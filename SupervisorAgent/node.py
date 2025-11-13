@@ -165,7 +165,7 @@ def criteria_generation(state: AgentState) -> Command[Literal["re_question"]]:
                     ,"criteria": response}
         )
     
-def supervisor_agent(state: AgentState):
+async def supervisor_agent(state: AgentState):
     # pdf가 있다면 데이터 추출 agent 호출
     if state.get("pdfs"):
         pass
