@@ -5,7 +5,7 @@ set -eu pipefail
 # Resolve host/port even when legacy FASTAPI_HOST carried a numeric port.
 HOST="${FASTAPI_HOST:-0.0.0.0}"
 PORT="${FASTAPI_PORT:-${FASTAPI_HOST:-9876}}"
-WORKERS="${GUNICORN_WORKERS:-1}"
+WORKERS="${GUNICORN_WORKERS:-4}"
 TIMEOUT="${GUNICORN_TIMEOUT:-120}"
 LOG_LEVEL="${GUNICORN_LOG_LEVEL:-info}"
 
