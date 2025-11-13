@@ -73,13 +73,6 @@ async def material_chat(request: MaterialAgentRequest) -> MaterialAgentResponse:
                 else:
                     return MaterialAgentResponse(response_str=resume_result["final_report"])
 
-async def start_uvicorn():
-    """Run uvicorn server within an async context."""
-    import uvicorn
-    config = uvicorn.Config("main:app", host="0.0.0.0", port=os.getenv("FASTAPI_HOST", 9876))
-    server = uvicorn.Server(config)
-    await server.serve()
-
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(start_uvicorn())
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=os.getenv("FASTAPI_HOST", 9876))
