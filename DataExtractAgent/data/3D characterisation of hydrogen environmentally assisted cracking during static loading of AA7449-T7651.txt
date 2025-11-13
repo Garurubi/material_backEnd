@@ -1,0 +1,853 @@
+Int J Fract (2021) 232:93-116 https://doi.org/10.1007/s10704-021-00595-y
+ORIGINAL PAPER
+3D characterisation of hydrogen environmentally assisted cracking during static loading of AA7449-T7651
+Unai De Francisco · Felix Beckmann · Julian Moosmann · Nicolas O. Larrosa · Matthew J. Peel
+Received: 25 June 2021 / Accepted: 21 September 2021 / Published online: 28 October 2021
+'The Author(s) 2021
+Abstract In this investigation, synchrotron X-ray microtomographywasusedtoperform3Dinsituobservations of crack initiation and growth during hydrogen environmentally assisted cracking (HEAC) in tensile samples of AA7449-T7651. Two smooth tensile samples with a 1 mm diameter gauge section were held at a fixed displacement ( ≈ 30% of yield stress) in warm, moist air ( ≈ 76 ◦ C, 73% relative humidity). The samples were then imaged repeatedly using X-ray tomography until they fractured completely. The tomograms showing the nucleation and evolution of intergranular cracks were correlated with electron microscopy fractographs. This enabled the identification of crack initiation sites and the characterisation of the crack growth behaviour relative to the microstructure. The samples were found to fracture within an environmental exposure time of 240 min. Some cracks in both samples nucleated within an exposure time of 80 min (33-40% of the total lifetime). Many cracks were found to nucleate both internally and at the sample surface. However, only superficial cracks contributed to the final fracture surface as they grew faster owing to the direct
+Supplementary Information The online version contains supplementary material available at https://doi.org/10.1007/ s10704-021-00595-y.
+U. De Francisco ( B ) · N. O. Larrosa · M. J. Peel Department of Mechanical Engineering in University of Bristol, Bristol BS8 1TR, UK e-mail: ud13050@bristol.ac.uk
+F. Beckmann · J. Moosmann Helmholtz-Zentrum Hereon, Hamburg, Germany environmental exposure and the larger crack opening. HEAC occurred prominently via brittle intergranular cracking, and cracks were found to slow down when approaching grain boundary triple junctions. Additionally, crack shielding from nearby cracks and the presence of coarse Al-Cu-Fe particles at the grain boundaries were also found to temporarily reduce the crack growth rates. After prolonged crack growth, the HEAC cracks displayed ductile striations and transgranular fracture, revealing a change in the crack growth mechanism at higher stress intensity factors.
+Keywords Static loading · Hydrogen environmentally assisted cracking · AA7449-T7651 · Synchrotron Xray tomography
+1 Introduction
+Age-hardenable 7xxx (Al-Zn-Mg-Cu) series aluminium alloys are commonly used for aircraft components, where they are subjected to demanding operating conditions (Rometsch et al. 2014). A recent safety information bulletin by the European Aviation Safety Agency (EASA) reported that aircraft components made from some novel 7xxx alloys have been found to crack as a result of hydrogen environmentally assisted cracking (HEAC) in moist air (European Aviation Safety Agency 2018). 7xxx alloys are known to be sensitive to HEAC in moist air and aqueous solutions (Speidel and Hyatt 1972). However, the EASA reported
+123
+94
+U. De Francisco et al.
+that the susceptibility to HEAC was attributed to components made of some specific alloys including: 7037, 7055, 7085, 7099, 7140 and 7449 (European Aviation Safety Agency 2018). The chemical composition limits of these alloys are shown in Table 1. By comparing the composition of these alloys with the long-established alloy AA7075, certain differences can be identified. Particularly, the modern alloys can be seen to contain higher levels of Zn, resulting in a higher Zn/Mg ratio (Dursun and Soutis 2014). The EASA linked the high HEAC sensitivity of the alloys mentioned to this high Zn/Mg ratio, in combination with a low Cu content (Young and Scully 2002; Knight et al. 2010; Sarkar et al. 1981).
+HEACof 7xxx alloys in moist air environments and aqueous solutions is known to occur by an absorption induced hydrogen embrittlement mechanism (Gruhl 1984). In the case of moist air, H2O molecules are reduced at the aluminium surface (Young and Scully 2002). Subsequently, atomic hydrogen is absorbed into the material and diffuses to regions with a high hydrostatic stress (Gruhl 1984). A sufficiently high hydrogen concentration will then cause a reduction in the fracture stress and result in brittle intergranular cracking at stress levels considerably below yield stress.
+For cracks which are comparatively small with respect to the microstructure, the behaviour of crack growth does not correlate with that of classical fracture mechanics (Castelluccio and McDowell 2014). It has beenexperimentally established that the microstructure has a significant effect on the crack growth rate during crack initiation and short crack growth. Many investigations exist regarding the microstructurally short crack growth behaviour during fatigue (Tokaji et al. 1988; Pegues et al. 2017; Hassanipour et al. 2019). However, there is limited understanding on the influence of different microstructural features on short cracks and microscale mechanisms occurring during crack initiation for the HEAC of 7xxx alloys.
+In a previous investigation by the authors, statically loaded smooth 4-point bend specimens were used to compare the delay in crack formation of AA7449T7651 (high Zn/Mg) and AA7075-T651 (low Zn/Mg) (De Francisco et al. 2020). The tensile surfaces of the 4-point bend samples were surveyed with an optical microscope to observe the crack growth behaviour. The images revealed discontinuous cracking, with cracks slowing down and accelerating at different microstructural features and grain boundaries (De Francisco et al.
+2020). Additionally, cracks were found to nucleate in large numbers and scattered at different grain boundaries. Subsequently, propagating cracks branched at grain boundary triple junctions with specific geometries. However, 2D surface images cannot accurately capture in-depth propagation (Le Poulain et al. 2005). Additionally, long exposures of approximately 24 h in between inspections meant that cracks were not imaged frequently enough to quantify the effect of microstructural features on the crack growth rate. Furthermore, cracks in the 4-point bend samples were seen to mostly nucleate and grow subsurface. Thus, the behaviour of most cracks could not be observed. Crack initiation and propagation are intrinsically different in the bulk of the material than at the surface (Luo et al. 2018). To overcome these limitations, this investigation aims to build on these findings by performing in situ X-ray computed microtomography ( µ CT).
+X-ray µ CT provides the capability of rapidly imaging metals at a high resolution. This has proved useful for the in situ 3D visualisation of corrosion and environmentally assisted cracking processes of a range of alloys by using purpose-built rigs (Knight et al. 2010; Bhuiyan et al. 2016; Stannard et al. 2018; Horner et al. 2011). Singh et al. performed in situ tomography to survey the HEAC behaviour of a pre-cracked sample of AA7075during sustained loading in moist air (Singh et al. 2014). This investigation allowed them to quantify the crack growth rates as a function of the stress intensity factor. Additionally, seemingly discontinuous cracks from the specimen surface were found to be connected in 3D (Singh et al. 2014). However, this experiment neglected crack initiation and no attempt was made to correlate the microstructure to the cracking behaviour.
+Recent advances in synchrotron based X-ray tomography have led to faster image acquisition rates. This facilitates performing a time lapse of tomograms for fast cracking events. Consequently, the crack initiation sites, the crack propagation behaviour and the interaction of colonies of cracks can be characterised in detail. For example, Gudla et al. used synchrotron tomography to analyse the environmentally induced cracking behaviour of AA5083 during slow strain rate tensile testing. In this case, tomograms with 1200 projections were acquired within 90 s, allowing them to obtain 22 tomograms within a period of 68 min (Gudla et al. 2020). This permitted the identification of crack initi-
+123
+3D characterisation of hydrogen environmentally assisted cracking...
+95
+Table 1 Composition of several 7xxx alloys
+Composition shown as weight percent maximum unless shown as range (Aluminum Association and others 2009)
+ation sites and the characterisation of the crack growth behaviour.
+The purpose of this investigation is to perform in situ X-ray µ CT using a fast acquisition rate to image crack initiation and microstructurally short cracking of statically loaded smooth samples of AA7449-T7651 during HEAC in warm moist air. This experiment aims to: (a) elucidate the exact crack initiation sites (surface/subsurface, intermetallic particles...), (b) accurately quantify the crack growth rates of cracks and correlate them with the microstructure, and (c) perform a statistical analysis of the number and size of cracks evolving with time.
+2 Experimental methods
+Small samples of AA7449-T7651 with a circular gauge section were loaded at a fixed displacement in tension. The loaded samples were subsequently exposed to a warm moist environment and imaged repeatedly using synchrotron tomography (P07 beamline at PETRA III) till fracture. This enabled the visualisation of crack initiation and growth during HEAC. Afterwards, the fracture surfaces of the samples were imaged using SEM. The fractographs were correlated with the tomography snapshots in order to pinpoint the crack initiation features and characterise the growth of cracks in 3D.
+2.1 Material
+The material used in this study was AA7449-T7651 (composition shown in Table 1). The T7651 temper is achieved by solution heat treating, stress relieving by
+Table 2 Tensile properties of AA7449-T7651 along the ST axis
+σ ys = 0 . 2%proof stress, σ uts ultimate tensile stress, ε f strain to fracture stretching and artificially ageing to an overaged condition. The material was obtained as a rolled 80 mm thick plate. The tensile properties of the material along the short transverse (ST) axis were obtained via uniaxial tensile tests and are given in Table 2.
+The microstructure of the alloy is presented in Fig. 1a. The alloy can be seen to contain pancaked shaped grains, characteristic of rolled plates. From Fig. 1b, the grains can be seen to be elongated along the longitudinal direction, with some grains exceeding 2 mm in length. There are some recrystallised grains without low angle grain boundaries (shaded in Fig. 1b). Previously, it has been identified that these recrystallised grains could be more prone to crack initiation during HEAC (De Francisco et al. 2020). Therefore, it is useful to estimate the recrystallised area fraction of the alloy. From Fig. 1b, the recrystallised area fraction was estimated as 10%.
+2.2 Sample preparation
+Figure 2a illustrates a diagram of the tensile specimens used for static loading. The samples had a diameter at the gauge section of 1 mm, in order to ensure that the entire gauge section could be within the field of view at the maximum resolution. The tensile axis of the
+123
+96
+U. De Francisco et al.
+Fig. 1 a Optical microscopy images showing the microstructure of AA7449-T7651 along three different planes after etching with Weck's reagent. T, ST and L represent the transverse, short transverse and longitudinal axes respectively. b A large image of the microstructure on the ST-L plane, with highlighted recrystallised grains
+(
+a
+)
+(b)
+2
+ST
+Recrystallised grains
+tST
+300 um
+370
+specimens was aligned with the short transverse (ST) direction (most susceptible to HEAC Speidel and Hyatt 1972), with the gauge section located at the centre of the thickness of the 80 mm rolled plate (T/2 position).
+The samples were polished at the gauge section to minimise scatter arising from any effects of surface quality and machining residual stresses on crack nucleation (De Francisco et al. 2020). The required surface finish was achieved by grinding with 600 grit SiC abrasive paper, followed by polishing using 9 µ mand3 µ m diamondpaste.Thespecimenswerecleanedinbetween polishing steps with a 3 min ultrasonic bath in acetone andwerelaterimmediatelyblow-dried.Itmustbenoted that the gauge section of the samples was reduced by about 2-5% after grinding and polishing. Therefore, the cross-sectional area at the gauge section was precisely calculated from the tomograms taken prior to loading.
+123
+Fig. 2 a Drawing of the tensile specimen with dimensions in mm. b Diagram showing the gauge section of the sample. The smallest cross sectional diameter has been labelled as dmin
+(
+a
+)
+(b)
+Fig. 3 Exploded view of the tensile rig for in situ µ CTinamoist environment
+Fixture for
+Base
+Fixed sample grip
+Sliding sample grip
+stage
+Bolt
+Sample
+Loading bolt
+Loading
+Container
+Casing for
+for KCL
+Polycarbonate
+nut
+heating element
+tube
+Lid
+solution
+2.3 Sample loading
+Two samples were used for in situ µ CT. These were loaded such that the maximum tensile stress at the gauge section was 141 MPa and 184 MPa (28% and 37% of yield stress respectively, from Table 2). These low stresses were applied to promote brittle intergranular HEAC and minimise plasticity. The samples were statically loaded in tension by using the rig illustrated in Fig. 3. In order to measure the load, uniaxial strain gauges were attached to the sample at the 4 mm diameter cylindrical section labelled in Fig. 2. The uniaxial stress at the gauge section, σ , can then be calculated by
+3D characterisation of hydrogen environmentally assisted cracking...
+97
+Table 3 Dimensions at the gauge section of the samples of AA7449-T7651 used for in situ tomography
+where dsg is the diameter at the strain gauge location (4 mm), d is the diameter at the gauge section ( ≈ 1 mm), ε is the measured strain and E is the Young's modulus of the alloy ( ≈ 70 GPa Mylonas and Labeas 2014). The gauge section was taken as the volume where the sample was thinnest within a 2 mm distance along the tensile axis (illustrated by the shaded region in Fig. 2b). Thevolumeatthegaugesection( V ), the diameter at the gauge section averaged over the range /Delta1 Z ( ¯ d ) and the diameter at the location with the smallest cross section ( dmin ) for each sample are given in Table 3. The tensile stress at the gauge section, σ , was computed using the average diameter at the gauge section (i.e. d = ¯ d ).
+2.4 Environmental exposure
+Cracking was achieved by exposing the statically loaded samples to warm moist air. The exposure temperature was higher than typical exposure temperatures to promote practical cracking rates during the beamtime available (De Francisco et al. 2020). A high steady state temperature was achieved by using two DCheating elements. One heating element was placed inside the sample environment. The other was located between the base and the stage fixture (Fig. 3). Additionally, the exterior of the polycarbonate tube, the base and lid were covered with nitrile rubber insulation to minimise heat losses and prevent condensation on the inner walls. A high relative humidity was achieved by following the procedure of the ASTM standard E10402 (ASTM International 2012). By placing a cylindrical container with a KCl saturated aqueous solution at the base of the enclosure, a high steady state relative humidity can be achieved for temperatures of up to 80 ◦ C. A small fan was also placed inside the enclosure to increase convection. This reduced the settling time and the vertical temperature gradients within the sample enclosure. The temperature and relative humidity settled at 76.2 ◦ C and 72.5% respectively. The temperature reached 80% and 95% of the final value after 0.5
+h and 1.2 h. Similarly, the relative humidity reached 80% and 95% of the settling value after 0.7 h and 2.0 h respectively. Therefore, a high temperature and humidity were achieved after a short period of 0.7 h.
+2.5 Tomography
+Theinsitu µ CTimagingwasperformedattheP07high energy material science beamline (HEMS), which is operated by the Helmholtz-Zentrum Hereon, at PETRA III at DESY in Hamburg (Germany) (Schell et al. 2014). Alowenergy44keVX-raybeamwasusedtominimise the transmission. This was essential owing to the small 1 mm gauge section of the samples and the low transmissivity of aluminium alloys. The sample to detector distance was set to 0.08 m. For each tomogram, 1000 projections were performed over an angle range from 0 ◦ to 180 ◦ . This resulted in the fast measurement time of approximately 8 min. For each radiograph, the field of viewwas4mm × 3.5 mm,withaneffectivepixelsizeof 0.5 µ m. After tomographic reconstruction, the resulting voxel size was 4.03 µ m 3 . The ASTRA toolbox was employed for the tomographic back-projection (Van Aarle et al. 2015). A phase retrieval algorithm, which is based on the linearised transport of the intensity equation and acts a low pass filter, was employed to enhance image contrast and reduce noise in the reconstructed tomograms (Moosmann et al. 2014; Moosmann 2021). The reconstruction was output as 430 cross-sectional images stacked along the tensile axis. An example of a grayscale cross-sectional slice is shown in Fig. 4a.
+Astable temperature is preferred during X-ray µ CT to avoid artefacts. Therefore, snapshots were not performed during the first hour of exposure. Afterwards, tomograms of the gauge section were taken repeatedly till fracture. At least 10 complete tomograms were taken per sample.
+2.6 Segmentation
+In order to visualise different 3D features, it is necessary to perform a segmentation on the reconstructed data for each tomogram. The segmentation was performed using the trainable 3D WEKA segmentation plugin in ImageJ (Arganda-Carreras et al. 2017). The classifier was trained by manually selecting sufficient pixels corresponding to each feature on one of the tomograms. Five classes were chosen for the pixel
+123
+98
+U. De Francisco et al.
+Fig. 4 Examples of the process followed to correlate the X-ray micro-tomography reconstructions with the SEM fractographs. a An original grayscale cross-sectional slice and b the classified result after performing a 3D WEKA segmentation. c 3D view of the segmented cracks after recombining the classified slices. d
+(
+a
+)
+(
+d
+)
+(e)
+(f)
+(b)
+(c)
+Air
+3.6
+Bulk phase
+344
+3.2
+Al-Cu-Fe
+MgzSi
+2,8
+2.6
+Cracks
+02
+X (mm)
+Y (mm)
+3.8
+200 um
+3.4
+8&9
+3
+3.2
+3
+10&11
+2.8
+2.6
+0.8
+X (mm)
+Y (mm)
+3D view of fracture surface cracks
+Projection of cracks on X-Y plane
+Projection of cracks onto fracture surface
+classification of each slice, including: (i) air, (ii) bulk aluminium phase, (iii) Fe and Cu bearing particles (bright/white), (iv) Mg2Si particles (dark/black) and (v) volumes occupied by cracks. Figure 4b shows an example of a classified cross-sectional slice from the grayscale image in Fig. 4a. Figure 4c shows a 3D view of the regions classified as cracks.
+It is essential to distinguish separate cracks by grouping the voxels classified as cracks. This was done by using the MATLAB function bwconncomp (MathWorks 2020). Voxels classified as cracks were considered to belong to the same crack if they had adjoining faces or edges, but not corners (18-connected MathWorks 2020). The segmentation algorithm classified some voxels as cracks for the tomograms taken prior to any exposure. These can be attributed to incorrectly labelled intermetallic particles (bright Al-Cu-Fe and dark Mg2Si). Therefore, small cracks containing less than ten voxels were removed.
+Subset of cracks in c which contribute to the fracture surface. e A 2D projection of the cracks in d on the X-Y plane, showing the crack outlines in red. f Projection of the crack outlines of cracks labelled 2 , 3 and 4 on a SEM fractograph
+123
+2.7 Crack volume distribution
+A statistical analysis of the volume distribution of cracks over time was performed. The volumes of cracks were estimated by adding the number of voxels contained within each crack. The number of voxels was then multiplied by the voxel volume to obtain the total crack volume. The volume could not be estimated accurately for large surface cracks, since the voxels between the fractured surfaces were classified as air rather than cracks. However, this was only for the largest cracks after extended exposure and did not affect the analysis.
+2.8 Fractography
+Since the samples were allowed to fracture completely, the fractured surfaces of both tensile samples were imaged with a TM3030 plus SEM microscope using
+3D characterisation of hydrogen environmentally assisted cracking...
+99
+backscattered electrons. The 3D cracks obtained from µ CTwerethencorrelatedwiththefractographs to analyse the effect of the microstructure during HEAC. This process is demonstrated in Fig. 4c-f:
+Firstly, the cracks which intersected with the fracture surfaces were isolated. Figure 4d illustrates the cracks belonging to the fracture surface.
+Secondly, the cracks belonging to the fracture surface were projected onto the X-Y plane (i.e. the plane perpendicular to the loading axis). Example in Fig. 4e.
+The crack projections were overlaid on top of the fractographs. Figure 4f shows the profile of three HEACcracksoverlaidontopofaSEMfractograph. The cracks correspond to those labelled as 2 , 3 and 4 in Fig. 4c-e.
+3 Results
+Two samples were imaged during HEAC using µ CT until fracture. The samples were statically loaded in tension to an initial stress of 141 and 184 MPa. The samples fractured completely after an exposure time of 239 ± 4and201 ± 4minrespectively. The exposure time was considered as the time elapsed from the moment when the heating elements were switched on. The short time to failure of the samples reveals the high sensitivity of the alloy 7449-T7651 to HEAC in warm moist air. The sample subjected to a higher initial stress fractured earlier, as expected. However, due to the statistical nature of crack initiation, duplicate tests are required to analyse the typical time to fracture of the samples.
+Many cracks were found to nucleate in both samples after a short period of time. Cracks nucleated internally and at the sample surface. However, surface cracks grew at a faster rate. Examples of two surface cracks appearing from the sample initially loaded at 141 MPa are presented in Fig. 5. In the case of crack 2 in Fig. 5b, nucleation occurred at the location of a bright Al-Cu-Fe intermetallic particle. Both cracks nucleated before an exposure of 80 min, suggesting very little delay in the formation of cracks. The environment reached a steady state temperature and relative humidity after approximately 80 and 120 min respectively. Therefore, the delay in crack formation would be expected to decrease if the samples were exposed to steady state conditions immediately. The slices in Fig. 5 do not manifest the full size of the cracks, as
+Fig. 5 Tomographic cross-sectional slices showing the evolution of two cracks in the sample subjected to 141 MPa. Each snapshot has been labelled with the corresponding exposure time from the moment the heaters were turned on. The arrow in b indicates the white Al-Cu-Fe particle at the location where the crack initiated. The cracks have been labelled 1 and 2 , corresponding to the labels in Fig. 9a, showing an image with the entire fracture surface of the sample
+(
+a
+)
+(b)
+250 um
+80 min
+95 min
+113 min
+129 min
+160 min
+200 pm
+min
+80 min
+95 min
+113 min
+129 min
+160 min
+min
+these deviated from the main cracking plane following grain boundaries. This section presents several results by exploiting the 3D nature of the tomographic data, including: (a) a statistical analysis of the distribution and size of cracks, (b) the identification of the main cracks causing fracture, (c) the identification of crack initiation sites, (d) the characterisation of crack initiation and growth relative to the microstructure and (e) the estimation of the crack growth rates.
+3.1 Crack volume distribution
+The volumes of the cracks at the gauge section were estimated at every snapshot to analyse the size distribution. The growth of the crack population and their size are presented in Fig. 6 for both samples. Several observations can be made:
+A large population of cracks were detected for both samples. However, more cracks were found to nucleate in the sample loaded at 184 MPa. After 150 min of exposure, the total number of cracks detected in the 141 and 184 MPa samples were 61
+123
+100
+U. De Francisco et al.
+Fig. 6 Box and whisker plots showing the evolution of the volume distributions of the cracks for the samples subjected to 141 MPaand184MPa.Thedotplots of the crack volumes were overlaid to show the total population of cracks. The total number of detected cracks have been presented as linear plots, with labelled
+initial and final values. Trend lines have been added to highlight the exponential growth of the largest cracks. These have been labelled as cracks 1 and 9 , corresponding to the labels in Figs. 9a and 10a, for the 141 and 184 MPa samples respectively
+Fig. 7 Box and whisker plots showing the evolution of the volume distributions of internal cracks and surface cracks for the sample subjected to 141 MPa. The dot plots of the crack volumes were overlaid to show the total population of cracks. The total number of detected cracks have been presented as linear
+and 103 respectively. Similarly, after 180 min of exposure, the total number of cracks increased to 85 and 155 respectively. Therefore, the nucleation of cracks appears to be highly dependent on the magnitude of the tensile stress and the exposure time.
+123
+plots, with labelled initial and final values. After an exposure of 160 min, the number of internal cracks detected decreased by 8 and the number of surface cracks increased by 9 (indicated in the linear plots). This can be ascribed to internal cracks surfacing
+Few cracks grew to a large size (7-8% of population). The logarithmic scale used underlines the large difference in volume between the largest cracks and the bulk population. After extended exposure times, the mean crack volume was an order of magnitude greater than the median, showing the large asymmetry of the population. Similar
+3D characterisation of hydrogen environmentally assisted cracking...
+101
+behaviour was observed for the environmentally induced cracking of AA5083, where only about 10% of cracks grew to a large size beyond 800 µ m (Gudla et al. 2020).
+The first cracks which grew beyond a volume of about 5 × 10 4 µ m 3 can be seen to dominate and grow exponentially with time. Two trend lines have been included to highlight the exponential growth of the largest cracks in both samples. The trend lines were determined using the equation
+where Vi is the crack volume of the i th crack, V 0 is the pre-exponential constant, b is the exponential coefficient and t is the exposure time. The exponential coefficient ( b ) for the largest cracks in the 141 and 184 MPa samples were found to be 0.0372 and 0.0376 min -1 respectively. The similarity of the coefficients implies very similar crack growth rates despite the difference in the initial tensile stress of the samples. The exponential growth of the largest cracks can be identified to be the cause of the large disparity in size relative to the bulk population of cracks.
+Figure 7 shows the evolution of the population of internal cracks (left) and surface cracks (right) for the sample initially loaded at 141 MPa. All of the cracks which grew to a large size were surface cracks. Additionally, between the time interval of 151 and 160 min, the number of internal cracks can be seen to decrease from 41 to 33. However, the number of surface cracks increases from 20 to 29. A similar observation can be made for the time interval between 95 and 113 min of exposure. Therefore, many small cracks can be seen to nucleate internally and subsequently surface. Figure 8 illustrates 2D and 3D views of the cracks present in the sample loaded at 141 MPa after different exposure times. The internal cracks (black) are distinguished from surface cracks (green). The images confirm the rapid growth of several superficial cracks and the limited growth of the cracks near the sample axis.
+3.2 Fracture behaviour
+Fracture in both samples occurred via the coalescence of several intergranular cracks. The entire fracture surface of the 141 and 184 MPa samples have been shown in Figs. 9a and 10a. The different intergranular cracks contributing to fracture have been outlined and labelled. The area fraction of the fracture surfaces covered by brittle intergranular regions was approximately 40% and 50% for the 141 and 184 MPa samples respectively. The remaining regions of the fracture surfaces are linked mostly to ductile overload and the onset of transgranular fracture at the edges of the intergranular cracks. The overload region is predominant at the centre of the samples and in between intergranular cracks. It can be inferred that after sufficient growth and the coalescence of intergranular cracks, the reduction in the effective cross-sectional area resulted in overload, despite loading under constant displacement conditions. Figure 11 shows matching SEM images of a ductile overload region in the 141 MPa sample. The topography of the overload region can be seen to be stepped, linking flat regions containing Al-Cu-Fe stringers (coarse bright intermetallic phases). Ductile tearing is evident by the presence of ductile ridges and microvoid coalescence (microvoids ≈ 1.5 µ m in size) in between Al-Cu-Fe particles. Most Al-Cu-Fe particles appear to be uncracked, indicating decohesion at the particle-matrix interface. In comparison to the overload region, the fraction of Al-Cu-Fe particles on the intergranular surfaces is much lower (Figs. 9a, 10a). Therefore, preferential cracking at grain boundaries containing stringers only takes place during final fracture.
+From Fig. 9a, the 141 MPa sample can be seen to have a total of nine surface cracks intersecting with the fracture surface. The cracks labelled 1-7 and 9 can be seen to be adjacent in the final fracture surface, indicating coalescence prior to overload. Together, the coalesced cracks ( 1-7, 9 ) encompass an angle of approximately 220 ◦ around the circumference of the fracture surface. Crack 8 is also located at the edge, but opposite the other cracks. Snapshots of the evolution of these cracks are presented in Fig. 9c-e; for exposure times of 140, 160 and 199 min. The evolution of the fracture surface cracks can be summarised as follows:
+140 min five surface cracks ( 1-2, 4-6 ) had nucleated close to each other along the sample circumference. Crack 1 was significantly larger than the others.
+160 min the area of crack 1 increased significantly, showing dominance. Two more cracks ( 3, 7 ) were seen to nucleate near the main cluster. Another
+123
+102
+U. De Francisco et al.
+Fig. 8 2D projections of the cracks at the gauge section of the sample loaded at 141 MPa after 80, 113, 151 and 178 min of exposure. 3D views of the cracks have also been included for the snapshots at 151 and 178 min. Internal cracks have been coloured black and surface cracks have been coloured green
+3.
+2D view after 80 min
+2D view after 113 min
+1.2
+0.2
+0.4
+0.6
+0.8
+0.2
+0.4
+0.6
+0.8
+X (mm)
+X (mm)
+2D view after 151 min
+2D view after 178 min
+1.2
+1.2
+0.2
+0.4
+0.6
+0.8
+0.2
+0.4
+0.6
+0.8
+X (mm)
+X (mm)
+3D view after 151 min
+3D view after 178 min
+1.5
+1.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+Y (mm)
+X (mm)
+Y (mm)
+X (mm)
+crack ( 8 ) can be seen to nucleate at a distance along the tensile axis of about 1 mm from the other cracks. 199 min crack 9 was found to nucleate near the main cluster. The crack growth of cracks 1-8 accelerated rapidly and the area of crack 1 doubled. Additionally, the crack mouth opening displacement (CMOD) was seen to widen notably for all cracks. Particularly for crack 1 , the CMOD doubled from 0.07 to 0.14 mm between the snapshots after 160 to 199 min of exposure. Despite the proximity of most cracks, no coalescence was visible at this stage.
+other. However, the clustered cracks are not coplanar. Most cracks nucleate on a line at an angle of about 30 ◦ from the ST plane. Cracks nucleated sequentially at different grain boundaries which were presumably more prone to crack nucleation. However, it is unclear why the largest cracks formed specifically along 30 ◦ lines. As cracks were not coplanar and cracking occurs preferentially along the short transverse plane, no crack coalescence was visible in the early stages of cracking.
+Cylindrical projections of the cracks in the 141 MPa sample after an exposure time of 160 min are shown in Fig. 9b, together with the position of the crack centres. The cracks labelled 1-7 are in close proximity to each
+123
+For the 184 MPa sample, most of the intergranular cracks also appear to be adjacent at the fracture surface. Cylindrical projections of the fracture surface cracks in the 184 MPa sample are shown in Fig. 10b together with 3D snapshots at different exposure times in Fig. 10c-e. From the cylindrical projections of the cracks, regression lines were overlaid along the crack centres
+3D characterisation of hydrogen environmentally assisted cracking...
+103
+Fig. 9 a SEM fractograph of the sample subjected to 141 MPa with several outlined and labelled intergranular cracks. b Cylindrical projection of the labelled cracks after 160 min of environmental exposure, showing the crack centres. Linear regressions
+(
+a
+)
+(b)
+(c)
+160 min
+2.4
+Crack centres
+2.2
+Linear regression
+1.8
+290
+330
+1.6
+1.4
+0.5
+1.0
+1.5
+2.0
+500 um
+Position
+circumference (mm)
+1.55
+1.65
+1.7
+1.75
+1.8
+1.5
+1.6
+1.7
+1.8
+2.0
+2.2
+2.3
+2.4
+2.8
+2.8
+2.8
+2.6
+140 min
+2.6
+160 min
+2.6
+199 min
+2.4
+2.4
+2.4
+2.2
+2.2
+2.2
+1
+1.8
+1.8
+1.8
+1.6
+1.6
+1.6
+1.4
+75
+5
+0.4
+0.6
+0.8
+1.2
+0.5
+0.4
+0.6
+0.8
+1.2
+0.5
+0.6
+0.8
+1.2
+(mm
+(mm
+along
+of cracks 1, 9-11 and cracks 2-7 . Similar to the 141 MPa sample, the regression lines show that the cracks nucleate at angles ranging between 22 ◦ and 36 ◦ from the short transverse plane relative to each other. As a result, fracture surface cracks in both samples appear to nucleate along a helix around the quasi-cylindrical sample surface. This is particularly evident for cracks 2-7 in the 184 MPa sample.
+From the snapshots (Fig. 10c-e), the fracture surface cracks were found to nucleate earlier in the 184 MPa sample. After 135 min, 9 out of the 11 fractures surface cracks had nucleated in the 184 MPa sample, compared to 5 out of 9 in the 141 MPa sample. After
+for the position of the crack centres are shown between cracks 2-5 and 5-7. c 3D view of the labelled cracks after 140, 160 and 199 min of environmental exposure
+150 min of exposure, all of the cracks present in the 184 MPa sample grew at similar rates. This is in contrast to the 141 MPa sample, where a single crack dominated fracture. After 166 min, the coplanar cracks in the 184 MPa sample were found to coalesce prior to fracture (cracks 8-9 and 10-11 ).
+3.3 Crack growth rates
+The fractured area is defined as the projected area on the ST plane, not the true 3D crack surface. Figure 12a showstheevolution of the fractured area in each sample as a function of time. The fractured area is presented
+123
+104
+U. De Francisco et al.
+Fig. 10 a SEMfractograph of the sample subjected to 184 MPa with several outlined and labelled intergranular cracks. b Cylindrical projection of the labelled cracks after 150 min of environmental exposure, showing the crack centres. Linear regressions
+1
+2
+3
+4
+5
+6
+7
+8&9
+10&11
+11
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+150 min
+135 min
+166 min
+1
+2
+3
+4
+5
+6
+7
+8
+9
+X (mm)
+X (mm)
+X (mm)
+Y (mm)
+Y (mm)
+Y (mm)
+Z (mm)
+Z (mm)
+Z (mm)
+3.8
+3.6
+3.4
+3.2
+3.0
+2.8
+2.6
+2.4
+0.5
+1
+0
+0.2
+0.4
+0.6
+0.8
+1
+3.8
+3.6
+3.4
+3.2
+3.0
+2.8
+2.6
+2.4
+0.5
+1
+0
+0.2
+0.4
+0.6
+0.8
+1
+3.8
+3.6
+3.4
+3.2
+3.0
+2.8
+2.6
+2.4
+0.5
+1
+0
+0.2
+0.4
+0.6
+0.8
+1
+2.4
+2.6
+3.0
+2.8
+3.2
+3.4
+2.5
+2.7
+3.1
+2.9
+3.3
+Z(mm)
+3.2
+3.4
+2.8
+2.6
+2.4
+2
+3
+4
+6
+5
+8
+9
+500 µm
+Position along circumference (mm)
+9
+8
+1
+10
+2
+3
+4
+5
+6
+7
+11
+36
+⁰
+22
+⁰
+150 min
+3
+2.2
+0.5
+1.5
+2.5
+0
+1
+2
+3
+3.6
+(
+a
+)
+(b)
+(c)
+= Crack centres
+= Linear regression
+T
+L
+10
+Fig. 11 Matching fracture surface images showing a ductile overload region of the sample loaded at 141 MPa. Different features have been labelled including: MVC microvoid coalescence, cleavage a flat region showing cleavage and no constituent particles, Al-Cu-Fe a stringer opposite the 'cleavage' labelled region in the matching fracture surface, IG an intergranular region, step steps linking regions at different heights
+123
+for the position of the crack centres are shown between cracks 2-7 and 1, 9-11. c 3D view of the labelled cracks after 135, 150 and 166 min of environmental exposure
+Cleavage
+IG
+Step
+Al-Cu-Fe
+MVC
+100 um
+100 pm
+Step
+3D characterisation of hydrogen environmentally assisted cracking...
+105
+Fig. 12 a Semi-log plot showing the fractured area fraction ( AF / A ) of the 141 and 184 MPa samples with time. b A plot of the lateral growth rate of the fractured area for both samples. The crack growth rate of crack 1 for the 141 MPa sample was also included. c A plot of the lateral growth rate for crack 8 in the 141 MPa sample and cracks 2-4 in the 184 MPa sample
+(
+a
+)
+(b)
+(c)
+Fig. 13 The portion of the fractured area corresponding to each crack ( Ai / AF ) for a the 141 MPa sample and b the 184 MPa sample. The largest crack in each sample has been highlighted for comparison
+(
+a
+)
+(b)
+as the ratio AF / A , where AF is the fractured area and A is the cross-sectional area of the samples ( π ¯ d 2 / 4). Additionally, Fig. 13 shows the portion of the fracture surface area constituted by each individual crack. This was calculated as the ratio Ai / AF , where Ai is the cross sectional area of the i th crack. The largest cracks in each sample (cracks 1 and 9 for the 141 MPa and the 184 MPa samples respectively) have been highlighted for comparison.
+Linear regression lines were drawn in the semi-log plot in Fig. 12a to highlight the exponential growth of the fractured area fraction after exposures of 100 min. The fractured area for the 141 MPa sample grew exponentially over an extended period of time. However, for the 184 MPa sample this was only true during the cracking period between 100 and 150 min of exposure. Similar to the volume increase of cracks, the regression lines for the fractured area fractions were fit using the equation
+where A 0 is a pre-exponential constant and b is the exponential coefficient. The values of b obtained for the 141 and 184 MPa samples were 0.023 and 0.049 min -1 respectively, indicating faster growth in the 184 MPasampleduringtheexponentialgrowthstage.However, during the initial stages (up until an exposure of 135 min), the cracked fraction was greater for the 141 MPasample.Thisinitialgrowthisclearlydominatedby crack 1 (Fig. 13a). For example, after 129 min, crack 1 accounts for 70% of the fractured area for the 141 MPa sample. In contrast, Ai / AF for crack 9 in the 184 MPa sample peaks at only 35% after 135 min (Fig. 13b).
+The growth rate of the fracture surfaces were extracted from the rate of change of the curves in Fig. 12a. These growth rates are shown in Fig. 12b. The fracture surface growth rate for the 184 MPa sample displays a monotonic increase with time, up until an exposure time of about 170 min. In contrast, the growth rate curve for the 141 MPa sample exhibits greater noise. The growth rate curve of the 141 MPa sample is more evidently affected by the growth of the largest crack. This results in dips occurring at the time intervals of 104-121 min, 151-168 min and after an exposure of 178 min. This variability in the growth rates implies a dependence on: (i) the growth of other cracks, due to a relaxation from the nominal stress of the sample, (ii) the interaction with nearby cracks, causing crack shielding or coalescence, and (iii) the microstructure. The influence of the microstructure is more closely analysed in the following section.
+The fracture surface growth rate in the 184 MPa sample follows an exponential increase without displaying much variability. The growth rate of the largest crack ( 9 ) was found to remain constant at a value of about 14 µ m 2 / s, after an exposure of 118 min. It can be concluded that the reduced variability in the 184
+123
+106
+U. De Francisco et al.
+MPa sample can be attributed to the dependence of the fracture surface area on multiple cracks rather than a single dominating crack.
+3.4 Correlating crack growth with fracture surfaces
+The projections of the cracks obtained from the 3D snapshots were overlaid onto SEM images of the final fracture surfaces and marked with the exposure time (Figs. 14-17).
+Fractographs of the dominating crack 1 (141 MPa) are shown in Fig. 14. The crack can be seen to nucleate and subsequently grow along a long grain boundary (outlined in Fig. 14a as i). From Fig. 12b, it can be seen that the growth rate of this crack did not increase monotonically with time, with three distinct drops occurring after exposures of about (i) 120 min, (ii) 155 min, and (iii) 195 min. The first and second hindrances are linked with the crack front running into the triple junctions labelled as (i) and (ii) in Fig. 14a. Further, the triple boundary labelled as (i) can be seen to contain a 100 µ m long Al-Cu-Fe particle. The presence of this particle also reduced the crack growth rate, as the particle did not crack and formed a ligament visible in the matching fracture surface (Fig. 14d). The influence of grain boundary triple junctions on crack growth is consistent with previous microscopy observations for AA7449-T7651 under static 4-point bending (De Francisco et al. 2020). The acceleration of the crack after 168 min coincided with the onset of transgranular fracture, particularly visible in Fig. 14c. In addition to transgranular cracking, small regions containing intergranular microvoid coalescence (IGMVC) can be seen after extended growth, together with large voids at the location of coarse constituent particles. The final decrease in the crack growth rate after 195 min can be linked to various phenomena. The crack front after 209 min can be seen to approach crack 2 (left) and crack 9 (right). Thus, crack shielding is likely to impede further crack growth around the circumference until coalescence. Additionally, a recrystallised grain can be seen to detach almost completely from the fracture surface (Fig. 14c), revealing the bifurcation of the crack at this location. The competing growth of the crack on both sides was also likely to reduce the growth rate. Finally, the sample stress relaxation due to the increased growth of other cracks can also be considered to contribute to this final drop.
+123
+Matching fractographs of crack 8 (141 MPa) are shown in Fig. 15. The crack growth rate of this crack is shown in Fig. 12c. The first SEM image shows the evolution of the crack front and the other illustrates the grain boundary triple junctions. The crack initiated after approximately 140 min at the location of a coarse Al-Cu-Fe particle. Initial growth, until an exposure of 178 min, was slow (2 µ m 2 /s) and was contained within asmallgrainboundary.Asthecrackpropagatedbeyond this grain boundary, crack growth accelerated rapidly to about 5 µ m 2 /s (labelled as (iii)). Cracking continued along the interface of a recrystallised grain. After propagating past this recrystallised grain, at about 209 min, the cracking mechanism changed from intergranular to predominantly transgranular. In comparison to crack 1 , crack growth was much slower, not exceeding 7 µ m 2 /s. This can be associated with the large delay in crack formation, as well as the smaller size of the grain boundary at which the crack initiated. Additionally, the lateral growth of the crack was hampered on one side, where a ligament has been labelled.
+Figure 16 shows SEM fractographs of several cracks in the 141 MPa sample including cracks (a) 2-3 and (b) 4-7 . It is evident from the crack fronts at 199 min in Fig. 16a, b, that crack shielding reduced the crack growth of several nearby cracks. For example, the crack profiles after 199 min of cracks 1-5 and cracks 6-7 are at a lateral distance from each other of less than 10 µ m. However, since these cracks were not coplanar (Fig. 9), coalescence did not occur even after 209 min of exposure. The growth of crack 5 after 199 min can be seen to occur radially into the sample, with striations indicating ductile fracture.
+Several intergranular cracks in the 184 MPa sample have been displayed in Fig. 17. The crack growth rates of cracks 2-4 (Figs. 12c and 17d-e) can be seen to steady out in the interval between 166 and 181 min. As with the cracks in the 141 MPa sample, this can be attributed to the proximity of the cracks resulting in crack shielding. Further, cracks 1,3,4,6 and 8 can be seen to display significant ductility in the form of white striations at intergranular surfaces. These ductile intergranular surfaces occur after an exposure time of 181 min. This reveals a gradual transition from brittle intergranular to ductile intergranular cracking, and then transgranular cracking prior to the final coalescence of cracks and overload.
+Apreviousinvestigationsuggestedthatcracksnucleated preferentially at coarse intermetallic particles and
+3D characterisation of hydrogen environmentally assisted cracking...
+107
+200 µm
+95
+113
+151
+168
+209
+188
+129
+B
+(
+a
+)
+C
+100 µm
+IGMVC
+RG
+Transgranular
+B
+Detached RG
+Al-Cu-Fe
+Subgrains
+Transgranular
+IGMVC
+(b)
+C
+100 µm
+L
+T
+L
+T
+L
+T
+(i)
+(ii)
+100 µm
+Al-Cu-Fe
+Triple junction
+(
+d
+)
+L
+T
+(c)
+Fig. 14 SEMfractographs of crack 1 for the 141 MPa sample. a and d Matchingfracture surface images. b And c Close up images of the regions labelled as 'B' and 'C' in a . In image a , the crack profiles at different times have been overlaid and labelled with the exposure time in minutes. Additionally, two grain boundary
+Fig. 15 SEM fractographs of crack 8 for the 141 MPa sample. The crack profiles at different times have been overlaid and labelled with the exposure time in minutes. Grain boundary triple junctions have been outlined with white lines. Different features have been labelled including: recrystallised grains (RG), Al-Cu-Fe constituent particles and the onset of transgranular fracture from intergranular cracks. The regions labelled as RG denote the whole area enclosed by white lines
+triple junctions (i) and (ii) have been outlined. Different features have been labelled including: recrystallised grains (RG), the presence of intergranular microvoid coalescence (IGMVC), Al-Cu-Fe constituent particles and the onset of transgranular fracture from intergranular cracks
+160
+50 µm
+178
+199
+209
+219
+Ligament
+RG
+RG
+L
+T
+50 µm
+Al-Cu-Fe
+RG
+L
+T
+(iii)
+Transgranular
+123
+108
+U. De Francisco et al.
+Fig. 16 SEMfractographs of cracks a 2 (top) and 3 (bottom) and b 4-7 (left to right) for the 141 MPa sample. c Close-up of the region labelled as 'C'. The crack profiles at different times have
+100 µm
+(b)
+168
+199
+199
+168
+168
+199
+199
+168
+C
+L
+T
+C
+(c)
+RG
+50 µm
+Ductile
+fracture
+Al-Cu-Fe
+L
+T
+80
+113
+199
+178
+100 µm
+(
+a
+)
+178
+L
+T
+129
+at the interface of recrystallised grains (De Francisco et al. 2020). In this case, 4 out of 9 fracture surface cracks nucleated at coarse Al-Cu-Fe stringers (cracks 2, 5, 7, 8 ) for the 141 MPa sample. However, only cracks 3 and 8 were found to nucleate at coarse intermetallic particles for the 184 MPa sample. Similarly, 4 out of 9 cracks originated at the interface of recrystallised grains for the 141 MPa sample (cracks 5-8 ). In contrast, for the 184 MPa sample, this portion was greater of 8 out of 11 cracks (cracks 1-6, 9, 11 ). Therefore, it is possible that the grain boundaries of recrystallised grains are more sensitive to crack nucleation, as a large fraction of the fracture surface cracks originated at these interfaces; despite recrystallised grains constituting only about 11% of the bulk material.
+Thelargest cracks in the 141 MPa and 184 MPa samples were cracks 1 and 9 respectively. These are shown in Figs. 14 and 17g. In both cases, the cracks nucleate at locations of the sample surface which are tangential to the longitudinal direction. Additionally, these cracks can be seen to have large aspect ratios, with a greater size along the longitudinal axis. Therefore, these cracks propagate more easily around the sample surface than radially. In contrast, crack 4 in the 141 MPa sample and cracks 1 and 6 in the 184 MPa sample appeared at positions along the sample surface tangential to the transverse axis. In contrast to the largest cracks, which formed tangential to the longitudinal axis, the growth
+been overlaid and labelled with the exposure time in minutes. Different features have been labelled including: recrystallised grains (RG), Al-Cu-Fe constituent particles and ductile fracture
+123
+of these cracks was not predominantly along the sample surface.
+3.5 Onset of transgranular fracture
+The onset of transgranular growth resembles a change in the main HEAC propagation mechanism after extended exposure and crack growth. Therefore, it is useful to determine the mode I stress intensity factor ( KI ) at the onset of transgranular crack growth. This can elucidate whether an increase in this parameter is responsible for transgranular cracking. The mode I stress intensity factor can be estimated using the finite element solution of circumferential semielliptical cracks in rods obtained by Raju and Newman (1986). In this case, KI is given by Raju and Newman (1986)
+where σ t is the remote uniform tensile stress, a is the depth of the surface crack, F is the stress-intensity boundary correction factor and Q is the shape factor for the elliptical crack given by Raju and Newman (1986)
+3D characterisation of hydrogen environmentally assisted cracking...
+109
+Fig. 17 SEMfractographs of the sample subjected to 184 MPa. The fractographs show cracks: a and b 1 , c 10-11 , d 2-4 , e 2-3 , f 6 and g 8-9 . The crack profiles at different times have been over-
+181
+T
+L
+100 µm
+150
+87
+(
+a
+)
+RG
+Al-Cu-Fe
+50 µm
+B
+T
+L
+118
+135
+135
+135
+150
+150
+150
+181
+181
+181
+(
+d
+)
+T
+L
+200 µm
+E2
+(b)
+E1
+E2
+RG
+(e)
+T
+L
+T
+L
+RG
+Al-Cu-Fe
+100 µm
+100 µm
+100 µm
+118
+150
+166
+RG
+RG
+(f)
+300 µm
+(
+g
+)
+102
+118
+135
+181
+RG
+T
+L
+T
+L
+T
+L
+(c)
+181
+166
+166
+RG
+50 um
+laid and labelled with the exposure time in minutes. Different features have been labelled including: recrystallised grains (RG) and Al-Cu-Fe constituent particles
+123
+110
+U. De Francisco et al.
+Fig. 18 Diagram showing the estimation of a and c for crack 1 (141 MPa sample), just before the onset of transgranular fracture (178 min of exposure time)
+0.845
+0.202
+=202
+178 min
+2c = 478 um
+where c is the half-arc length of the surface crack. It must be noted that this solution is an overestimate for the given experimental setup. KI is calculated by assuming a constant remote tensile stress, σ t . However, in displacement control, sample relaxation due to the nucleation and growth of cracks, will cause a drop in the remote tensile stress. Further, the existence of nearby cracks can influence the stress field at the crack tip.
+Crack 1 in the 141 MPa sample was deemed the best to calculate KI at the onset of transgranular crack growth. This is because crack 1 was the largest and the first to display transgranular cracking, after an exposure time of 178 min. Additionally, the 141 MPa sample contained fewer cracks, minimising the uncertainty due to stress relaxation and the interaction with other cracks. The crack depth and half-arc length at the onset of transgranular cracking have been shown in Fig. 18. Twopoints have been labelled 'A' and 'B', representing the locations at the centre and at the sample surface of the crack front.
+Table 4 shows an estimate of KI at point 'A', where transgranular cracking initiated. The variables used to calculate KI are also shown, including the geometrical parameters and the stress-intensity boundary correction factor, F , at 'A' and 'B'. The values of F were interpolated from the tables provided by Raju and Newman using the geometrical ratios a / c and a / d ( d is the sample diameter). KI prior to transgranular fracture was estimated as 2.8 MPa √ m. It must be noted that at the onset of transgranular growth, the crack continues predominantly along an intergranular fracture path.
+123
+4 Discussion
+4.1 Fracture behaviour
+Two tensile samples of AA7449-T7651 were initially loaded at 141 and 184 MPa. HEAC of the samples was surveyed using in situ µ CT till fracture. The fracture process of the tensile samples can be summarised as follows:
+0-100 min ( nucleation ) many small cracks nucleated at the interior and surface of the samples. Within 100 min of exposure, around 30 cracks nucleated within the gauge volume of both samples (approximately 1.5 mm 3 ).
+100-180 min ( exponential growth ) at this time, the total number of cracks in both samples increased to 85 and 155 for the 141 and 184 MPa samples respectively. Some small cracks were found to nucleate near the exterior and subsequently reach the sample surface. For most cracks, growth due to intergranular HEAC was limited. However, the volume of several surface cracks grew exponentially and dominated. The growth rates of the largest cracks in both samples were very similar.
+> 180 min ( onset of transgranular growth ) the cracking mechanism started to shift to a transgranular mode. For the dominating crack in the 141 MPa sample, the stress intensity factor at the onset of transgranular growth was estimated as 2.8 MPa √ m. Additionally, crack shielding prevented rapid crack growth of large intergranular cracks in close proximity to each other. This was consistent with findings from SSRT during environmentally induced cracking of AA5083 (Gudla et al. 2020).
+240/200 min (141/184 MPa) ( final fracture ) Large surface cracks coalesced, resulting in a sudden reduction of the effective cross-sectional area of the samples. The abrupt increase in the true stress caused the samples to overload and fracture from ductile tearing. This occurred preferentially at grain boundaries containing Al-Cu-Fe particles.
+4.2 Recrystallised grains
+Recrystallisation of 7xxx alloys is typically undesirable in order to maintain a high strength and toughness (Robson and Prangnell 2002). In the case of AA7449T7651,therecrystallised fraction was estimated as 11%
+3D characterisation of hydrogen environmentally assisted cracking...
+111
+Table 4 Crack geometry and stress intensity factor for crack 1 (141 MPa sample), just before the onset of transgranular fracture
+The stress intensity factor was computed using FA , given that the onset of transgranular fracture initiated at location A
+using optical microscopy. Most intergranular cracks belonging to the fracture surfaces of the tensile samples appeared at the interface of recrystallised grains (4 out of 9 for the 141 MPa sample and 8 out of 11 for the 184 MPa sample). In a previous study using static 4-point bend samples, cracks were also found to form preferentially at the grain boundaries of recrystallised grains (De Francisco et al. 2020). Therefore, it can be inferred that the grain boundaries of recrystallised grains are moresensitive to HEAC. The crack growth behaviour is also affected by recrystallised grains. For example, secondary cracking and the bifurcation of cracks occur to a greater degree at recrystallised grains (De Francisco et al. 2020). Kannan and Raja performed HEAC SSRT and static U-bend tests on a 7xxx alloy with and without scandium (Sc) additions (Kannan and Raja 2010). Sc additions are used to prevent the recrystallisation of grains in the alloy (Riddle and Sanders 2004). The alloy without Sc was found to be more sensitive to HEAC, with clear brittle intergranular fracture occurring preferentially at the interface of recrystallised grains (Kannan and Raja 2010). The grain boundary precipitates were found to be distributed discontinuously for the non-recrystallised grains. This was suggested to cause the improvement in the HEAC resistance.
+4.3 Sub-surface cracking
+For both samples investigated, cracks were observed to nucleate throughout the volume with no preference for surface cracking. Therefore, it is likely that hydrogen diffused rapidly to the centre of the sample. All of the cracks belonging to the fracture surface were found to initiate at, or close to, the surface. This was associated to the faster growth of surface cracks and not the preferential formation of cracks at the surface.
+Subsurface cracking was also observed in previous experiments by the authors using static 4-point bend tests on AA7449-T7651 and AA7075-T651 (De Francisco et al. 2020). At least 70% of the cracks in the 4-point bend samples were found to nucleate subsur- face. This is unexpected, given that HEAC is expected to occur at locations with a high tensile stress; implying that crack growth should be facilitated at the maximum tension surface. Moreover, subsurface cracks in the 4point bend samples could grow to macroscopic sizes without surfacing. Therefore, the geometry of the samples can be assumed to affect the diffusion of hydrogen due to differences in the hydrostatic stress gradients (Brocks et al. 2012; Martínez-Paæeda et al. 2016).
+4.4 Crack initiation at intermetallic particles
+Particles in 7xxx series aluminium have been associated with pits formed via multiple mechanisms (Tsai and Chuang 1996; Birbilis and Buchheit 2005; Holroyd and Scamans 2013), however, in moist air, coarse intermetallic phases are not seen to dissolve or cause localised corrosion. From Figs. 14, 15, 16 and 17, the fracture surfaces did not display any thick films or signs of corrosion.
+Previous 4-point bend samples by the authors found that most cracks in AA7075-T651 and some in AA7449-T7651 nucleated in the proximity of coarse intermetallic particles (Mg2Si and Al-Cu-Fe stringers) (De Francisco et al. 2020). Similarly, Schwarzenböck et al. found that most cracks in static tensile samples formed at coarse Cu and Fe rich intermetallic particles near the sample surface (Schwarzenböck et al. 2020). Al-Cu-Fe particles have also been established as crack initiation sites of 7xxx alloys under other loading conditions. For example, Payne et al. found that Al7Cu2Fe and Mg2Si particles in AA7075 were prone to cracking and initiating cracks during fatigue (Payne et al. 2010). Al-Cu-Fe particles close to the surface were also found to be responsible for crack initiation of AA7150 modified to contain high amounts of Zn and absorbed hydrogen during monotonic tensile loading (Bhuiyan et al. 2016). In this report, 4 out of 9 and 2 out of 11 fracture surface cracks nucleated at coarse intermetallic particles for the samples loaded at 141 and 184 MPa respectively. Therefore, cracks do not necessarily form at intermetallic particles for AA7449-T7651 sub-
+123
+112
+U. De Francisco et al.
+jected to a low stress. At low stress, coarse particles are unlikely to crack. However, the stress concentration and enhanced hydrogen trapping due to lattice distortions at the particle-matrix interface may cause some cracks to nucleate.
+4.5 Delay in crack formation and fracture
+Even though the samples of AA7449-T7651 were subjected to a low initial stress (28% and 37% of yield), manycracks nucleated both internally and superficially after very short exposure times of less than 80 min. Fracture also occurred rapidly, within 240 min of exposure for both samples. In contrast, the formation of large cracks (at least 5 mm long) in smooth 4-point bend samples of the same material under similar environmental conditions, took more than 700 h (42,000 min) when loaded at 200 MPa (40% of yield) (De Francisco et al. 2020). Thus, there is a large discrepancy in the time to failure between the small tensile samples and the 4point bend samples. This is partly as a consequence of the small cross-section of the tensile samples. This is evident by the presence of large overload regions in the fracture surfaces of both tensile samples. The coalescence of multiple surface cracks was made possible by the reduced cross-section after extended exposure and resulted in slanted fracture surfaces from cracks which were not coplanar. Additionally, the tensile samples are much more sensitive to HEAC, as they do not have a region subjected to compressive stresses. Finally, it must be noted that the use of a KCl salt solution to obtain constant relative humidity conditions in the tensile rig results in the presence of HCl gas in the enclosure (Opila et al. 1989). The presence of chloride ions in the gaseous environment may therefore accelerate surface reaction rates and promote hydrogen absorption.
+4.6 Preferential growth of surface cracks
+The rapid lateral growth and volume increase of surface cracks relative to internal ones can be ascribed to two main reasons: a greater crack opening, and the direct environmental exposure at the fracture surface. For surface cracks, the presence of a free lateral surface allows for a wider crack opening, thus increasing the crack volume. Additionally, a wider crack opening
+123
+ensues an increase in the stress intensity factor, KI , at the crack edge (Levan and Royer 1993). KI at the onset of transgranular crack growth was estimated as 2.8 MPa √ m. From a previous paper, the onset of stage II cracking for AA7449-T7651 exposed to moist air at 80 ◦ C was found to be approximately 8.3 MPa √ m(De Francisco et al. 2021). This implies that intergranular HEAC in the tensile samples took place in the highly KI -dependent stage I. Therefore, a higher stress intensity factor due to a wider opening can be assumed to increase the lateral growth rates of surface cracks. This is consistent with the increasing lateral growth rates and the exponential volume increase of surface cracks with time.
+The direct exposure of surface cracks also enhances the evolution of atomic hydrogen near the crack tip. The newly created fracture surfaces with a direct exposure do not initially have a passive oxide/hydroxide layer (Young and Scully 2002). Therefore, surface reactions may initially occur rapidly, resulting in high hydrogen concentrations at the crack surfaces. Additionally, it is possible that high stresses may cause the passive layer to rupture at the crack tip, following the film rupture model (Anderson 2017). Therefore, hydrogen may be preferentially absorbed at the crack tip region. This hydrogen only needs to diffuse a short distance to reach the fracture process zone, further reducing the total delay in accumulating critical hydrogen concentrations.
+4.7 Effect of microstructure on crack growth
+Gudla et al. suggested a sequence for environmentally induced cracking with six steps: precursor, incubation, nucleation, crack growth of cracks susceptible to arrest, sustained crack propagation and final fracture (Gudla et al. 2020). In this case, the precursor stage involves loading the sample in tension and increasing the temperature and moisture in the environment to enable cracking. The incubation period comprises the transport of hydrogen accumulating at critically stressed grain boundaries. After nucleation, short cracks are affected appreciably by microstructural obstacles. After extended crack growth, microstructural obstacles are small relative to the cracks and the stress intensity factor increases. Therefore, cracks enter the sustained crack growth stage. This sequence is consistent with the crack growth rates, which were
+3D characterisation of hydrogen environmentally assisted cracking...
+113
+Fig. 19 Diagrams illustrating four different possibilities for crack propagation after encountering triple junctions
+found to increase progressively with time. In this case, the sustained crack growth stage was characterised by localised ductility in the form of ductile intergranular and transgranular fracture at high KI .
+Different microstructural features were found to be responsible for delaying crack growth during microstructurally short cracking. As intergranular cracks nucleated and grew along grain boundaries, the size, shape and arrangement of grains had a strong influence on the crack growth rates. Grain boundary triple junctions were found to obstruct crack growth. Figure 19 shows four different possibilities for the behaviour of cracks approaching triple junctions:
+Thecrackgrowthratedecreasesasacrackapproaches triple junctions of coplanar grain boundaries. As the crack propagates beyond the triple junction, crack growth accelerates along the new grain boundary. Twoclear examples are the triple junctions labelled as (i) and (iii) in Figs. 14a and 15a.
+As a crack intersects with a triple junction where the crack can propagate along two branches ( Y -
+shaped), the crack will preferentially propagate along the grain boundary which is most perpendicular to the tensile loading direction. However, in some cases a bifurcation occurs and the crack branches along both grain boundaries. This has been seen to occur particularly at recrystallised grains, which are more sensitive to HEAC. An example of a detached recrystallised grain due to crack branching is shown in Fig. 14c.
+During sustained crack growth, some cracks continue via a transgranular path after encountering unfavourable triple junctions where the new grain boundaries deviate from the main propagation plane (normal to the tensile axis). This may only occur for cracks with a high KI .
+Alternatively, cracks may arrest completely at unfavourable triple junctions. These are triple junctions where the crack approaches grain boundaries with a low resolved normal tensile stress (De Francisco et al. 2020). The stress field near the crack tip may subsequently cause another crack to nucleate at a nearby grain boundary with a high resolved normal stress. Consequently, cracks due to HEAC in 7xxx alloys are really composed of colonies of coplanar cracks which branch and coalesce (Burnett et al. 2015). In this case, the tensile samples with a 1 mm gauge section were too small to observe this kind of behaviour. However, the fracture surface cracks were found to nucleate in clusters at an angle ranging between 22 ◦ and 36 ◦ from each other. This could be attributed to this phenomenon, rather than cracks nucleating independently.
+In both samples, the largest cracks were found to initiate at the sample surface, tangential to the longitudinal direction. This can be attributed to the combined effect of a large free surface and a long grain size along the longitudinal direction. This resulted in cracks with a large aspect ratio, growing mainly around the sample circumference.
+5 Conclusion
+This study investigated crack initiation and microstructurally short cracking of AA7449-T7651 during sustained loading in moist air of two samples subjected to 141 and 184 MPa (28 and 37% of yield stress). In situ µ CT snapshots were combined with fractographic
+123
+114
+U. De Francisco et al.
+observations to correlate the fracture behaviour with the microstructure. The main findings can be summarised as:
+Crack nucleation of both samples occurred within 80 min of exposure, indicating a short incubation period.
+After an exposure of 180 min, as many as 57 and 98 cracks/mm 3 nucleated in the 141 and 184 MPa samples respectively. The cracks appeared internally and at the sample surface. However, only surface cracks grew rapidly and contributed to the final fracture surfaces of both samples. This may be attributed to the greater free lateral surface and crack opening, as well as the direct environmental exposure.
+Crack initiation of both samples mostly took place at the interface of recrystallised grains. Therefore, the grain boundaries of recrystallised grains may be more sensitive to HEAC than those of unrecrystallised grains. This data is consistent with a previous investigation, where recrystallised grains were also observed to be more susceptible to cracking (De Francisco et al. 2020).
+For both samples, only about a quarter of the cracks contributing to the fracture surfaces nucleated at coarse intermetallic particles.
+Grain boundary triple junctions were identified as an obstacle for crack growth during the microstructurally short cracking stage.
+6 Future work
+The cracking behaviour and fracture rates during HEACcandiffersignificantly between nominally identical samples subjected to equivalent loading conditions (De Francisco et al. 2020; Schwarzenböck et al. 2020). This is due to the statistical nature of HEAC, particularly during the crack initiation and microstructurally short cracking stages. This variability is exacerbated by the use of small samples, where small differences in the microstructure can influence the cracking behaviour significantly. In this study, only two samples have been investigated. Additionally, these samples have a thin 1 mm gauge section. Thus, the observations made in this study are insufficient to ascertain whether the trends identified are definitive or could represent an anomaly. To verify whether the influence of triple junctions, inclusions, recrystallised grains and
+123
+the proximity of cracks to the surface described in this report are accurate, duplicate tests on multiple samples are required to perform a statistical analysis. However, the observations regarding the influence of triple junctions and recrystallised grains are consistent with a previous extensive investigation (De Francisco et al. 2020).
+Due to the thin 1 mm gauge section of the samples, ductile overload occurred after a short period of time. Consequently, intergranular cracks did not grow beyond a size of 650 µ m. Therefore, it is recommended that thicker samples are used in the future to allow for the propagation of longer intergranular cracks. This can allow for the observation of crack segmentation at a meso-scale, as well as minimising the statistical variability inherent of small samples. The P07 high energy material science beamline used in this study has the capability of imaging thicker samples while maintaining the same resolution.
+Acknowledgements WewouldliketoacknowledgeDeutsches Elektronen-Synchrotron(DESY)andHelmholtz-ZentrumHereon for providing the synchrotron facilities at PETRA III (Hamburg, Germany), both members of the Helmholtz Association HGF. This support was granted for the beamline experiment proposal I-20190687 EC. This research was supported in part through the Maxwell computational resources operated at DESY, Hamburg, Germany. Additionally, we would like to acknowledge the support of Dr. Haris Paraskevoulakos and Ursula Tietze during the experiment.
+Funding We would like to acknowledge the Engineering and Physical Sciences Research Council (EPSRC) for providing funding in a Doctoral Training Partnership (DTP). This funding is provided for a PhD in the University of Bristol (UK). Additionally, funding for the travel expenses to the beamline were provided by CALIPSOplus.
+Data availability The raw data is available online as 'Supplementary material'. Details of the content for each file can be read in the 'Readme.txt' file.
+Conflict of interest Not applicable.
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view
+3D characterisation of hydrogen environmentally assisted cracking...
+115
+a copy of this licence, visit http://creativecommons.org/licenses/ by/4.0/.
+References
+AluminumAssociationandothers(2009)International alloy designations and chemical composition limits for wrought aluminum and wrought aluminum alloys. Teal Sheets, pp 1-28
+Anderson TL (2017) Fracture mechanics: fundamentals and applications. CRC Press, Washington, DC
+Arganda-Carreras I, Kaynig V, Rueden C, Eliceiri KW, Schindelin J, Cardona A, Sebastian Seung H (2017) Trainable Weka Segmentation: a machine learning tool for microscopy pixel classification. Bioinformatics 33:24242426
+ASTM International (2012) Standard practice for maintaining constant relative humidity by means of aqueous solutions, E104-02. ASTM International, West Conshohocken
+Bhuiyan MS, Tada Y, Toda H, Hang S, Uesugi K, Takeuchi A, Sakaguchi N, Watanabe Y (2016) Influences of hydrogen on deformation and fracture behaviors of high Zn 7XXX aluminum alloys. Int J Fract 200:13-29
+Birbilis N, Buchheit RG (2005) Electrochemical characteristics of intermetallic phases in aluminum alloys an experimental survey and discussion. J Electrochem Soc 152:B140-B151
+Brocks W, Falkenberg R, Scheider I (2012) Coupling aspects in the simulation of hydrogen-induced stress-corrosion cracking. Procedia IUTAM 3:11-24
+Burnett TL, Holroyd NJH, Scamans GM, Zhou X, Thompson GE, Withers PJ (2015) The role of crack branching in stress corrosion cracking of aluminium alloys. Corros Rev 33:443-454
+Castelluccio GM, McDowell DL (2014) A mesoscale approach for growth of 3D microstructurally small fatigue cracks in polycrystals. Int J Damage Mech 23:791-818
+DeFrancisco U, Larrosa NO, Peel MJ (2020) Hydrogen environmentally assisted cracking during static loading of AA7075 and AA7449. Mater Sci Eng A 772:138662
+De Francisco U, Larrosa NO, Peel MJ (2021) The influence of temperature on hydrogen environmentally assisted cracking of AA7449-T7651 in moist air. Corros Sci 180:109199
+Dursun T, Soutis C (2014) Recent developments in advanced aircraft aluminium alloys. Mater Des 56:862-871
+European Aviation Safety Agency (EASA) (2018) Environmentally assisted cracking in certain aluminium alloys. https:// ad.easa.europa.eu/ad/2018-04R1
+Gruhl W (1984) Stress corrosion cracking of high strength aluminium alloys. Z Met 75:819-826
+Gudla VC, Storm M, Palmer BC, Lewandowski JJ, Withers PJ, Holroyd NJ, Burnett TL (2020) Environmentally induced crack (EIC) initiation, propagation, and failure: a 3D in-situ time-lapse study of AA5083 H131. Corros Sci 134:108834
+Hassanipour M, Watanabe S, Hirayama K, Toda H, Uesugi K, Takeuchi A (2019) Effects of 3D microstructural distribution on short crack growth behavior in two bimodal Ti-6Al4V alloys. Mater Sci Eng A 766:138264
+Holroyd NJH, Scamans GM (2013) Stress corrosion cracking in Al-Zn-Mg-Cu aluminum alloys in saline environments. Metall Mater Trans A 44:1230-1253
+Horner DA, Connolly BJ, Zhou S, Crocker L, Turnbull A (2011) Novel images of the evolution of stress corrosion cracks from corrosion pits. Corros Sci 53:3466-3485
+Kannan MB, Raja VS (2010) Enhancing stress corrosion cracking resistance in Al-Zn-Mg-Cu-Zralloythroughinhibiting recrystallization. Eng Fract Mech 77:249-256
+Knight SP, Salagaras M, Wythe AM, De Carlo F, Davenport AJ, Trueman AR (2010) In situ X-ray tomography of intergranular corrosion of 2024 and 7050 aluminium alloys. Corros Sci 52:3855-3860
+Knight SP, Birbilis N, Muddle BC, Trueman AR, Lynch SP (2010) Correlations between intergranular stress corrosion cracking, grain-boundary microchemistry, and grainboundary electrochemistry for Al-Zn-Mg-Cu alloys. Corros Sci 52:4073-4080
+Le Poulain F, Touzet M, Puiggali M, Aubert I (2005) Mechanical behaviour of a solid with many stress corrosion growing cracks. J Mater Sci 40:1731-1741
+Levan A, Royer J (1993) Part-circular surface cracks in round bars under tension, bending and twisting. Int J Fract 61:7199
+Luo Y, Wu SC, Hu YN, Fu YN (2018) Cracking evolution behaviors of lightweight materials based on in situ synchrotron X-ray tomography: a review. Front Mech Eng 13:461-481
+Martínez-Paæeda E, Niordson CF, Gangloff RP (2016) Strain gradient plasticity-based modeling of hydrogen environment assisted cracking. Acta Mater 117:321-332
+MathWorks (2020) bwconncomp. https://uk.mathworks.com/ help/images/ref/bwconncomp.html
+MoosmannJ(2021)Reconstructionscriptsandfunctions.https:// github.com/moosmann/matlab
+Moosmann J, Ershov A, Weinhardt V, Baumbach T, Prasad SM, LaBonne C, Xiao X, Kashef J, Hofmann R (2014) Timelapse X-ray phase-contrast microtomography for in vivo imaging and analysis of morphogenesis. Nat Protoc 9:294304
+Mylonas GI, Labeas GN (2014) Mechanical characterisation of aluminium alloy 7449-T7651 at high strain rates and elevated temperatures using split Hopkinson bar testing. Exp Tech 38:26-34
+Opila RL, Weschler CJ, Schubert R (1989) Acidic vapors above saturated salt solutions commonly used for control of humidity. IEEE Trans Compon Hybrids Manuf Technol 12:114-120
+Payne J, Welsh G, Christ RJ, Nardiello J, Papazian JM (2010) Observations of fatigue crack initiation in 7075-T651. Int J Fatigue 32:247-255
+Pegues JW, Roach MD, Shamsaei N (2017) Influence of microstructure on fatigue crack nucleation and microstructurally short crack growth of an austenitic stainless steel. Mater Sci Eng A 707:657-667
+Raju IS, Newman JC (1986) Fracture mechanics, vol 17. ASTM International, West Conshohocken, pp 789-805
+Riddle YW, Sanders TH (2004) A study of coarsening, recrystallization, and morphology of microstructure in Al-Sc-(Zr)(Mg) alloys. Metallurgical and Materials Transactions A 35:341-350
+Robson JD, Prangnell PB (2002) Predicting recrystallised volumefractioninaluminiumalloy7050hotrolledplate.Mater Sci Technol 18:607-614
+123
+116
+U. De Francisco et al.
+Rometsch PA, Zhang Y, Knight S (2014) Heat treatment of 7xxx series aluminium alloys-Some recent developments. Trans Nonferr Met Soc China 24:2003-2017
+Sarkar B, Marek M, Starke EA (1981) The effect of copper content and heat treatment on the stress corrosion characteristics of Ai-6Zn-2Mg-XCu alloys. Metall Mater Trans A 12:1939-1943
+Schell N, King A, Beckmann F, Fischer T, Müller M, Schreyer A (2014) The high energy materials science beamline (HEMS) at PETRA III. Mater Sci Forum 772:57-61
+Schwarzenböck E, Ollivier E, Garner A, Cassell A, Hack T, Barrett Z, Engel C, Burnett TL, Holroyd NJH, Robson JD, Prangnell PB (2020) Environmental cracking performance of new generation thick plate 7000-T7x series alloys in humid air. Corros Sci 171:108702108701
+Singh SS, Williams JJ, Lin MF, Xiao X, De Carlo F, Chawla N (2014) In situ investigation of high humidity stress corrosion cracking of 7075 aluminum alloy by three-dimensional (3D) X-ray synchrotron tomography. Mater Res Lett 2:217-220
+Speidel MO, Hyatt MV (1972) Stress-corrosion cracking of highstrength aluminum alloys. In: Advances in corrosion science and technology. Springer, Boston, pp 115-335
+Stannard TJ, Williams JJ, Singh SS, Singaravelu ASS, Xiao X, Chawla N (2018) 3D time-resolved observations of corrosion and corrosion-fatigue crack initiation and growth in peak-aged Al 7075 using synchrotron X-ray tomography. Corros Sci 138:340-352
+123
+Tokaji K, Ogawa T, Osako S (1988) The growth of microstructurally small fatigue cracks in a ferritic-pearlitic steel. Fatigue Fract Eng Mater Struct 11:331-342
+Tsai TC, Chuang TH (1996) Atmospheric stress corrosion cracking of a superplastic 7475 aluminum alloy. Metall Mater Trans A 27:2617-2627
+Van Aarle W, Palenstijn WJ, De Beenhouwer J, Altantzis T, Bals S, Batenburg KJ, Sijbers J (2015) The ASTRA Toolbox: a platform for advanced algorithm development in electron tomography. Ultramicroscopy 157:35-47
+Young GA, Scully JR (2002) Hydrogen production, absorption and transport during environment assisted cracking of an Al-Zn-Mg-(Cu) alloy in humid air. In: International conference on hydrogen effects on material behavior and corrosion deformation interactions, pp 22-26 (2002)
+YoungGA,ScullyJR(2002)Theeffectsoftest temperature, temper, and alloyed copper on the hydrogen-controlled crack growthrateofanAl-Zn-Mg-(Cu)alloy.MetallMaterTrans A 33:1167-1181
+Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.

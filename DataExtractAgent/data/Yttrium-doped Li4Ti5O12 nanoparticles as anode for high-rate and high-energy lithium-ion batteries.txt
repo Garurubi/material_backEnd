@@ -1,0 +1,659 @@
+Discover Nano
+Research
+Yttrium-doped   Li 4 Ti 5 O12 nanoparticles as anode for high-rate and high-energy lithium-ion batteries
+Kai Su 1 · Chenxia Tang 1 · Chunyue Li 1 · Shijie Weng 1 · Yong Xiang 1,2,3,4 · Xiaoli Peng 1
+Received: 14 October 2024 / Accepted: 17 December 2024
+© The Author(s) 2024
+OPEN
+Abstract
+Li 4 Ti 5 O12  (LTO) batteries are known for safety and long lifespan due to zero-strain and stable lattice. However, their low specific capacity and lithium-ion diffusion limit practical use. This study explored modifying LTO through yttrium doping by hydrothermal method to form   Li 4 Y 0.2 Ti 4.8 O12  nanoparticles. This approach optimized electron and ion transport, markedly enhancing rate and cycle performance. XRD and TEM revealed that Y addition increased interplanar distance of LTO and widened   Li + transport pathways. XPS indicated that Y doping augmented the oxygen vacancy concentration and   Ti 3+ content. UV tests demonstrated a band gap reduction from 3.72 eV to 2.94 eV, accompanied by enhanced electronic conductivity. EIS tests showed lithium-ion diffusion coefficient remarkably increased to 1.27 ×   10 -10 cm 2 s -1 . The initial discharge capacity of   Li 4 Y 0.2 Ti 4.8 O12  at 1 A   g -1 reached 198.9 mAh   g -1 and retained 89.3% capacity after 1000 cycles. At 6 A   g -1 , the discharge capacity was 161.1 mAh   g -1 , while at an ultra-high current density of 20 A   g -1 , it reached 78.8 mAh   g -1 , highlighting its robust rate performance. The yttrium-doped and nano-morphology stabilizes the LTO lattice, enhancing rate performance and cycling stability. This study reveals that LTO has the potential to be used in the high-energy fast-charging storage market.
+Keywords Li 4 Ti 5 O12  · Doping · Yttrium · High rate · Lithium-ion battery
+1  Introduction
+The advancement of energy storage plays a pivotal role in achieving carbon peaking and carbon neutrality goals [1, 2], necessitating energy storage systems characterized by high safety, extended operational life, and enhanced energy density [3, 4]. Presently, lithium-ion batteries dominate energy storage systems [5], with graphite and lithium titanate serving as primary materials on the anode side [6, 7].   Li 4 Ti 5 O12  (LTO), owing to its stable spinel crystal structure, exhibits negligible volume changes during the charge-discharge in the voltage of 1 to 2.5 V [8, 9]. LTO can inhibit lithium dendrite formation during cycling, positioning it as an excellent choice for high-safety anode applications [10, 11], particularly in
+Supplementary Information The online version contains supplementary material available at https://  doi.  org/  10.  1186/  s11671-  02404177-4.
+* Xiaoli Peng, pxl@uestc.edu.cn | 1 School of Materials and Energy, University of Electronic Science and Technology of China, Chengdu 611731, Sichuan, People's Republic of China. 2 Frontier Center of Energy Distribution and Integration, Tianfu Jiangxi Lab, Huoju Avenue, Futian Sub-District, Jianyang City, Chengdu 641419, Sichuan, People's Republic of China. 3 Advanced Energy Research Institute, University of Electronic Science and Technology of China, Chengdu 611731, Sichuan, People's Republic of China. 4 Sichuan Provincial Engineering Research Center of Flexible Display Material Genome, University of Electronic Science and Technology of China, Chengdu 611731, Sichuan, People's Republic of China.
+Vol.:(0123456789)
+Discover Nano          (2024) 19:213
+| https://doi.org/10.1186/s11671-024-04177-4
+Research
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+energy storage solutions requiring robust stability. However, three electrons transfer in   [Li 3 ] 8a [LiTi 5 ] 16d [O 12 ] 32e results in a low discharge specific capacity (175 mAh   g -1 ) [12], alongside low   Li + diffusion coefficient   (10 -9 -10 -13 cm 2 s -1 ) [13]. These characteristics severely restrict the practical applications of lithium titanate as an anode material [14]. Consequently, there is a pressing research focus on enhancing the rate capability and discharge capacity of LTO within the scientific community.
+Through methodologies such as surface coating [15, 16], structural design [17, 18], grain nanocrystallization [19, 20], two-phase composites [21, 22], ion doping [23-28] and other approaches, the electronic conductivity and rate capability of LTO can be enhanced. However, surface modification cannot typically improve the intrinsic lithium-ion diffusion coefficient of LTO, and intricate structural designs often involve complex fabrication processes [29]. In comparison, element doping can effectively promote the electronic conductivity and lithium-ion diffusion coefficient by either substituting the lattice positions or occupying the interstitial sites of LTO [30-32]. It has been demonstrated that doping   Ti 4+ with the rare earth element yttrium (Y) can effectively enhance the cycle stability and rate characteristics of LTO. For instance, Bai et al. [33] produced Y-doped LTO by co-precipitation method and achieved a capacity of 156.8 mAh   g -1 at 10C, about 90% capacity remained over 1800 cycles. Similarly, Chen et al. [34] prepared   Y 3+ doped LTO, surface-modified with   Y 2 Ti 2 O7 through solid-phase reaction, reached 92 mAh   g -1 after 1000 cycles at 40C. The heterogeneous valence doping of Y elements disrupts the charge balance, generating free electrons and oxygen vacancies that effectively alter the pathways for lithium-ion transport. Rare earth element Y is an excellent dopant, with the primary source area being South China. Y has a well-established and environmentally friendly recycling technology with the capacity for sustainable development [35, 36].
+Reducing particle size can shorten the transport path of   Li + and enhance discharge capacity at high rates. Lu et al. [37] produced N-doped and carbon-coated LTO using a solvothermal method, composed of 3-5 nm nanoparticles and several nanometers thick nanosheets, showing a capacity of 208.5 mAh   g -1 at 1.6 A   g -1 . Zhu et al. [19] obtained Co-doped LTO nanosheets via a hydrothermal process, demonstrating a capacity of 106 mAh   g -1 (20C). Compared to the solidstate method, LTO synthesized by the solvothermal method results in a narrower particle size distribution and smaller particle size [10]. Nanoscale LTO possesses a larger specific surface area, thereby significantly increasing the discharge capacity at high currents. In addition, reducing the cut-off voltage can effectively enhance the capacity of LTO. However, additional lithium-ion insertion usually leads to severe polarization, contributing to drastic capacity degradation at high rates, affecting its cycling stability [38].
+Therefore, it is imperative to devise a method that increases the active sites of LTO and stabilizes the lattice structure during high rate charge and discharge processes. In this study, Y-doped   Li 4 Y 0.2 Ti 4.8 O12  nanoparticles were prepared via the hydrothermal method. The nanostructure increased the specific surface area and active sites of   Li 4 Y 0.2 Ti 4.8 O12 , while its hollow structure facilitated electrolyte infiltration. Meanwhile, yttrium doping led to an increased interplanar distance of LTO and widened   Li + transport pathways. Y doping augmented the oxygen vacancy concentration and   Ti 3+ content in the lattice. Ultimately, the ion and electron transport properties were improved by multiple modifications through nanomorphology, and yttrium doping. This contributes to the improvement of the rate and cycle performance of the prepared Y-doped   Li 4 Ti 5 O12  nanoparticles. Even when discharged to a depth of 0.01 V, the initial discharge capacity of Li 4 Y 0.2 Ti 4.8 O12  reached 198.9 mAh   g -1 , and 89.3% of the capacity remained after 1000 cycles at 1 A   g -1 . At 10 A   g -1 , the discharge capacity is 131.3 mAh   g -1 . At a high current density of 20 A   g -1 , the specific capacity reached 78.8 mAh   g -1 . These results demonstrate markedly improved cyclic stability and high rate performance of   Li 4 Ti 5 O12 , underscoring its potential for widespread application in high energy density storage markets.
+2    Experiment
+2.1    Synthesis of nanoparticles   Li 4 Ti 5-x Y x O12
+All raw materials were commercially purchased without further purification. Titanium tetrabutylate   (C 16 H36 O 4 Ti, Aladdin) served as the titanium source, yttrium nitrate hexahydrate   (N 3 O9 Y·6H 2 O, MERYER) as the source of yttrium, and lithium hydroxide monohydrate (LiOH·H 2 O, MERYER) as the lithium provider. Hexadecyl trimethyl ammonium bromide (CTAB, D&B) was utilized as the surfactant.
+The synthesis procedure involved the preparation of two solutions: Solution A contained 0.88 g LiOH·H 2 O, 0.25 g CTAB, and an appropriate amount of   N 3 O9 Y·6H 2 O in 40 ml ethanol, heated and stirred for 30 min. Solution B comprised 10 ml
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+ethanol with   C 16 H36 O 4 Ti, which was stirred to ensure homogeneity. Solutions A and B were combined and heated at 50 ℃ , then slowly added dropwise into deionized water. The stirred solution was transferred to a 100 ml polytetrafluoroethylene reactor and reacted at 200 ℃ for 16 h. The product was washed four times with ethanol and deionized water. The dried product underwent further treatment in a tube furnace at 600 ℃ for 5 h to prepare   Li 4 Y x T 5-x O12  powder. In the nomenclature, unmodified   Li 4 Ti 5 O12  is denoted as Y0. Samples with yttrium doping of X = 0.05, X = 0.1, X = 0.2 and X = 0.3 are designated as Y0.05, Y0.1, Y0.2 and Y0.3 respectively.
+2.2    Structural characterization
+The crystal structure was identified using X-ray diffraction (XRD, λ = 1.5406 Å, 10-90°, Rigaku Ultima IV, Japan) by powder at 2θ from 10° to 85° with a step speed of 2°   min -1 . The structural properties were further elucidated by Raman spectroscopy (Horiba LabRAM HR Evolution, Japan), which probed the optical vibration mode of the sample under ambient conditions. The morphology was observed by scanning electron microscopy (SEM). Further characterization of morphology and elemental distribution was conducted using a transmission electron microscope (TEM, Japan Electronics F200), while crystal spacing was characterized using high-resolution transmission electron microscopy (HRTEM). The chemical state of the samples was investigated by X-ray photoelectron spectroscopy (XPS, Thermo Scientific K-Alpha, USA), and the resulting data were subsequently analyzed using Avantage. To ascertain the presence of oxygen vacancies, electron paramagnetic resonance (EPR) was conducted utilizing a Bruker EMXplus-6/1-EPR spectrometer. UV-visible diffuse reflectance tests were performed on Shimadzu UV-3600i Plus, Japan. The BET conditions (ASAP 2460 Micromeritics, US) were   N 2 , 77 K, and degassing temperature was 200 ℃ for 8 h. The pore size distribution was acquired using the BarrettJoyner-Halenda (BJH) method.
+2.3    Electrochemical performance characterization
+The anode was composed of the prepared active material powder, Super P and polyvinylidene fluoride (PVDF) in a mass ratio of 7:2:1. Lithium metal as the counter electrode. The electrolyte was 1 M   LiPF 6 / EC: DMC: EMC (volume 1: 1: 1), and the Celgard 2500 membrane served as the separator. The CR2025 coin cell was assembled in the glove box (H 2 O,   O 2 < 0.1 ppm), and the assembled battery was left stationary for 24 h at room temperature before testing. At 25 ℃ , the charge/discharge tests were carried out on the LANDt battery test system with a voltage cut-off range of 0.01 to 3.0 V. Cycling tests were conducted at a charge/discharge current of 1 A   g -1 . Rate capability was assessed at 0.1 A   g -1 /0.2 A   g -1 /0.4 A   g -1 /1 A   g -1 /2 A   g -1 /4 A   g -1 /6 A   g -1 /10 A   g -1 /14 A   g -1 /20 A   g -1 /0.1 A   g -1 with the same charge/ discharge current density. Electrochemical impedance spectroscopy (EIS) measurements (AMETEK-Princeton Versa STAT 3F) were performed in the frequency range of 0.01 Hz to 0.1 MHz. Cyclic voltammetry (CV) was applied by using a CHI660E with scan rates ranging from 0.1 to 5 mV   s -1 , within a voltage window of 0.01 to 3.0 V.
+3    Results and discussion
+Figure 1a presents a schematic diagram of synthesizing Y0.2 using the hydrothermal technique. As depicted in Fig. 1b, the crystal structure of each component was characterized by XRD and their space groups are Fd-3 m [39, 40].The diffraction peaks at 18.58°, 35.46° and 43.24° of the samples are consistent with the (111), (311) and (400) crystal planes corresponding to the standard card   (Li 4 Ti 5 O12 , PDF#49-0207). The Y0.05 and Y0.2 found a small peak at 25.28°, which was attributed to anatase   TiO 2 (PDF#99-0008). In Fig. 1c, there is an amplification diagram of the diffraction peak of the (111) crystal plane. From the diagram, it is evident that the diffraction peak of Y-doped LTO has shifted to the left compared with LTO. According to the Bragg equation Eq. (1), it can be known [11]:
+Y 3+ (90 pm) has a larger ionic radius than   Ti 4+ (68 pm). The insertion of   Y 3+ into the LTO crystals leads to an increase in the interplanar spacing, resulting in a shift of the diffraction peaks towards lower angles. Among the different doping concentrations, Y0.3 causes the largest shift in the (111) diffraction peak, indicating successful Y doping into the LTO crystal. As seen in Fig. 1d, the crystal structure was further analyzed by Raman spectroscopy. The spectra of all component samples exhibit five vibration peaks at 232, 349, 426, 676 and 752   cm -1 , consistent with the spinel structure   (A 1g +    E g +    3F 2g )
+Vol.:(0123456789)
+Research
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Fig. 1 a Schematic illustration for the preparation of Y0.2; b XRD patterns of Y0, Y0.05, Y0.1, Y0.2 and Y0.3; c The amplification diagram of the diffraction peak of the (111) crystal plane; d Raman spectra
+(a)
+Solution A
+Stirring
+200 C
+3Omin
+16h
+Solution B
+Hydrothermal
+Precursor
+Y0.2
+5
+YO.3
+232
+YO.2
+Y0.3
+YO.I
+676
+YO.2
+YO.2
+426
+YO
+1
+1
+1
+349
+1
+1
+YO.I
+1
+752
+YO
+Anatasc
+TiOz(PDF#99-0008)
+10
+20
+30
+40
+50
+60
+70
+80
+17.5
+18.0
+18.5
+19.0
+19.5
+200
+300
+400
+500
+600
+700
+800
+900
+2Theta (degree)
+2Theta (degree)
+Raman shift (cm
+[41]. The peaks around 676 and 752   cm -1 originate from the Ti-O stretching vibrations of the   TiO 6 octahedron [42]. The Li-O stretching vibration in the tetrahedral group of   LiO 4 occurs between 400 to 600   cm -1 , while in the octahedral group of   LiO 6 it occurs between 250 to 400   cm -1 , indicating that slight yttrium doping doesn't alter the structural and vibrational characters of   Li 4 Ti 5 O12 .
+Reducing particle size can enhance the rate performance of LTO, as nanoscale particles provide a larger specific surface area. This increase in surface area shortens the lithium-ion transport path, facilitates charge transfer, and accelerates electrode reactions [20]. Compared to solid state sintering, LTO prepared by the hydrothermal method exhibits smaller particle sizes. As shown in Fig. S1, the microstructure of the samples prepared via this method was characterized using SEM. The prepared samples, without further refinement, show a particle size distribution ranging from tens to hundreds of nanometers resulting from the aggregation of nanosized particles, and are characterized by a relatively uniform mesoporous distribution between particles. The micron-sized irregular clusters formed by the primary nanoparticles are beneficial as they increase the compression density of the anode, which in turn increases the battery's capacity density.
+Nitrogen adsorption and desorption tests were conducted on samples with varying Y doping amounts, and the results are presented in Fig. 2a, with type IV adsorption curves for all the samples. Figure 2b demonstrates the BET specific surface area of Y0, Y0.05, Y0.1, Y0.2 and Y0.3, the specific surface areas were 49.87, 79.14, 98.40, 108.53 and 116.84   m 2 g -1 , respectively. The surface areas of the samples increased gradually with the elevation of the doping content, which is conducive to the penetration of the electrolyte during charge/discharge cycling [25]. The pore size of Y0 and Y0.2 are shown in Fig. 2c,d. It can be seen that the mesoporous range of Y0.2 sample is between 10 and 30 nm. The pore volume comparison graph is shown in Fig. 2e, where Y0.2 has the maximum hole capacity. Combined with SEM images (Fig. S1), there are a large number of mesoporous in the particles, which are likely to form a through-hole structure. This porous structure facilitates the transport of   Li + and allows electrolyte to fully penetrate into the electrode material, which is critical to improving rate performance [39].
+Further morphology and crystal structure characterization using TEM techniques. In Fig. 2f, Y0 is a nanoflake stacked. Figure 2g presents a high-resolution TEM (HRTEM) image of Y0, displaying distinct lattice fringes of 0.484 and 0.257 nm, which correspond to the (111) and (311) crystal planes of LTO, respectively. Compared to Y0, Y0.2 has a larger specific surface area and more active sites (Fig. 2f,2h), consistent with the BET surface area (Fig. 2b). The HRTEM image in Fig. 2i displays complete lattice fringes measuring 0.488 nm, which is compatible with the (111) crystal plane of LTO. Upon substitution of Ti by Y with a larger ionic radius, an increase in the interplanar spacing of the (111) crystal plane is observed,
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+Fig. 2 a Nitrogen adsorption and desorption isothermal of samples; b BET specific surface area of samples; The BJH pore size distribution of c Y0; d Y0.2; e Pore volume of samples; f TEM image of Y0; g HRTEM image of Y0; h TEM image of Y0.2; i HRTEM image of Y0.2
+(a
+b
+500
+120
+116.84
+0.008
+108.53
+1
+Y0.2
+YO.3
+0.006
+80
+300
+1
+0.004
+200
+40
+Adsorption
+5
+0.002
+Desorption
+20
+0.000
+0.0
+0.2
+0.4
+0.6
+0.8
+Samples
+10
+100
+Relative Pressure (PIPo)
+Pore Diameter (nm)
+e
+Yo
+YO
+0.020
+0.8
+Yo.o5
+1
+0.016
+Yo.3
+0.6
+5
+0.012
+> 0.008
+030
+0.004 -
+0.2
+0.000
+0.0
+10Onm
+10
+100
+Samples
+Pore Diameter (nm)
+YO
+(h)
+YO.2
+LTO
+=0.484nm
+=0488nm
+LTO
+Snm
+IOnm
+2nm
+IOnm
+5
+1
+dan
+which promotes   Li + transportation and diffusion, thus improving the electrochemical performance [43]. Fig. S2, S3 show the mapping of Y0 and Y0.2, indicating the successful incorporation of Y into LTO. In Fig. S3, a greater quantity of Y doping is observed in the nanoflake-type particles in comparison to the spherical particle. Combined with XRD, the spherical nanoparticle was probably a very small amount of   TiO 2 . Fig. S4 shows the SAED images of Y0 and Y0.2, confirms that they have a good crystalline characteristic.
+The valence states of surface Y, O, and Ti elements were analyzed by XPS (Fig. 3a-c). In samples Y0.05 and Y0.2, Y exhibits + 3 valence state (Fig. 3a), and the   Y 3+ peaks near 159.5 and 157.4 eV respectively correspond to   Y 3+ 3d 3/2 and   3d 5/2 [44]. In the O1s spectrum Fig. 3b, it is evident that the oxygen vacancy concentration in LTO increases after Y doping. The oxygen vacancy concentrations in the samples were 5.96%, 4.17%, 8.80%, and 4.30% for Y0.05, Y0.1, Y0.2, and Y0.3, respectively. The Y0.2 sample has the highest oxygen vacancy concentration may be attributed to the appropriate amount of Y doping. Additionally, for the modified samples, in the high-resolution XPS spectra (Fig. 3c),
+Vol.:(0123456789)
+Research
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Fig. 3 The XPS spectrum of a Y 3d; b O 1 s; c Ti 2p; d Electron paramagnetic resonance spectra of Y0 and Y0.2; e UV-vis DRS spectrum with local amplification diagram of UV spectrum
+(a)
+Y 3d
+Yo.05
+[(b)
+0 Is
+Ti 2p
+Ti"
+Ti-0*
+Y'-3d,2
+Ti-OH
+Yo.05
+Ti-0*
+YJ-
+0z Vacany
+1
+Ti-0*
+1
+YO.2
+1
+1
+Ti"
+Ti-0*
+Y0.3
+Y0.3
+Y0.3
+Ti-0?
+YJ-
+Til
+0, Vacany
+Ti'
+COr
+162
+161
+160
+159
+158
+157
+156
+155
+154
+534
+532
+530
+528
+526
+468
+466
+464
+462
+460
+458
+456
+Binding Energy (eV)
+Binding Energy (eV)
+Binding Energy (eV)
+(d)
+YO
+YO
+1.5
+Yo.05
+YO.2
+1.2
+1
+YO.2
+Y0.3
+g = 2.004
+0
+1
+0.6
+333
+224
+325
+375
+400
+425
+450
+0.3
+Wavelength (nm)
+0.0
+3480
+3490
+3500
+3510
+3520
+3530
+3540
+300
+400
+500
+600
+700
+800
+Magnetic field (G)
+Wavelength (nm)
+3ds2
+2p1
+2py?
+Ti exhibits both + 3 and + 4 valence states. Peaks at 464.3 and 458.5 eV correlate to   Ti 4+ 2p 1/2 and   2p 3/2 , while peaks at 463.5 and 458.1 eV belong to   Ti 3+ 2p 1/2 and   2p 3/2 [45, 46]. Doping Y into LTO produces   Ti 3+ , and the maximum content of   Ti 3+ in Y0.2 samples was 22.44%. In previous studies, increasing the concentration of oxygen vacancies and Ti 3+ can enhance the electronic conductivity of LTO [24, 39]. The presence of   Ti 3+ increases the number of electrons, furthermore, the oxygen vacancies can create more active sites, thus improving lithium-ion diffusion coefficient and discharge capacity [47]. From Fig. 3d, the hydrothermally synthesized Y0.2 sample display a robust EPR resonance signal, indicative of the existence of oxygen vacancies.
+The UV test is shown in Fig. 3e, which shows the spectral characteristics, and they show a clear absorption edge in the spectrum. It can be seen from the local amplification diagram, the tangent vector of the absorption spectrum of the LTO sample intersects the x-axis is in the UV region, while the absorption edge of the modified sample shifts to the visible light direction and is located in the visible wavelength band. In Fig. 3e, the wavelength thresholds of Y0, Y0.05, Y0.1, Y0.2 and Y0.3 samples are 333.7 nm, 394.6 nm, 350.1 nm, 422.4 nm and 344.3 nm respectively. The bandgap value is calculated by Eq. (2) [26],
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+where λg (nm) is absorption wavelength, and Eg (eV) means bandgap. According to Eq. (2), the optical band gaps of Y0, Y0.05, Y0.1, Y0.2 and Y0.3 samples are 3.72, 3.14, 3.54, 2.94 and 3.60 eV respectively. Bandgap value of Y0 is the largest, indicating that its electronic conductivity is the worst. After Y is doped into the LTO lattice, the following defect reactions Eqs. (3) and (4) will occur [34],
+As the low-valent   Y 3+ doped LTO replaces part of   Ti 4+ , these   Ti 4+ are transformed into   Ti 3+ , and the electronic structure of the mixture of   Ti 3+ and   Ti 4+ promotes electron transitions, and the 4p orbitals of   Y 3+ provide conduction electrons for the 3d orbitals of Ti, so that the otherwise empty Ti 3d states are occupied by electrons, reducing the bandgap value. With the reduction of oxygen vacancies and   Ti 3+ makes the band gap of the Y0.3 larger than that of the Y0.2. The formation of oxygen vacancies can be charge-compensated, creating more energy levels in the energy bands near the conduction band edges and altering the bandgap value, furthermore, the OVs will make the   Ti 4+ exist in   Ti 3+ , which will change the electron chemical potential of   Ti 4+ , ultimately improving the electrochemical performance of LTO [9, 39].
+As can be seen in Fig. 4a, Y doping can effectively improve rate capability when charging and discharging at high current density, which is due to the combined results of the means of doping with the heterovalent element Y and the nanoparticles with more active sites. It can be seen that the discharge capacity of Y0.2 decays slower with increasing current density, while Y0, Y0.05, Y0.1 and Y0.3 decay faster. At 4A   g -1 , Y0.2 has a capacity of 187.7 mAh   g -1 , whereas other components have discharge capacities less than 160 mAh   g -1 (Table S1). The discharge capacities of all modified samples exceeded 100 mAh   g -1 at 6 A   g -1 while Y0 has a capacity of 82.1 mAh   g -1 . Moreover, Y0.2 has a capacity of 131.3 mAh   g -1 at 10 A   g -1 , and even at 20 A   g -1 the discharge capacity still reached 78.8 mAh   g -1 . In contrast, Y0 exhibits a capacity of only 48.5 mAh   g -1 at 10 A   g -1 and has almost no capacity at 20 A   g -1 . When recovered to 0.1 A   g -1 , the capacity of Y0.2 is restored to 258.9 mAh   g -1 , indicating that Y doping improves the structural stability of the LTO when deeply discharged. From Fig. 4c, it can be seen that the discharge capacity of Y0.2 decays slower with increasing current density, while Y0 (Fig. 4b) decay faster. Table S1 lists the average discharge capacity of all samples at different current density.
+In Fig. 4d, the rate performance of the Y0.2 clearly exceeds that of the other modifications reported in the literature listed (Table S2). The excellent performance of Y0.2 is attributed to the widening of lithium-ion transport channels due to the increased crystallite spacing by Y doping, as well as the nanosizing leads to huge specific surface area and more active sites. From the galvanostatic discharge-charge curves of Y0 (Fig. 4e) and Y0.2 (Fig. 4f) for different cycles, indicating that the Y0.2 has good electrochemical stability at high current density.
+Figure 4g demonstrates the capacity curves of Y0, Y0.05, Y0.1, Y0.2 and Y0.3 for 1000 cycles at 1 A   g -1 . Pure LTO has the worst cycling stability with a capacity of only 41.2 mAh   g -1 after 1000 cycles, because of the large polarization under high current, and all modified samples performs better than Y0 with a capacity of more than 100 mAh   g -1 . After long cycling, Y0.05, Y0.1, Y0.2 and Y0.3 have a discharge capacity of 126.2 mAh   g -1 , 123.5 mAh   g -1 , 177.6 mAh   g -1 and 103.9 mAh   g -1 , respectively. Among them, Y0.2 presents the least capacity loss and the most stable cycling with a capacity retention of 89.3%.
+In addition, it was verified that Y doping could improve the structural stability during deep discharge by CV tests of Y0 and Y0.2 before and after 1000 cycles (Fig. S5). Fig. S5a shows that a peak packet bulged at 1.7 V in the Y0 component after cycling, which may originate from the formation of   TiO 2 [21], and the CV curves of the Y0.2 component before and after cycling were basically unchanged Fig. S5b, indicating that the Y0.2 component has good stability and reversibility, which can effectively stabilize the structural stability of LTO during over-discharge. The formation of redox peaks at 1.7 V and 2.1 V for TiO ₂ was not observed [48], confirm that   TiO 2 has very few. Fig. S6 illustrates the XRD results of Y0 and Y0.2 electrodes following 1000 cycles. It can be observed that the peaks of the LTO and copper foil. In comparison to Y0, Y0.2 exhibits more distinct diffraction peaks, which suggests that Y0.2 possesses a more stable structure following the cycling process.
+The electrochemical properties of yttrium-doped   Li 4 Ti 5 O12  was studied by EIS under open circuit (Fig. 5a). In the impedance curves, semicircles in the high-frequency region represent the resistance of the charge transfer process, while
+Vol.:(0123456789)
+Research
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Yo
+3.0
+YO.2
+2.5
+0.2A g
+'250
+04A
+2A g '
+2.0
+2.0
+200
+1.5
+0.IA g
+1.5
+0.IA g
+'150
+1
+0.2A g'
+0.2A g
+1.0
+0.4A g
+1.0
+0.4A g'
+100
+IA g
+IA g5
+YO.1
+2A g '
+2A g '
+50
+0.5
+0.5
+Y0.3
+4A g '
+4Ag'
+0.0
+0.0
+20
+40
+80
+100
+100
+150
+200
+250
+300
+50
+100
+150
+200
+250
+300
+Cycle Number
+Discharge Capacity (mAh g ')
+Discharge Capacity (mAh g
+3.0
+3.0
+LaF-LTO
+YO
+YO.2
+300
+dual-phase LTOITiO?
+Zr doped LTO
+2.5
+Co doped LTO
+Co,0,-doped LTO
+2.0
+Co-Cl co-doped LTOITiOz
+520
+2nd
+2nd
+200
+F-doped LTO
+1.5
+SOth
+SOth
+OV-LTO
+OOth
+1
+This work
+150
+2OOth
+2OOth
+1.0
+SOOth
+100
+0.5
+0.5
+7OOth
+1OOOth
+50
+0.0
+0.0
+4000
+8000
+12000
+16000
+20000
+50
+100
+150
+200
+100
+150
+200
+250
+Current density(mA g
+Discharge Capacity (mAh g
+Discharge Capacity (mAhg
+120
+400
+100
+300
+80
+1
+Retention=89.3%
+60
+200
+YO
+40
+100
+Ya.os
+1
+20
+YO.2
+YO.3
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+1.0
+Cycle Number
+Fig. 4 Electrochemical performance plots of charge/discharge cut-off voltage at 0.01-3 V; a Rate capacity test from 0.1 A   g -1 to 20 A   g -1 ; Galvanostatic discharge-charge curves for different current density of b Y0; c Y0.2; d Comparison of rate performance of different modification methods of LTO; Galvanostatic discharge-charge curves at 1 A   g -1 for different cycles of e Y0; f Y0.2; g Long cycle for 1000 cycles at 1 A g. -1
+a diagonal truncation in the low-frequency region indicating the resistance of the lithium diffusion process [49]. The EIS fitting data are listed in Table 1. After doping with Y, the semicircle diameter becomes smaller, indicating a smaller impedance, and the fitting results Fig. 5b shows that the   R ct of Y0.2 is 94.59 Ω, which is smaller than that of Y0 (188.30 Ω), Y0.05 (163.50 Ω) and Y0.1 (133.20 Ω). It indicated that Y0.2 has a higher charge-transfer capacity, which makes the kinetic response of lithium ions faster.
+The electrochemical improvement of Y0.2 was demonstrated by calculating the diffusion rate of   Li + by the following equations [50, 51],
+In Eq. (6), R is the gas constant; T is 273.15 K; A is the electrode surface area; F is the Faraday constant; C is the molar concentration of   Li + and ω is the angular frequency. The slope σ was obtained by curve fitting according to Fig. 5c. From Eq. (5) and Eq. (6), it was concluded that doping yttrium elements enhance the diffusion coefficients of lithium ions of LTO to varying degrees. This stems from the oxygen vacancies generated by Y-substituted doping and the introduced phase interface [34], with Y0.2 showing the most significant enhancement of 1.27 ×   10 -10 cm 2 s -1 .
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+Fig. 5 a The impedance spectroscopy of Y0, Y0.05, Y0.1, Y0.2 and Y0.3; b The charge transfer impedance obtained from the resistance fitting results of EIS spectrum; c The linear relationship of Zre and ω -1/2 ; CV curves at different scanning rates of d Y0; g Y0.2. The linear relationship between log (peak current) and log (scan rate) e Y0; h Y0.2. The proportion of pseudocapacitive contribution at various scan rates f Y0; i Y0.2
+(a) 300
+200
+500
+250
+163.50
+YO3
+160
+400
+200
+133.20
+133.20
+120
+150
+300
+80
+100
+200
+40
+50
+100
+Zre-18.820-12+98.62
+100
+150
+200
+250
+300
+Y0.3
+1.8
+2.1
+2.4
+3.0
+Zre (2)
+Samples
+0-1/2
+(s"2)
+0.6
+120
+YO
+Yo
+Diffusion Contribution
+Capacitance Contribution
+100
+0.3
+80
+70%
+1
+0.0
+60
+580/
+63%
+40
+0.SmV s
+-0.3
+OmV s
+banodic =0.567
+20
+2.OmV s
+5.OmV s
+0.6
+0.0
+0.5
+15
+2.0
+2.5
+3.0
+41.2
+-0.8
+0.0
+0.4
+0.8
+1.2
+0.1
+0.2
+0.5
+Potential (V)
+Scan rate (mV s
+120
+YO.2
+YO.2
+Diffusion Contribution
+Capacitance Contribution
+100
+0.6
+89%
+80%
+84%
+80
+74%
+78%
+0.3
+1
+60
+0.ImV
+0.0
+1
+0.2mV
+40
+0.640
+0.SmV
+banodie =0.682
+OmV s
+20
+2.OmV s'
+5.OmV s
+1.0
+1.5
+2.0
+2.5
+3.0
+"0.8
+"0.4
+0.0
+0.8
+1.2
+0.2
+0.5
+Potential (V)
+Scan rate (mV s
+Zre=117.060-1/2+156.15
+990-1/2+110.18
+Log
+Table 1 EIS fitting data
+The CV test for each group of cells at OCV was performed at different sweep rates over a voltage range of 0.01-3 V. The results of Y0, Y0.05, Y0.1, Y0.2 and Y0.3 are shown in Fig. 5d, Fig. S7a, b, Fig. 5g and Fig. S7c, respectively. They display the redox reaction behavior of samples with different Y doping amounts in the voltage range of 0.01-3 V and all show a pair of obvious reversible redox peaks. The peak potential difference between the oxidation-reduction peaks reflects the extent of polarization, whereas the peak current density signifies the intensity of the electrochemical reaction [51]. From CV curves at 0.1 mv   s -1 (Fig. S7d) and 5 mv   s -1 (Fig. S7e), the peak shape in the Y0.2 is much sharper, suggesting faster stripping and embedding of lithium and a more efficient redox reaction [39]. Fig. S7f shows that the peak current density also becomes stronger for the doped sample. It indicates that Y doping is beneficial for improving the kinetic
+Vol.:(0123456789)
+Research
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+efficiency of the redox reaction of LTO and reducing the polarization. Among them, the Y0.2 has the highest current density with the maximum lithium ion diffusion rate.
+The nanoscale Y0.2 exhibited excellent rate performance, and in order to further understand the source of the excellent rate capability, a kinetic analysis based on CV was performed. The CV curves all show broad redox peaks. According to the correlation between response current ( i ) and scan rate ( v ) at specific potentials [52],
+In the above formulas, b-value can be calculated from the slope of the log( i )log( v ) plot. A b-value close to 0.5 implies the reaction is diffusison-controlled dominated, whereas b near 1 indicates that surface atomic charge transfer (pseudocapacitive effect) is the dominant one [53]. The b-values of the pure LTO are 0.567 for the oxidation peak and 0.571 for the reduction peak (Fig. 5e), while the b-values of Y0.2 are 0.682 and 0.640, as shown in Fig. 5h, and the increase in the b-values indicates that the pseudocapacitive effect is enhanced in the doped sample. In addition, the specific contribution ratio of diffusion control and pseudocapacitance components can be quantitatively verified by the following equation [54],
+where the i at a given potential can be divided into two parts, one from the pseudocapacitive contribution (linearly related to the v and the other belonging to the diffusion control the contribution (proportional to ( v 1/2 )). The constants   k 1 and   k 2 in the above equation can be calculated from the linear relationship between   i ( v ) / v 1/2 and v 1/2 . This method allows the calculation of the pseudocapacitance contribution at a specific scanning speed. At 2 mv   s -1 , the pseudocapacitance contribution reached 89% for Y0.2 (Fig. 5f), while the capacitance was 79% for Y0 (Fig. 5i). The higher pseudocapacitance contribution indicates that Y0.2 has a faster surface diffusion, which leads to the excellent discharge capacity of Y0.2 at high current densities, attributed to the nanoscale particle size and large specific surface area [21, 55].
+4    Conclusions
+In general, Y-doped LTO nano-sized particles were prepared by a one-step hydrothermal method. XRD and TEM characterizations proved that Y doping increased the crystal plane spacing, and broadened the   Li + transport channels. The introduced Y increased grain boundaries in LTO, and the nano size particles promoted   Li + transportation and diffusion. XPS showed that the concentration of oxygen vacancies and   Ti 3+ had increased. Due to the co-modification of multiple methods, the band gap decreased and the lithium-ion diffusion coefficient increased significantly. Electrochemical tests showed that the Y0.2 can provide a discharge capacity of more than 250 mAh   g -1 at 0.1 A   g -1 , a capacity of 161.1 mAh g -1 at 6 A   g -1 , 131.3 mAh   g -1 at 10 A   g -1 , and even at an ultrahigh current density of 20 A   g -1 , the discharge capacity still reached 78.8 mAh   g -1 . After 1000 cycles at 1 A   g -1 , the discharge capacity was 177.6 mAh   g -1 , and the capacity retention was 89.3%. This study greatly improved the lattice stability and fast charge performance of LTO under deep discharge. It is expected that LTO can be applied to the energy storage market with high safety and high specific energy.
+Acknowledgements This work was supported by Central Guidance Local Innovation Base Construction Project, China (No. 2022ZYD0130), Major Hazard Measurement and Control Key Laboratory of Sichuan Province Funding (Grant No. KFKT-2022-02), Natural Science Foundation of Sichuan Province (Grant No. 2024NSFSC0252), Major Science and Technology Special Projects in Sichuan Province Unveiled List of Marshal Projects (Grant No. 2024ZDZX0032).
+Author contribution KS proposed the research idea, performed the experiments, and drafted the manuscript. XCT and CYL carried out characterization and data analysis. SJW participated in the sample preparation. XY and XLP contributed to the manuscript writing and supervised the research. All authors read and approved the final manuscript.
+Funding Central Guidance Local Innovation Base Construction Project, China, No. 2022ZYD0130, Major Hazard Measurement and Control Key Laboratory of Sichuan Province Funding, No. KFKT-2022-02, Natural Science Foundation of Sichuan Province, No. 2024NSFSC0252, Major Science and Technology Special Projects in Sichuan Province Unveiled List of Marshal Projects, No. 2024ZDZX0032.
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+Data availability Data is provided within the manuscript or supplementary information files.
+Declarations
+Competing interests The authors declare no competing interests.
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://  creat  iveco mmons.  org/  licen  ses/  by-  nc-  nd/4.  0/.
+References
+Dehghani-Sanij AR, Tharumalingam E, Dusseault MB, Fraser R. Study of energy storage systems and environmental challenges of batteries. Renew Sustain Energy Rev. 2019;104:192-208. https://  doi.  org/  10.  1016/j.  rser.  2019.  01.  023.
+Zhang C, Wei Y-L, Cao P-F, Lin M-C. Energy storage system: current studies on batteries and power condition system. Renew Sustain Energy Rev. 2018;82:3091-106. https://  doi.  org/  10.  1016/j.  rser.  2017.  10.  030.
+Nyamathulla S, Dhanamjayulu C. A review of battery energy storage systems and advanced battery management system for different applications: Challenges and recommendations. J Energy Storage. 2024;86: 111179. https://  doi.  org/  10.  1016/j.  est.  2024.  111179.
+Jeevarajan JA, Joshi T, Parhizi M, Rauhala T, Juarez-Robles D. Battery hazards for large energy storage systems. ACS Energy Lett. 2022;7(8):2725-33. https://  doi.  org/  10.  1021/  acsen  ergyl  ett.  2c014  00.
+Koh SCL, Smith L, Miah J, Astudillo D, Eufrasio RM, Gladwin D, Brown S, Stone D. Higher 2nd life Lithium Titanate battery content in hybrid energy storage systems lowers environmental-economic impact and balances eco-efficiency. Renew Sustain Energy Rev. 2021;152: 111704. https://  doi.  org/  10.  1016/j.  rser.  2021.  111704.
+Zhang L, Zhu C, Yu S, Ge D, Zhou H. Status and challenges facing representative anode materials for rechargeable lithium batteries. J Energy Chem. 2022;66:260-94. https://  doi.  org/  10.  1016/j.  jechem.  2021.  08.  001.
+Zhao W, Zhao C, Wu H, Li L, Zhang C. Progress, challenge and perspective of graphite-based anode materials for lithium batteries: a review. J Energy Storage. 2024;81: 110409. https://  doi.  org/  10.  1016/j.  est.  2023.  110409.
+Zhang H, Yang Y, Xu H, Wang L, Lu X, He X. Li4Ti5O12 spinel anode: fundamentals and advances in rechargeable batteries. InfoMat. 2021;4(4): e12228. https://  doi.  org/  10.  1002/  inf2.  12228.
+Bhatti HS, Jabeen S, Mumtaz A, Ali G, Qaisar S, Hussain S. Effects of cobalt doping on structural, optical, electrical and electrochemical properties of Li4Ti5O12 anode. J Alloys Compd. 2022;890: 161691. https://  doi.  org/  10.  1016/j.  jallc  om.  2021.  161691.
+Yi T-F, Yang S-Y, Xie Y. Recent advances of   Li 4 Ti 5 O12  as a promising next generation anode material for high power lithium-ion batteries. J Mater Chem A. 2015;3(11):5750-77. https://  doi.  org/  10.  1039/  c4ta0  6882c.
+Zhang Y, Li J, Zhang F, Li X, Yuan B, Xia M, Zhao P, Lei R. The evolution in electrochemical performance of Li4-XCaxTi5O12 (Ca doped Li4Ti5O12) as anode materials for lithium ion batteries. Colloids Surf. 2021;616:126329. https://  doi.  org/  10.  1016/j.  colsu  rfa.  2021.  126329.
+Zhao B, Ran R, Liu M, Shao Z. A comprehensive review of Li4Ti5O12-based electrodes for lithium-ion batteries: the latest advancements and future perspectives. Mater Sci Eng: R: Rep. 2015;98:1-71. https://  doi.  org/  10.  1016/j.  mser.  2015.  10.  001.
+Julien CM, Mauger A. Fabrication of   Li 4 Ti 5 O12  (LTO) as anode material for Li-Ion batteries. Micromachines. 2024;15(3):310. https://  doi. org/  10.  3390/  mi150  30310.
+Lv W, Gu J, Niu Y, Wen K, He W. Review-gassing mechanism and suppressing solutions in Li4Ti5O12-based lithium-ion batteries. J Electrochem Soc. 2017;164(9):A2213-24. https://  doi.  org/  10.  1149/2.  00317  12jes.
+Zhao J, Zhu X, Zhang W, Qiu J, Zhai F, Zhang H, Cao G, Gao S, Ding F, Xiang Y. Expanded graphite incorporated with Li4Ti5O12 nanoparticles as a high-rate lithium-ion battery anode. RSC Adv. 2024;14(16):11276-83. https://  doi.  org/  10.  1039/  d4ra0  0832d.
+Kuang H, Xiao L, Lai Y, Shen L, Zhou A, Wu J, Zhu Y. Effect of Si Doping and active carbon surface modifications on the structure and electrical performance of   Li 4 Ti 5 O12  anode material for lithium-Ion batteries. Ionics. 2024;30(3):1307-17. https://  doi.  org/  10.  1007/ s11581-  023-  05367-3.
+Yao Z, Xia X, Xie D, Wang Y, Zhou CA, Liu S, Deng S, Wang X, Tu J. Enhancing ultrafast lithium Ion storage of Li4Ti5O12 by tailored TiC/C core/shell skeleton plus nitrogen Doping. Adv Funct Mater. 2018;28(31):1802756. https://  doi.  org/  10.  1002/  adfm.  20180  2756.
+Yao Z, Xia X, Zhou C-A, Zhong Y, Wang Y, Deng S, Wang W, Wang X, Tu J. Smart construction of integrated CNTs/Li4Ti5O12 core/shell arrays with superior high-rate performance for application in lithium-ion batteries. Adv Sci. 2018;5(3):1700786. https://  doi.  org/  10. 1002/  advs.  20170  0786.
+Zhu C, Liu J, Yu X, Zhang Y, Zhang Y, Jiang X, Wang S, Wang Q, Dong P. Enhance the electrochemical performance of Li4Ti5O12 with Co doping via a facile mechanical activation strategy. J Mater Sci: Mater Electron. 2019;30(6):5866-73. https://  doi.  org/  10.  1007/ s10854-  019-  00884-2.
+Meng W-W, Xu Y-J, Yan B-L. In situ nano-sized spinel Li4Ti5O12 powder fabricated by a one-step roasting process in molten salts. J Alloys Compd. 2018;732:784-91. https://  doi.  org/  10.  1016/j.  jallc  om.  2017.  10.  261.
+Vol.:(0123456789)
+Research
+|  https://doi.org/10.1186/s11671-024-04177-4
+Discover Nano          (2024) 19:213
+Huang C, Zhao S-X, Peng H, Lin Y-H, Nan C-W, Cao G-Z. Hierarchical porous Li4Ti5O12-TiO2 composite anode materials with pseudocapacitive effect for high-rate and low-temperature applications. J Mater Chem A. 2018;6(29):14339-51. https://  doi.  org/  10.  1039/ c8ta0  3172j.
+Yi T-F, Wei T-T, Li Y, He Y-B, Wang Z-B. Efforts on enhancing the Li-ion diffusion coefficient and electronic conductivity of titanate-based anode materials for advanced Li-ion batteries. Energy Storage Mater. 2020;26:165-97. https://  doi.  org/  10.  1016/j.  ensm.  2019.  12.  042.
+Ye M, Ye J, Feng Z, He M. Freeze-drying synthesis of metal element (Zr, Cr, Co)-doped Li4Ti5O12 anode material for enhanced electrochemical energy storage in lithium-ion batteries. Ionics. 2024;30(7):3767-78. https://  doi.  org/  10.  1007/  s11581-  024-  05546-w.
+Zou L, Gan L, Song W, Rong C, Yang L, Yu L, Ma Z, Lian S. Improving electrochemical properties of Li4Ti5O12/TiO2 diphase anode materials via Co-Cl co-doping. J Alloys Compd. 2023;960: 170765. https://  doi.  org/  10.  1016/j.  jallc  om.  2023.  170765.
+Li C, Huang Q, Mao J. Improve the low-temperature electrochemical performance of Li4Ti5O12 anode materials by ion doping. J Mater Sci: Mater Electron. 2020;31(23):21444-54. https://  doi.  org/  10.  1007/  s10854-  020-  04658-z.
+Li Y, Gao H, Yang W. Enhancements of the structures and electrochemical performances of Li4Ti5O12 electrodes by doping with non-metallic elements. Electrochim Acta. 2022;409: 139993. https://  doi.  org/  10.  1016/j.  elect  acta.  2022.  139993.
+Noerochim L, Prabowo RS, Widyastuti W, Susanti D, Subhan A, Idris NH. Enhanced high-rate capability of iodide-doped Li4Ti5O12 as an anode for lithium-ion batteries. Batteries. 2023;9(1):38. https://  doi.  org/  10.  3390/  batte  ries9  010038.
+Wang P, Wang Y, Zhang W, Xing Y, Huang B, Zhang H. One-step synthesis of Cl-doped Li4Ti5O12 during electrode fabrication process with improved specific capacity. J Solid State Electrochem. 2024;28(7):2437-44. https://  doi.  org/  10.  1007/  s10008-  023-  05794-2.
+Ezhyeh ZN, Khodaei M, Torabi F. Review on doping strategy in Li4Ti5O12 as an anode material for Lithium-ion batteries. Ceram Int. 2023;49(5):7105-41. https://  doi.  org/  10.  1016/j.  ceram  int.  2022.  04.  340.
+Liang Q, Cao N, Song Z, Gao X, Hou L, Guo T, Qin X. Co-doped Li4Ti5O12 nanosheets with enhanced rate performance for lithium-ion batteries. Electrochim Acta. 2017;251:407-14. https://  doi.  org/  10.  1016/j.  elect  acta.  2017.  08.  121.
+Sreejith OV, Ramaswamy M. Diffusion kinetics in germanium doped lithium titanate anode material through potential sweep analysis. Ceram Int. 2022;48(16):24071-8. https://  doi.  org/  10.  1016/j.  ceram  int.  2022.  05.  087.
+Sreejith OV, Indu MS, Ramaswamy M. Electrochemical characterizations of carbon decorated tin doped lithium titanate for lithiumion battery anode applications. J Electroanal Chem. 2022;926: 116952. https://  doi.  org/  10.  1016/j.  jelec  hem.  2022.  116952.
+Bai Y-J, Gong C, Lun N, Qi Y-X. Yttrium-modified Li4Ti5O12as an effective anode material for lithium ion batteries with outstanding long-term cyclability and rate capabilities. J Mater Chem A. 2013;1(1):89-96. https://  doi.  org/  10.  1039/  c2ta0  0048b.
+Chen W, Kuang S, Liu Z, Fu H, Yun Q, Xu D, Hu H, Yu X. Y-doped Li4Ti5-xYxO12 with Y2Ti2O7 surface modification anode materials: superior rate capability and ultra long cyclability for half/full lithium-ion batteries. J Alloys Compd. 2020;835: 155327. https://  doi. org/  10.  1016/j.  jallc  om.  2020.  155327.
+Zhang K, Kleit AN, Nieto A. An economics strategy for criticality - Application to rare earth element Yttrium in new lighting technology and its sustainable availability. Renew Sustain Energy Rev. 2017;77:899-915. https://  doi.  org/  10.  1016/j.  rser.  2016.  12.  127.
+Favot M, Massarutto A. Rare-earth elements in the circular economy: The case of yttrium. J Environ Manage. 2019;240:504-10. https:// doi.  org/  10.  1016/j.  jenvm  an.  2019.  04.  002.
+Lu G, Liu J, Huang W, Wang X, Wang F. Boosting the electrochemical performance of Li4Ti5O12 through nitrogen-doped carbon coating. Appl Organomet Chem. 2019;33(7): e4957. https://  doi.  org/  10.  1002/  aoc.  4957.
+Han C, He Y-B, Wang S, Wang C, Du H, Qin X, Lin Z, Li B, Kang F. Large polarization of   Li 4 Ti 5 O12  Lithiated to 0 V at large charge/discharge rates. ACS Appl Mater Interfaces. 2016;8(29):18788-96. https://  doi.  org/  10.  1021/  acsami.  6b042  39.
+Yan L, Qin J, Liang B, Wang Q, Geng M. High-pressure induction and quantitative regulation of oxygen vacancy defects in lithium titanate. Adv Funct Mater. 2023;33(34):2301886. https://  doi.  org/  10.  1002/  adfm.  20230  1886.
+Gong SH, Lee JH, Chun DW, Bae J-H, Kim S-C, Yu S, Nahm S, Kim H-S. Effects of Cr doping on structural and electrochemical properties of Li4Ti5O12 nanostructure for sodium-ion battery anode. J Energy Chem. 2021;59:465-72. https://  doi.  org/  10.  1016/j.  jechem.  2020. 11.  029.
+Xie Z, Song Q, Xie H, Yin H, Ning Z. Chemically driven synthesis of Ti3+ self-doped Li4Ti5O12 spinel in molten salt. J Am Ceram Soc. 2021;104(2):753-65. https://  doi.  org/  10.  1111/  jace.  17515.
+Wei A, Mu J, He R, Bai X, Li X, Zhang L, Zhang X, Wang Y, Liu Z. Enhanced electrochemical performance of Li4Ti5O12 anode material by LaF3 surface modification for lithium-ion batteries. J Phys Chem Solids. 2022;169: 110871. https://  doi.  org/  10.  1016/j.  jpcs.  2022. 110871.
+Zhu W, Yang H, Guo X. Ellipsoid-like Li4Ti5O12-TiO2 composites constructed by nanocrystals for lithium ion batteries. RSC Adv. 2016;6(16):13505-13. https://  doi.  org/  10.  1039/  C5RA2  4347E.
+Wen Y, Yuan B, Peng W, Liu Y, Han Q, Hu R. Enhanced diffusion kinetics in Y-doped SnO2 anodes for low-temperature lithium-ion batteries: a combined theoretical and experimental study. J Alloys Compd. 2024;990: 174481. https://  doi.  org/  10.  1016/j.  jallc  om.  2024. 174481.
+Wang M, Chen Y, Yang CX, Zeng YH, Fang PF, Wang W, Wang XL. High lithium storage performance of Co Ion-doped Li4Ti5O12 induced by fast charge transport. Front Chem. 2022. https://  doi.  org/  10.  3389/  fchem.  2022.  919552.
+Zhang Q, Liu Y, Lu H, Tang D, Ouyang C, Zhang L. Ce3+-doped Li4Ti5O12 with CeO2 surface modification by a sol-gel method for high-performance lithium-ion batteries. Electrochim Acta. 2016;189:147-57. https://  doi.  org/  10.  1016/j.  elect  acta.  2015.  12.  103.
+Liu Z, Huang Y, Cai Y, Wang X, Zhang Y, Guo Y, Ding J, Cheng W. Oxygen vacancy enhanced two-dimensional lithium titanate for ultrafast and long-life bifunctional lithium storage. ACS Appl Mater Interfaces. 2021;13(16):18876-86. https://  doi.  org/  10.  1021/  acsami. 1c029  62.
+Hao Z, Chen Q, Dai W, Ren Y, Zhou Y, Yang J, Xie S, Shen Y, Wu J, Chen W, Xu GQ. Oxygen-deficient blue TiO2 for ultrastable and fast lithium storage. Adv Energy Mater. 2020;10(10):1903107. https://  doi.  org/  10.  1002/  aenm.  20190  3107.
+Liu Z, Cao L, He F, Zhang Z, Li D, Zhao W, Qi T. Study on the possibility of diagonal line rule in elemental doping effects in Li4Ti5O12 by mechanochemical method. Electrochim Acta. 2022;422: 140485. https://  doi.  org/  10.  1016/j.  elect  acta.  2022.  140485.
+Yan L, Qin J, Liang B, Gao S, Wang B, Cui J, Bolag A, Yang Y. High pressure rapid synthesis of LiCrTiO4 with oxygen vacancy for high rate lithium-ion battery anodes. Small. 2022;18(35):2202901. https://  doi.  org/  10.  1002/  smll.  20220  2901.
+Vol:.(1234567890)
+Discover Nano          (2024) 19:213
+|  https://doi.org/10.1186/s11671-024-04177-4
+Research
+Zhang Q, Verde MG, Seo JK, Li X, Meng YS. Structural and electrochemical properties of Gd-doped Li4Ti5O12 as anode material with improved rate capability for lithium-ion batteries. J Power Sources. 2015;280:355-62. https://  doi.  org/  10.  1016/j.  jpows  our.  2015.  01. 124.
+Du Y-H, Liu X-Y, Wang X-Y, Sun J-C, Lu Q-Q, Wang J-Z, Omar A, Mikhailova D. Freestanding strontium vanadate/carbon nanotube films for long-life aqueous zinc-ion batteries. Rare Met. 2021;41(2):415-24. https://  doi.  org/  10.  1007/  s12598-  021-  01777-2.
+Yu F, Huang T, Zhang P, Tao Y, Cui F-Z, Xie Q, Yao S, Wang F. Design and synthesis of electrode materials with both battery-type and capacitive charge storage. Energy Storage Mater. 2019;22:235-55. https://  doi.  org/  10.  1016/j.  ensm.  2019.  07.  023.
+Shen L, Wang Y, Lv H, Chen S, van Aken PA, Wu X, Maier J, Yu Y. Ultrathin Ti2Nb2O9 nanosheets with pseudocapacitive properties as superior anode for sodium-ion batteries. Adv Mater. 2018;30(51):1804378. https://  doi.  org/  10.  1002/  adma.  20180  4378.
+Zhang Y, Huang J, Saito N, Yang X, Zhang Z, Yang L, Hirano S-I. Layered perovskite lithium yttrium Titanate as a low-potential and ultrahighrate anode for lithium-ion batteries. Adv Energy Mater. 2022;12(31):2200922. https://  doi.  org/  10.  1002/  aenm.  20220  0922.
+Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Vol.:(0123456789)

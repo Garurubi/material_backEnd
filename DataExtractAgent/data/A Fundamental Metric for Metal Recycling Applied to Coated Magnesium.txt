@@ -1,0 +1,632 @@
+A Fundamental Metric for Metal Recycling Applied to Coated Magnesium
+C.E.M. MESKERS, M.A. REUTER, U. BOIN, and A. KVITHYLD
+A fundamental metric for the assessment of the recyclability and, hence, the sustainability of coated magnesium scrap is presented; this metric combines kinetics and thermodynamics. The recycling process, consisting of thermal decoating and remelting, was studied by thermogravimetry and differential thermal analysis (TG/DTA) experiments and thermodynamic simulations. Decoating phenomena are interpreted using kinetic analysis, applying existing reaction models. The derived kinetic model parameters ln A and Ea /( RTp ) are used to characterize the decoating process. The impact of inorganic coating components on remelting is quantified using exergy. Oxidation and entrapment losses, quality losses, and material resource depletion caused by the inorganic components are expressed in exergy units and combined into the single parameter R . Based on the results, the coating characteristics favorable for recycling are derived. The obtained metric is a three-dimensional (3-D) combination of ln A , Ea /( RTp ), and R , which represent the decoating velocity, the ease of decoating, and the impact of coating materials on the remelting process, respectively. The metric, therefore, directly links coating characteristics, coating design, and product design with process technology and recyclability, enabling the ranking of coating alternatives in terms of their respective recyclability. Therefore, the key idea of this article is to use fundamental metallurgical theory to express the recyclability of postconsumer scrap in a unique combination of parameters. This should pave the way for ranking the sustainability of different materials.
+DOI: 10.1007/s11663-008-9144-8 /C211 The Author(s) 2008
+I. INTRODUCTION
+COATED scrap is created during the manufacturing of consumer products, in the form of rejects, and during the processing of end-of-life products indicated in Figure 1. The amount of coated magnesium scrap is considerable and will continue to increase, as the application of magnesium in consumer products is still growing. Over 150,000 tons per year in 2004 [1] of diecast magnesium is used in the automotive industry and in consumer electronics such as laptop computers, mobile phones, and handheld tools. In these applications, it is often necessary to coat magnesium with conversion or anodizing coatings combined with organic coating (paint) in order to prevent corrosion and enhance appearance. [2-4] Currently, this coated scrap is not yet recycled, because the direct remelting of painted
+C.E.M. MESKERS, Assistant Manager, Market Research and Development, Umicore Precious Metals Refining, A. Greinerstraat 14, BE 2660 Hoboken, Belgium, is Postdoctoral Student, with the Department of Materials Science and Engineering, Delft University of Technology, 2628 CD Delft, the Netherlands. M.A. REUTER, Chief Executive Technologist, Ausmelt Ltd., 3175 Dandenong, Victoria, Australia, is Professor Fellow, with the Department of Chemical and Biomolecular Engineering, University of Melbourne, Melbourne, Victoria 3010, Australia. Contact e-mail: markus.reuter@ausmelt. com.au U. BOIN, 61440 Oberursel, Germany, is retired. A. KVITHYLD, Researcher, is with the Department of Materials Science and Engineering, Norwegian University of Science and Technology, 7491 Trondheim, Norway.
+Manuscript submitted October 22, 2007.
+Article published online June 18, 2008.
+magnesium scrap generates large amounts of offgas, increases salt flux usage, and lowers the metal quality and yield. [5-7] Recycling retains magnesium resources within the utilization cycle and, thus, reduces primary magnesium usage. Furthermore, energy resources can be saved, as the remelting of scrap consumes only 10 pct of the energy necessary for primary production. [8] Legislation such as the End-of-Life Vehicle and Waste Electric and Electronic Equipment directives of the European Union [9,10] serve as an extra incentive for recycling.
+Materials cycles, such as the one for coated magnesium, have to be closed in a sustainable manner. Industrial ecology provides a suitable (conceptual) framework, because it focuses on product design and manufacturing processes. [11] Its holistic, system approach, together with its emphasis on prevention and its use of technology as a means for problem solving, are important elements. For the evaluation and optimization of recycling systems, a detailed understanding of the parts of the system itself, as well as the interconnectivity of the system and its parts with other systems, is a prerequisite. [12] Physics, thermodynamics, and material quality have to be addressed simultaneously, as they determine the overall performance of the (recycling) system. [13] Metrics that are based onfirst principles are necessary to evaluate and assess this, as Ignatenko et al . [13] have shown for the car recycling system, using exergy as the metric. Exergy has also been used to evaluate the remelting of magnesium scrap and assess its recyclability. [14] Expressing recyclability and sustainability in metrics based on fundamental principles provides a direct quantitative link between the product
+500-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+Fig. 1-Suggested recycling system for coated magnesium products. The arrows indicate flow of magnesium. Magnesium-containing residues created in the system have been omitted from figure.
+Uncoatod scrap
+Coated
+Shredding
+scrp
+Pre-treatment
+Motal
+(de-coating)
+Remelting
+Alloying
+separation
+End-of-Life
+Uncoated
+product
+ejocis
+Alloy
+Consumer
+Manufacturing
+Die-casting
+and the process design, on the one side, and recyclability and sustainability, on the other. In this manner, a ranking of the alternatives is made possible, so unfavorable alternatives can be avoided.
+A recycling system for coated magnesium is suggested in Figure 1. Organic material in the coating is removed, using thermal decoating as pretreatment. Its effectiveness depends on the kinetics of decomposition of the organic material. Afterward, an inorganic residue from the paint and an anodizing or conversion coating remain on the magnesium substrate. They enter the remelting process, which takes place at 700 /C176 C using a salt flux, [2,15] and interact with liquid metal and salt. The degree of interaction is governed by the thermodynamics and kinetics of the process. Metal loss, oxide and intermetallic formation, and metal quality loss are the result. The created salt slag is a waste stream that has to be disposed of. Increasing amounts of slag and metal loss indicate that existing metal resources are not used efficiently. In addition, deviations from the standard alloy composition are counteracted by refining and alloying with high-purity materials, depleting material resources. The alloy is returned to the die caster for the manufacture of new products (Figure 1).
+In this article, the recyclability assessment of four different painted magnesium objects using newly developed metric for recycling is presented. Thermal decoating was simulated using thermogravimetry-differential thermal analysis, and mass spectometry (TG/DTA-MS) laboratory setup. The phenomena occurring are described, while the experimental data are further interpreted and characterized using existing kinetic models. The remelting of the magnesium substrate with the inorganic residue is simulated using FactSage (GTTTechnologies, Herzogenrath, Germany). [16] Equilibrium compositions of metal and salt slag are obtained and form the input for the exergy calculations. Based on the exergy losses, the impact of the residue on remelting is evaluated. A suitable metric that can be used by designers and recyclers is developed. It combines in three-dimensional (3-D) space the factors that link coating characteristics to behavior during recycling, as (1) ln A : decoating kinetics based on TG/DTA experiments, which characterizes the rate of decoating, (2) Ea /( RTp ): decoating kinetics based on TG/DTA experiments, which characterizes the ease of decoating, and (3) the R remelting losses based on FactSage simulations are expressed as the sum of the exergy of (1) oxidation and entrapment losses, (2) metal quality loss, and (3) material resource loss. This sum characterizes the impact of coating components on the remelting process.
+Based on this 3-D metric, the coating characteristics favorable for recycling are derived so that coated magnesium can be designed for recycling.
+A. Kinetic Analysis of Decoating Process
+In this section, the kinetic analysis of the decoating process is discussed. Experimental thermogravitometry and differential thermogravitometry (TG/DTG) data are necessary for the calculation of the factors ln A and Ea /( RTp ) in the metric for recycling. The scrap objects and experimental approach are described, followed by a discussion of the decoating of the objects. Subsequently, Ea was determined from the experimental data, and existing reaction models were used to characterize the decoating process. The validity of the existing models and their assumptions are, therefore, assumed. It is important to note that the key idea of this article is the combining of kinetics and thermodynamics and the expression of recyclability in terms of these factors rather than in terms of a modeling article of data.
+B. Theory
+A solid-state decomposition reaction can be described by Reference 17 as
+where g ( a ) is the integral function described by the reaction model and k is the temperature-dependent factor described by the Arrhenius equation. The symbol a represents the fraction decomposed, as defined by Eq. [2], in which the subscripts i and f indicate the initial and final mass, respectively.
+The activation energy Ea of a reaction that occurs during a constant heating rate experiment can be easily determined using the Kissinger equation (Eq. [3]). [18] This equation employs only the peak temperature (in Kelvin). The activation energy is determined from the slope of a plot of ln b = T 2 p vs 1/ Tp . !
+Whenisothermalexperiments are carried out, Ea can be calculated for each a using Eq. [1] rewritten as Eq. [4]: [19]
+/C18
+/C19
+An expression for g ( a ) or ln A is not required to determine Ea , as the slope of a plot of -ln t a vs 1/ T hold
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-501
+permits the calculation of the activation energy for each a .
+The integral function describes the mass loss during decoating. The expression for g ( a ) is found by fitting known reaction models [17,19] to the experimental data. For mass loss under isothermal conditions, Eq. [1] is used. The previously calculated Ea is inserted, expressions for g ( a ) are attempted, and, simultaneously, a value for A is obtained.
+For reactions that take place during a constant heating experiment, Eq. [1] has to be rewritten as [20]
+Z
+where x replaces Ea / RT . The exponential integral has no analytic solution; instead, it is approximated. [21] Subsequently, the same procedure as was just described can be followed.
+For the Kissinger equation and the reaction models, it is assumed that the activation energy is independent of the progress of the reaction. To verify this, an isoconversional method based on the Coats-Redfern approximation is employed. It is obtained by replacing Tp in Eq. [3] with T a , the temperature at a selected a . The Ea for each a is determined, so that the relation between the activation energy and the fraction decomposed can be investigated. [22]
+II. EXPERIMENTAL APPROACH FOR KINETIC ANALYSIS
+A. Materials
+Four different painted magnesium automotive objects, labeled A through D, were collected from a scrap yard and used for the experiments. Objects A and B (Figures 2(a) and (b), respectively) are intermediate products. The surface of object A is dull and rough, while the paint on object B is very thick and can be peeled off quite easily. Objects C and D (Figures 2(c) and (d), respectively), on the other hand, are finished products with smooth and shiny surfaces. The substrate of all objects is an AZ91 magnesium alloy containing approximately 9 wt pct aluminum and 1 wt pct zinc as alloying elements.
+Prior to decoating, electron microprobe analysis was used to determine the paint layer thickness and the inorganic elements present. The paint and inorganic particle mass were determined using tetrahydrofuran (C4H8O) as a solvent, to remove the paint from the scrap. The results are given in Table I. Although the exact composition of the organic resin in the paint is difficult to determine, the main component is likely to be a polyester, epoxy, or polyester-epoxy blend, as these are often used in the automotive industry. [3,6]
+Fig. 2-Objects A through D, before and after decoating. One square is 1 mm 2 . ( a ) Object A before decoating, ( b ) object B before decoating, ( c ) object C before decoating, ( d ) object D before decoating, ( e ) object A after decoating in air, ( f ) object B after decoating in air, ( g ) object C after decoating in argon, and ( h ) object D after decoating in argon.
+(a)
+(b)
+(c)
+(d)
+(e)
+(g)
+(h)
+Table I. Characteristic Features of Paint on Magnesium Objects; Paint Consists of Organic Resin and Inorganic Particles
+502-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+B. Setup of Experiment
+The thermal degradation of organic coatings and resins has been studied extensively, [22] often without a substrate. Usually, the degradation of organic material is investigated by heating the material to temperatures between 700 /C176 C and 900 /C176 C, to ensure that the organic material is fully degraded. When magnesium is subjected to these temperatures, the alloy will be molten or oxidized. Hence, the temperature program that can be used for decoating magnesium scrap is determined by the properties of the magnesium alloy at elevated temperatures.
+Three properties have to be taken into account. First, the solidus temperature has to be considered. According to the Mg-Al-Zn phase diagram, the formation of a liquid phase starts at 456 /C176 C for an AZ91 alloy. [23] At 475 /C176 C, almost 5 wt pct of the alloy has melted. An additional increase in temperature causes partial melting (softening) of the scrap, so it becomes more difficult to handle. Next, the vapor pressure of magnesium plays a role. At 470 /C176 C, the vapor pressure is 0.93 Pa. [8] As the temperature increases, the vapor pressure increases greatly, resulting in metal loss by evaporation when the magnesium is exposed to high temperatures for a long time. The magnesium vapor can precipitate as finely divided particles at cold spots in the equipment. If it comes into contact with air, during either the experiment or the opening of the equipment, the vapor could oxidize. Last, the oxidation rate of the magnesium has to be taken into account. At 440 /C176 C, the initially formed oxide layer is stable for 20 minutes; after that, the oxide layer thickness increases exponentially. The period during which the oxidation layer is stable becomes shorter with increasing temperature. [24]
+The TG/DTA measurements will be influenced by softening, evaporation, and oxidation. Therefore, a twostep temperature program is chosen that minimizes these influences. During the first step, the scrap is heated from room temperature to 450 /C176 C with a constant heating rate of 5 /C176 C/min, 10 /C176 C/min, or 20 /C176 C/min, which is followed by an isothermal section of 20 minutes at 450 /C176 C. Three heating rates are necessary in order to correctly describe the decoating reaction, [25] while the twofold difference between the heating rates results in more consistent Ea values after modeling. [20] At every heating rate, three experiments were done for each scrap object. Objects C and D were also subjected to a longer holding time at lower temperatures, to further investigate mass loss during the holding period. In an air atmosphere, the scrap is heated at a rate of 10 /C176 C/min from room temperature to 400 /C176 C or 425 /C176 C and is held at this temperature for 120 minutes.
+Decoating was performed using a Seiko EXSTAR 6300 TG/DTA machine (Seiko Instruments Inc., Tokyo, Japan) in an atmosphere of air or argon, with a gas flow rate of 50 mL/min. Small pieces of scrap (5 to 10 mm 2 ) were placed in a platinum cup; the reference cup was left empty. To find out which volatiles were generated during the decomposition of the paint, an online Gaslab 300 mass spectrometer (Fisons Instruments Inc., Ontario, Canada) was used for evolved gas analysis (EGA). It was set to detect m / Z = 12 (CO2), 22 (CO2), 26 (acetylene), 41 (1-butene, butanal), 44 (butanal, acetaldehyde, CO2), 53 (pentadiene), and 67 (pentadiene, phenol) ions. The organic compound for which the m / Z ion is most representative is given in parentheses. [26] This selection of m / Z is based on the findings of Parra et al ., [27] who identified the volatile components generated during the degradation of polyester and epoxy.
+During the complete temperature program, the TG/ DTA and EGA signals are recorded at a 1-second interval. The obtained TG/DTG and DTA curves were interpreted using kinetic modeling; the remaining residues after decoating were analyzed using X-ray fluorescence and scanning electron microscopy (SEM).
+C. Experimental Results
+1. Decoating in argon
+None of the objects is completely decoated in an argon atmosphere. On the surface of objects B and C (Figure 2(g)), a dark brown, hard, shiny residue is present that consists of pigment and filler particles embedded in carbonaceous material. The upper part of the residue layer is dense and has bubbles. The underneath layer is more porous. In contrast, the remaining residue on objects A and D (Figure 2(h)) is a porous, brown-black material made of a network of smaller and larger particles. Spot analysis using SEM equipment on several locations confirms the presence of CaO, TiO2, and Fe2O3 in the residue. In addition, large amounts of carbon are detected.
+The DTG and EGA curve of object A is plotted in Figure 3. The paint on object A decomposes in one step, with maximum mass loss occurring at 436 /C176 C ( Tp ), using a heating rate of 20 /C176 C/min. On the left side of the peak, a small step change is visible between 15 and 20 minutes. When passing through the step change, light hydrocarbons with m / Z = 26 and 44 are released. The other m / Z ions, such as m / Z = 67, are detected only during the main mass loss peak. The decoating
+Fig. 3-DTG (top) and EGA (bottom) curve of object A during decoating in argon, using a heating rate of 20 /C176 C/min. In the DTG curve, a small step change occurs between 15 and 20 min. Release of light hydrocarbons ( m / Z = 26) starts before release of heavy hydrocarbons ( m /Z = 67).
+180
+475
+160
+350
+140
+225
+120
+2
+100
+100
+80
+1
+60
+40
+20
+10
+15
+20
+25
+30
+Time in min
+mlZ = 26
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-503
+process is finished before the holding period starts at t = 22 min. A decrease in heating rate results in a decrease in Tp to 410 /C176 C when a heating rate of 5 /C176 C/ min is used, while the peak width does not change much. Object B decoats in a similar manner.
+Object C also decoats in one step, with Tp at 438 /C176 C, when the heating rate is 20 /C176 C/min (Figure 4). Although the peak temperature is similar to object A, the mass loss peak is broader, 76 /C176 C or 4 minutes for object C,
+Fig. 4-DTG (top) and EGA (bottom) curve of object C during decoating in argon, using a heating rate of 20 /C176 C/min. Release of light hydrocarbons ( m / Z = 26) starts before release of heavy hydrocarbons ( m /Z = 67).
+160
+800
+140
+600
+120
+400
+5
+100
+200
+80
+1
+60
+200
+40
+20
+600
+800
+10
+15
+20
+25
+30
+35
+40
+Time in min
+mlZ = 26
+mlZ = 67
+DTG
+Fig. 5-DTG curve of object D and temperature program during decoating in argon using a heating rate of 10 /C176 C/min. Three mass loss peaks with Tp at 348 /C176 C, 421 /C176 C, and 444 /C176 C.
+450
+8
+400
+20
+2
+350
+300
+15
+250
+{
+200
+10
+150
+100
+50
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+Time in min
+Temperature
+DTG
+1
+compared to 47 /C176 C or 2.5 minutes for object A. In addition, no step change is present. Decreasing the heating rate lowers the peak temperature to 416 /C176 C when the heating rate is 5 /C176 C/min. The EGA reveals two distinct phenomena (Figure 4). During the first part of the mass loss peak, between 15 and 19 minutes (290 /C176 C to 380 /C176 C), light hydrocarbons with m / Z = 12, 26, 41, and 44 are released. After this, heavier hydrocarbons, with m / Z = 53 and 67, are also released, together with the lighter hydrocarbons. It can be concluded that the single DTG peak represents two different degradation steps.
+The DTG curve of object D (Figure 5) has three mass loss peaks, with Tp at 348 /C176 C, 421 /C176 C, and 444 /C176 C, when the heating rate is 10 /C176 C/min. Only during the last two peaks are m / Z = 53 and 67 detected, while the other m / Z ions are detected during all mass loss peaks.
+In summary, at elevated temperatures, the organic components in the coating break up into smaller molecules. Between 250 /C176 C and 375 /C176 C, small, light hydrocarbons are released; above 400 /C176 C, these are accompanied by larger, heavier hydrocarbons. This process is called scission. [28] The scission phase is comprised of one or more mass loss peaks. The number of peaks depends on the type of coating, the heating rate, and the atmosphere used during decoating. A higher heating rate leads to more overlapping of the peaks and higher peak temperatures. After scission, a residue of (hydro)carbon material and pigment and filler particles remains on the magnesium surface.
+2. Decoating in air
+Experiments using an air atmosphere resulted in virtually completely decoated objects (Figures 2(e) and (f)). On the surface, a loose powdery residue remains. It consists mainly of common pigments and fillers, [29] in particular, CaO and TiO2 (Table II). Traces of V, Cr, and Sn oxide were also detected (included in others). The small particle size makes it difficult to completely remove the residue from the magnesium surface.
+Figure 6 shows the DTG and DTA curves of object B. Scission takes place during the first DTG peak. The Tp of the scission peak is lower in air (399 /C176 C) than in argon (407 /C176 C). The oxygen causes the scission reactions to occur at a lower temperature. [30] During scission, very little heat develops, as the DTA curve is still around zero. Only a small part of the total amount of m / Z = 12 and 44 is released at this moment, as opposed to
+Table II. Composition (Weight Percent) of Residue after Decoating in Air
+504-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+Fig. 6-DTG and DTA curve of object B during decoating in air, using a heating rate of 5 /C176 C/min. The last DTG peak coincides with a large exothermic peak in the DTA curve, indicating the combustion phase.
+80
+1500
+60
+1300
+40
+1100
+1
+20
+900
+2
+700
+220
+500
+40
+300
+100
+80
+100
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100 105 110
+Time in min
+DTG
+DTA
+Fig. 7-EGA of decoating of object B in air; b is 5 /C176 C/min. During combustion (second peak), only m / Z = 12 and 44, typical of CO2, are released.
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+105
+110
+Time in
+min
+mlZ = 12
+mlZ = 44
+mIZ = 67
+m / Z = 26, 41, 53, and 67 (Figure 7). The second DTG peak coincides with a large exothermic peak in the DTA curve. The start time (79 minutes), peak time, and end time (84 minutes) of both peaks are identical. This is typical of the combustion phase, which is finished before the holding period starts at t = 86 min. During this period, only m / Z = 12 and 44, characteristic for CO2, are detected (Figure 7). The combustion of the carbon material generates heat sufficient enough to increase the scrap temperature by a few degrees.
+Object C has an extra mass loss peak at t = 37 min during the scission phase (Figure 8). It occurs at the same point as the slope of the DTG curve of decoating in argon changes. The second scission peak in air appears at nearly the same time (and, thus, temperature) as the only scission peak in argon, at t = 41 min, and is more narrow. The presence of oxygen has no effect on the peak temperature of this peak. Still, the scission reactions differ from the reactions taking place in argon, because the DTG peaks differ in shape and number. The EGA of the scission in air showed that the lighter
+Fig. 8-DTG curve of object C during decoating in argon and air; b is 10 /C176 C/min. The scission peaks occur at the same time in argon and air. The combustion peak is only present in air.
+scission
+combustion
+20
+1
+1
+15
+10
+211
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+Time in min
+Argon
+hydrocarbons were released during the first scission peak, while the heavy hydrocarbons did not appear until the second scission peak started. The combustion phase takes place during the holding time (42 £ t £ 62 min).
+The decoating of object D in air results in two (5 /C176 C/ min) or three mass loss peaks during the scission phase (10 /C176 C/min or 20 /C176 C/min), followed by the combustion phase during the holding period. The m / Z = 57 and 63 are only released during the last DTG peak in the scission phase, while the other m / Z are detected earlier.
+Typical for decoating in air is that the scission phase is followed by a combustion phase; this is represented by the last peak in the DTG curves. During this peak, the organic material is combusted to CO2 and H2O while generating heat; this accounts for 20 pct (object A) to 35 pct (object C) of the total mass loss during decoating. The combustion phase of objects A and B takes place before the holding period starts; it follows rapidly after the scission phase, so both mass loss peaks largely overlap. Objects C and D, however, have their combustion phases during the holding period. Before their combustion phases have started, the decoating of objects A and B is already completed.
+D. Kinetic Analysis Results
+1. Objects A and B
+The activation energy of the mass loss peaks during the scission phase is calculated with Eq. [3]. In argon, the values of objects A and B are nearly identical at approximately 205 kJ/mol. In air, the activation energy is lower, between 160 and 170 kJ/mol. The Ea of the combustion phase of objects A and B could not be determined, due to the large overlap of the scission and the combustion peak in the DTG curve at high heating rates.
+The relationship between the activation energy and the fraction converted is determined using the CoatsRedfern approximation. The activation energy of object A first increases with a until a = 0.20. It then levels off, and the dependence of Ea on a becomes much smaller (Figure 9). Object B has an activation energy that is almost independent of a , especially when degradation
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-505
+takes place in argon. The small dip in the Ea curve at a = 0.35 (argon) could indicate that two steps with nearly equal activation energy are taking place one after the other, [32] although this is not apparent from the DTG curve.
+Since the activation energy is reasonably constant during the scission phase, each mass loss peak of objects A and B can be regarded as a single-step kinetic reaction. The difference in Ea determined by the Kissinger and Coats-Redfern equations is small, so the Kissinger values will be used during the rest of the kinetic analysis. It is possible that multiple parallel reactions take place during the mass loss peak, [17] with their combined effect appearing as a single-step kinetic reaction.
+The beginning of the decoating process of objects A and B is described by a power law expression (Eq. [6]), as shown in Figure 12. It corresponds to the shoulder before the scission peak in the DTG curve. The assumption underlying power law expressions, unrestricted growth of the reaction interface at a constant rate, is very likely to be valid at this moment in the scission phase. To find the reaction, model Ea of the scission peak is used:
+Fig. 9Ea of the scission phase of objects A and B, calculated using the Coats-Redfern equation.
+250
+375
+1
+200
+300
+1
+2
+150
+100
+150
+50
+75
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+Object A argon
+Object A air
+Object B argon
+Object B air
+The n value of object A (Table III) is the same in argon and air, namely, 0.43, and is independent of the heating rate used during the experiments. The n value of object B is significantly lower in air than in argon, indicating that different reactions take place while the reaction mechanism stays the same. When n becomesclose to 0.5, the power law is almost identical to the D1 diffusion model ( g ( a ) = a 2 ). A diffusion reaction mechanism is not unlikely to occur. Nevertheless, the fit of the D1 model to the experimental data is less good. As the model is used only to describe a small part of the scission phase, preference is given to the model with the best fit even though it might not be the most accurate physical description. [31]
+The rest of the scission phase was modeled using the Avrami-Erofeev model (Figure 12). The assumption of the unrestricted growth of the power law is now replaced by unhindered growth, until the reaction interfaces touch. [17] The Avrami expression has to be adjusted for the later starting point of the main mass loss peak, by replacing a with a ¢ (Eq. [7]).
+a 0 is the value of a at the extrapolated onset temperature ( Te ) of the scission peak, and a f is the value at the extrapolated end temperature ( Tc ). In argon, n is found to be 1.90 for both objects (Table III); this is an average value influenced by the heating rate. For example, the n value of object A increases from 1.70 for 5 /C176 C/min to 2.0 for a heating rate of 20 /C176 C/min. Slightly different n values are found for the scission phase of objects A and B in air.
+The scission phase in both argon and air can be roughly characterized by the Avrami A2 model. The value 2 indicates a surface reaction, when it is assumed that all nuclei are instantaneously formed. The results are in line with the findings of Morancho et al . [30] for the degradation of epoxy and polyester coatings.
+Table III. Kinetic and Model Parameters of Decoating of Objects A and B. a = 0 at Start of Temperature Program and a = 1 at End of Temperature Program; Ea Is Calculated Using Eq. [3]
+* Modeling not possible, due to peak overlap.
+506-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+The combustion phase was not modeled, due to the nearly complete peak overlap with the scission phase. It is expected that it will follow the Avrami model, as well.
+2. Objects C and D
+The activation energy of the mass loss peaks of objects C and D is given in Table IV. Using the Coats-Redfern method, the relation between Ea and a in the scission phase is assessed. The activation energy of objects C and D depends more on a (Figure 10). The Ea of object C strongly varies with the fraction converted. In argon, the Ea continuously increases with a . The slope of the curve changes after about a third of the decoating process. When air is used, there is a small plateau in the curve between a = 0.1 and a = 0.2. The scission phase of object C consists more of complex multistep reactions, as Ea strongly depends on a . [32,19] In spite of this, the scission phase of object C will be modeled using single-step kinetic reaction models.
+Compared to object C, the activation energy of object D depends less on a , so the inaccuracies associated with assuming a constant Ea for each mass loss peak will be smaller. The three mass loss peaks during scission in argon can be distinguished. Mass loss peak 1 ends at approximately a = 0.25. It is followed by an increase in Ea , until it reaches a small plateau at 0.5 £ a £ 0.6, which corresponds to the second mass loss peak. Another increase follows during the third mass loss peak. In addition, in air, the curve has two or three plateaus.
+The combustion peak of objects C and D is treated separately; thus, 0 £ a £ 1, and Ea is calculated using Eq. [4]. The results are displayed in Figures 11, 12. The Ea of the combustion phase of object C is constant over a large interval (0.35 £ a £ 0.90) and equals 173 kJ/mol. The curve of object D has a smaller range in which Ea is constant. Between a = 0.2 and 0.5, the activation energy is 106 kJ/mol. The combustion of the coating can thus be regarded as a single-step kinetic reaction. The value of Ea used is the value at the peak time t p .
+The scission phases of both of these objects cannot be described adequately using the Avrami model. A good fit is only obtained for n values smaller than 1, but this does not make sense physically. Instead, the weak point concentration (WPC) model is employed (Eq. [8]). [33] It postulates that decomposition starts at weak points in the coating. These are weak points in the chemical structure of the polymer chain, [34] such as head-to-head links, hydroperoxy, and peroxy structures. [22]
+/C16
+/C17
+Table IV. Kinetic and Model Parameters of Decoating of Objects C and D; a =0 at Start of Temperature Program and a = 1 at End of Temperature Program; Ea Is Calculated Using Eq. [3] (Scission) or Eq. [4] (Combustion)
+450
+300
+375
+1
+250
+300
+200
+2
+2
+225
+0
+150
+100
+150
+50
+75
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+a
+Cin argon
+Cin air
+Din argon
+Din air
+{ {
+Fig. 10Ea of the scission phase of objects C and D, calculated using the Coats-Redfern equation.
+Fig. 11Ea of the combustion phase of objects C and D, calculated using Eq. [4].
+200
+150
+100
+2
+50
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+Object €
+Object D
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-507
+Fig. 12-Fit of g ( a ) to the experimental data of the scission phase of object A in argon using the power law model ( a < 0.25) and Avrami model ( a >0.25); b is 10 /C176 C/min.
+25
+20
+1.5
+g
+1.0
+0.5
+0.0
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+a
+Avrami n = 1.85
+Power n = 0.45
+Experimental values
+Fig. 13-Fit of g ( a ) to the experimental data of the scission phase of object C in air using the WPC model for both peaks; b is 10 /C176 C/min.
+0.9
+3.2
+2.8
+0.7
+25
+0.6
+21
+0,5
+1,8
+g
+0.4
+1.4
+0.3
+peak
+11
+0.2
+0.7
+0.1
+0.4
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+Experiment peak
+WPC model peak
+Experiment peak 2
+WPC model peak 2
+peak
+In Eq. [8] mF is defined as the mass when degradation is completed. The values of a and A are obtained by model fitting, and the e calculated from the TG curve of both objects are given in Table IV.
+The fit of the WPC model to the experimental values of the scission phase of object C in air is shown in Figure 13. Two mass loss peaks are modeled. The scission phase ends at a = 0.58, which is after the transition to the constant temperature section. Therefore, the second mass loss peak could only be modeled up to a = 0.50. Decoating reactions continue in the holding period, and the rest of the mass (42 pct) is lost through combustion. Small deviations from the experimental values occur at the beginning of each peak. The difference in the g ( a ) values of peak 1 and 2 is caused by the difference in the activation energy.
+The reaction model parameter a of object C has a large spread of 30 pct in argon and 50 pct in air (Table IV). The variation in Ea with a was quite large for the decoating of object C, which might be the reason for the large spread in a . It is also observed in the a value describing the mass loss peaks of object D, but to a lesser degree. The model parameter e is influenced by the heating rate, in particular for the last scission peak of object D. The dependence of the model parameters on the heating rate shows that the reactions taking place are complex, not always completed, and different in argon and air.
+Fig. 14-Fit of g ( a ) to experimental data of the combustion phase of object C in air using Avrami model with n = 1.84; isothermal experiment is at 425 /C176 C.
+experiment
+25
+15
+model
+0.5
+0.2
+0.3
+0,4
+0.6
+0.7
+0.8
+0.9
+Experiment
+Avrami n=1.84
+The combustion of the coating on objects C and D can be very well characterized by the Avrami model (Eq. [7]), as shown for object C in Figure 14. Only at the start and end of the curve do small deviations occur. The model parameter n is 2.05 for object C and 1.6 for object D, which justifies the use of the Avrami model with n = 2 (A2 model) for object C and the Avrami model with n = 1.5 (A1.5 model) for object D. Inorganic particles such as pigments can function as nuclei for the combustion reaction. The reaction starts at a particle and the reaction interface progresses outward in a circular manner, until another reaction interface is touched. [35] This confirms the main assumption underlying the Avrami model.
+III. SIMULATION OF REMELTING PROCESS
+The pigment and filler particles in the residue that remains on the surface after the complete combustion of the coating should be easy to remove. In reality, this is not the case, because the particles are small and they adhere strongly to the surface, requiring various levels of mechanical force to remove them. When the particles are not completely removed, they enter the remelting process together with the magnesium scrap. Magnesium is an excellent reducing agent and has the potential to reduce most of the oxides to their metallic state, as can be seen in Ellingham diagrams. [36] Hence, valuable metal is lost as magnesium oxide is formed. Additional metal loss occurs when the metals created from the filler oxides react to the solid intermetallic particles. Furthermore, dissolution of the impurities in the alloy leads to deviations from the standard alloy compositions.
+The interaction between the residue, liquid metal, and salt flux is predicted by the simulation of the remelting process using FactSage; in this way, the effect of the residue on the amount and composition of metal and salt slag can be assessed.
+A. Approach
+The remelting of magnesium with decoating residue at 700 /C176 C is simulated with the FactSage package, [16] using the approach and remelting conditions described in
+508-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+Reference 14. A standardized substrate, 100-kg Mg9Al pieces with a total surface area of 58.5 m 2 , is chosen. Using the inorganic particle mass per square centimeter given in Table I and assuming all organic material has been removed during decoating, the amount of residue remaining on the substrate can be calculated. The mass varies strongly: residue A is 1.41 kg, residue B 12.93 kg, residue C 0.76 kg, and residue D 3.12 kg. Only the four main constituents of the residue (Table II) are included in the remelting simulation. In summary, the mass of the substrate plus the residue varies during the simulations, while the substrate mass remains constant (Table VII). In this manner, the impact different coatings have for a semiproduct on the remelting process can be compared, and a direct link between product design choices and the remelting/recycling process can be established.
+B. Simulation Results
+1. Residue A
+During remelting, the CaO present in the residue reacts with MgCl2 instead of with Mg, creating MgO and CaCl2. The salt phase in the salt slag becomes a Ca-K-Mg-Na chloride mixture with 10.96 wt pct CaCl2. Magnesium is thus only lost through oxidation by 0.04 kg SiO2 and 0.61 kg TiO2.
+Very little thermodynamic data are available on the Mg-Ti binary system. For that reason, it is not present in the Scientific Group Thermodata Europe (SGTE) database used for the simulations, and the alloy composition and amount have to be calculated manually. The solubility of titanium in liquid and solid Mg-Al alloys is zero; [37] it does form intermetallic compounds with aluminum and silicon at T remelt , in the form of Al3Ti and Si3Ti5. [38,39] As the amount of SiO2 in the residue is very low, the amount of Si created is small, and all of it dissolves in the Mg9Al alloy. It can be safely assumed that all titanium will react to Al3Ti solid particles. The formation consumes 0.55 kg of aluminum, lowering the aluminum content in the alloy to 8.46 wt pct (Table V). The intermetallic particles leave the remelter as part of the salt slag.
+2. Residue B
+Residue B contains 1.1 kg BaSO4, instead of CaO. The BaSO4 interacts with both the salt flux and the metal, yet the net effect is a change in the salt slag composition. The salt phase now consists of 8 wt pct BaCl2, 28.7 wt pct KCl, 34.9 wt pct MgCl2, and 28.3 wt pct NaCl, as well as a small number of MgS2 particles.
+The presence of 9.4 kg TiO2 in the residue results in a large loss of alloy and a large quantity of salt slag (Table V). The reduction of TiO2 creates 12.8 kg MgO, which is included in the salt slag. The SiO2 (0.6 kg) is also reduced. The amount of silicon created is larger than for residue A, so Si reacts with Ti to Si3Ti5( s ), and the presence of Si in the alloy is very low. The remainder of the titanium forms Al3Ti (8.8 kg), consuming nearly all of the aluminum present in the alloy. After remelting, only 77 kg of metal is produced from the 100 kg of Mg9Al entering and only 0.2 wt pct aluminum remains of the 9 wt pct initially present in the alloy.
+3. Residue C
+The lowest amount of residue is present on object C. The interactions taking place are comparable to residue A (Table V). The slag amount is a bit lower, while the small amount of CaO leads to a very small change in the salt phase composition.
+4. Residue D
+In the residue, no TiO2 is present; only 0.065 kg SiO2 is present. Therefore, very little magnesium and aluminum is lost due to oxidation. The silicon does not form any intermetallics, resulting in a Si content of 0.03 wt pct in the metal. The CaO (2.11 kg) is the major residue component. It reacts with MgCl2 in the salt flux, completely changing the composition of the salt phase in the slag. Instead of a K-Mg-Na-chloride mixture, it has now become predominantly a Ca-K-Na-chloride mixture, as it contains 39 wt pct CaCl2, 28 wt pct KCl, 27 wt pct NaCl, and only 6 wt pct MgCl2. The changes in the salt slag do not affect the metal recovery and composition (Table V).
+C. Remelting Losses
+The amount of magnesium and aluminum lost during remelting is primarily determined by the amount of residue reacting with Mg9Al, the number of oxygen molecules in the oxide, and the tendency to form
+Table V. Remelting of Mg9Al with Decoating Residue; Composition in Weight Percent; m in kg
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-509
+intermetallics with Mg or Al at the remelting temperature. The TiO2, the SiO2, and, to a lesser extent, the BaSO4 display this kind of behavior.
+Quality changes are determined by the solubility of metallic impurities in the liquid alloy. Silicon dissolves easily in Mg9Al and can change the composition when it is present in a sufficient amount. Titanium, on the other hand, dissolves only minimally and does not directly change the quality of the alloy. Titanium has an indirect effect, through the formation of a Ti-Al intermetallic. Quality losses also occur with respect to the salt flux. The metallic and oxide particles created during remelting are included in the salt slag; a treatment process is, therefore, necessary to obtain salt for reuse. Because CaO and BaSO4 change the composition of the salt phase in the slag, they cannot be reused without making composition adjustments. [40]
+The interactions between the coating component, salt flux, and metal can be predicted using thermodynamics. In this way, the effect of the residue on the remelting process can be determined beforehand, during the design of products. In these predictions, the kinetics of the reactions have not been taken into account. Although thermodynamics predicts whether a reaction will take place, kinetics determines the speed of the reaction. It could well be that the reaction rate of one of the interactions described previously is very low. For that reason, it might not take place within the time necessary for remelting. Some undesirable effects, then, will not be present or will be present only to a lesser degree, changing the outcome of the remelting process. The unwelcome interactions of a coating component would then be reduced.
+The metal loss and quality changes caused by the interactions between the coating, salt flux, and metal will be quantified using exergy. The exergy calculations require detailed mass balances of the remelting process, which are obtained from the FactSage simulations.
+IV. CHARACTERIZATION FOR RECYCLING
+Before characteristics for recycling can be assigned, an interpretation of what constitutes good recyclability with regard to coated magnesium scrap has to be specified. Recyclable coated scrap should have a coating that can be removed by thermal decoating using a temperature program suitable for magnesium substrates. Complete removal of the organic material is desired; therefore, only those characteristics related to decoating in air will be discussed. In addition, the impact on the remelting process of the inorganic coating components present on the substrate has to be small. In this way, the quality of the metal will be preserved and little waste is created.
+The characteristics of recyclable coated scrap are discussed based on the outcomes of the decoating and remelting process. The fundamental parameters describing these characteristics in a quantitative way are introduced and are combined into a metric that links coating characteristics to recyclability.
+A. Decoating
+Based on the DTG curves, the scrap objects can be divided in two groups, namely, those completely decoated after the constant heating rate section and those completely decoated after the constant temperature section (holding period). In Figure 15, the Tp or t p of the combustion peak of each object is plotted. The temperature program is depicted on the horizontal axis. On the left side, the constant heating rate section until 450 /C176 C is shown, followed by the constant temperature section on the right side of the horizontal axis.
+Objects A and B are nearly completely decoated before the holding period, followed by object D in the first half of the holding period. Object C is decoated last with t p in the second half of the holding period. It can be concluded that objects A and B can be regarded as easy to decoat, while the decoating of objects C and D becomes increasingly more difficult. From a recycling point of view, the decoating behavior of objects A and B is very desirable; decoating behavior such as that of object C is less preferred.
+To characterize the decoating behavior in a quantitative manner, parameters describing the ease of the decoating process have to be identified. These parameters then link the decoating behavior to the recyclability of the coated scrap. The ease of decoating is determined by the kinetics of the reactions during the scission and combustion phases. Parameters derived from the expression for k (Arrhenius equation) would thus be suitable. Although one kinetic parameter could have been selected, two parameters have been chosen, in order to pinpoint the decoating process.
+As the first parameter, ln A is selected. It is a measure of the speed of the decoating reaction. In this case, the selection of a reaction model that characterizes the experimental decoating data is necessary. A discrepancy between the assumptions underlying the reaction model and the experimental data will influence ln A ; hence, the accuracy of the value can vary.
+As the second parameter, the dimensionless ratio Ea /( RTp ) has been selected, because it includes the activation energy of the decomposition reactions as well
+Fig. 15-Ease of decoating of objects A through D, based on Tp or t p of the combustion peak for each heating rate.
+easy
+ease of de-coating
+difficult
+350
+400
+10
+15
+20
+Temperature in %
+Holding time in minutes
+510-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+as the peak temperature. The Ea indicates the threshold that has to be overcome before decomposition will take place, while Tp indicates when the maximum mass loss occurs. The Ea can be calculated based on experimental DTG curves, using the Kissinger equation or an isoconversional method, without the need to select a reaction model.
+When coated scrap is directly remelted (without decoating), the organic coating decomposes during the heating of the scrap to the remelting temperature. This is similar to decoating and can also be described by ln A and E / RT . In this case, the parameters provide additional information related to the interactions between the decoating residue and the magnesium metal. The ln A also reflects the amount of time after decoating that is available for reactions between the residue and the substrate. These reactions can have an effect on the metal quality. The Ea /( RTp ) includes Tp , which determines the D G of the reactions between the decoating residue and the substrate. In this way, it indicates which reactions can occur and which components will form.
+The Ea /( RTp ) of the scission peaks in air of objects A through D are plotted in Figure 16. Objects A and B have a single scission peak, with an Ea /( RTp ) between 25 and 32. Both objects are the first to be completely decoated, so an Ea /( RTp ) of approximately 28 and an A2 reaction model for the scission phase would be typical for easy decoating and very recyclable paint.
+Object C is at the other end of the spectrum. The Ea /( RTp ) for the first scission peak is lower than for objects A and B, indicating the first peak is ''easy.'' On the other hand, the Ea /( RTp ) for the second peak is very high, at approximately 33, putting it in the ''difficult'' category. The release of light hydrocarbons during the first peak has a low Ea (Table IV). Conversely, the created carbonaceous residue is more difficult to degrade, which is reflected by a high Ea and Ea /( RTp ). Since the combustion phase cannot start until the scission phase has been completed, a high Ea/(RTp ) in the scission phase is unfavorable, because it delays combustion. Compared to object D, the combustion
+Fig. 16Ea / RTp of mass loss peaks during decoating in air. A low value is favorable for decoating. Black symbol = first scission peak; white symbol = second scission peak.
+43
+41
+difficult
+39
+37
+35
+33
+1
+1
+31
+29
+27
+25
+23
+21
+easy
+19
+Object
+phase of object C does not take place easily, either. The combustion of paint D is easy, while that of paint C is more difficult (Figure 15).
+Furthermore, it can be noted that objects C and D have a large spread in the Ea / RTp of the scission phase. It is mainly caused by the large spread in Ea (Table IV). The assumption that Ea is independent of a is a strong simplification of the decoating process. Therefore, the reaction models selected based on this assumption, as well as the resulting A , have to be used with caution. Despite the simplifications, the outcomes are useful in characterizing the decoating process.
+B. Remelting
+Interactions between the decoating residue and the Mg9Al during remelting have been quantified using exergy ( E ), as it takes both mass and quality changes into account, [41] using the approach described in Reference 14 and the reference environment defined by Szargut in Reference 42. This reference substance model is based on an average temperature of 298 K, an average pressure of 1 atm, and the common components of the earth. For every chemical element, a reference species is selected that is from either the atmosphere, the hydrosphere, or the lithosphere. Reference substances are common substances in the earth's environment that represent the products of the interaction between the environment and the chemical elements. The concentration of the reference species is based on the average composition of the air, sea, or crust, and is taken as zero level for the exergy calculation. [42] A different reference environment model could also be used, as changes in exergy are compared in this study; the general validity of the reference environment model, however, will aid in a comparison of the processes and the environmental impact. [43]
+The exergy balance of the remelting process is
+The E destr. is necessary for balancing the flow of exergy into and out of the remelter; it represents the amount of exergy destroyed due to the irreversibility of the reactions taking place during remelting. The exergy of materials that consist of multiple constituents i entering and leaving the remelter is calculated using Eq. [10]. [42]
+X
+/C0
+/C1
+X
+Thus, exergy takes into account the mass/composition of a material as well as its quality, which is represented by the last term in Eq. [10]. The exergy of the metal and slag, as well as the different constituents of the slag, are given in Table VII. A detailed composition of the materials entering and leaving the remelter, as well as the ai and E i of the components, are given in Tables VII and VIII. The e 0 values used in Eq. [10] can be found in
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-511
+Table IX. The remelting of residue B has the largest impact on the exergy balance. It has the highest E destr. and E slag and the lowest E metal, while the other residues are closer to the outcomes of the clean Mg9Al remelting.
+A residue on scrap has very little impact on remelting, or is very well recyclable when the loss of metal is minimal and the metal composition before and after remelting is nearly the same and, therefore, the amount of material for alloying and refining is minimal. Using exergy, these characteristics of recyclability can be quantified in joules. For this purpose, three exergy losses are defined as follows.
+(a) Entrapment and oxidation losses ( D E E&O) are losses of magnesium and aluminum through entrapment, intermetallic formation, and oxidation.
+(b) The metal quality loss ( D E quality ) is the quality change caused by a different metal composition before and after remelting.
+(c) The material resource loss ( E resource) is the amount of refining and alloying material necessary to counteract the metal quality loss and achieve the desired alloy composition.
+The sum of these losses, R , is a quantitative measure of the recyclability. It can be generally applied to describe the impact of any material or impurity on the remelting of magnesium. A low R value corresponds to a low impact and good recyclability (Eq. [11]).
+The losses and recyclability of remelting Mg9Al with residue are compared to the remelting of clean Mg9Al (Table VII). The Mg9Al has a small metal quality loss caused by the presence of 0.0157 wt pct Na in the alloy. The E resource associated with this loss is calculated based on the desired composition of maximum 0.002 wt pct Fe, maximum 0.005 wt pct Na, maximum 0.003 wt pct Si, [44] and 9.00 wt pct Al. The impurity levels are quite stringent; nevertheless, they allow for a small change in composition, compared to the impurity-free metal input. The metal quality is then preserved; the alloy, therefore, can be reused for the same application. Sodium is removed by the addition of MgCl2, while the other requirements are met by adding high-purity magnesium and aluminum.
+Residues A and C have an R closest to clean Mg9Al. The oxidation and intermetallic formation due to the interactions between metal and residue have increased D E E&O. The E resource is higher, to compensate for the metal quality loss. The sodium level has to be lowered and the aluminum content has to be corrected.
+Although the E quality of residue D is the lowest of all the residues, E resource is highest, because a lot of Mg metal is used to lower the silicon content from 0.03 wt pct after remelting, to the desired 0.003 wt pct. This results in the highest R and, thus, it is not very well recyclable. When the impurity limit for silicon in the desired alloy is less strict, less dilution material is necessary and the E resource will be lower. Compared to residue D, the R value of residue B appears to be much better; however, 600 MJ is lost due to oxidation and intermetallic formation and 7.43 kg or 219 MJ aluminum is still necessary, to compensate for the 25.88 MJ metal quality loss (Table VI).
+V. METRIC FOR RECYCLING
+Coated magnesium scrap is well recyclable when the organic components in the coating can be easily removed (by thermal decoating) and when the remaining inorganic components have little or no impact on the subsequent remelting process. For both requirements, fundamental parameters have been selected: Ea /( RTp ) and ln A , to quantify the ease of the decoating, and R , to quantify the impact on remelting. These three parameters provide a detailed, fundamental understanding of
+Table VI. Exergy, E, and Specific Exergy, e 0 , of Metal and Slag Components after Remelting (Upper Part); Calculated Exergy Losses and R Based on 100-kg Mg9Al Substrate Plus Decoating Residue in MJ and on MJ per kg Mg9Al Substrate Entering the Remelter (Lower Part)
+* Per kg Mg9Al substrate.
+512-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+Fig. 17-Metric for recycling combining ln A , Ea / RTp , and R in 3-D. The ln A relates to the velocity of decoating, Ea / RTp represents the ease of decoating, and R quantifies the impact of inorganic contaminants on the remelting process. High recyclability corresponds to a position in the nearest lower left corner, while objects with low recyclability are located in the topmost right corner. 4 object A, e object B, h object C, s object D.
+low
+10
+10?
+10
+05
+10
+In A
+10
+25
+40
+high
+EJ(R Tp)
+Increasingrecyclability
+10'5
+the processes that make up the recycling system. In Figure 17, the parameters are presented together in the form of a 3-D design metric. The metric reflects the holistic (life cycle) approach to the recycling of coated magnesium in several ways. First, the metric takes into account the combination of substrate plus coating similar to the way in which it is present in a product. Second, the metric takes the complete recycling process into account, whether it is a decoating step followed by a remelting step or the direct remelting of coated magnesium during which decomposition of the organic coating will take place. Finally, the metric shows the interconnectivity between the different phases in the product life cycle, because it links recycling and recyclability to product design.
+Each coated object will have its own position in this metric, determined by its values for Ea /( RTp ), ln A , and R . High recyclability means a position in the nearest bottom left corner (Figure 17). In this case, ln A , related to the decoating velocity, is high; Ea /( RTp ), indicating the ease of decoating, is low; and R , quantifying the impact on remelting, is also low. Conversely, objects located in the topmost right corner have a very low recyclability.
+Object A has the best recyclability: it is closest to the lower front left corner of Figure 17. This object is easy to decoat, because the Ea /( RTp ) is approximately 28 and ln A is high. In addition, it has a low impact on remelting, because the R is 2.34 MJ/kg (Table VII). Object C has the next highest level of recyclability; it has a lower R value than object A, but it is more difficult to decoat, since the Ea /( RTp ) of the second scission peak is quite high. Using a paint with a lower Ea /( RTp ) will optimize the recyclability of object C. The unfavorable recyclability of objects B and D is caused by their R value. To achieve a better (higher) recyclability, the R value has to decrease. The high R value of object D (241.31 MJ/kg) is mainly due to the high material resource loss ( E resource ). Silicon from the silica in the decoating residue has dissolved in the alloy and dilution is necessary in order to meet the quality requirements. Prevention of the interaction between magnesium and silica will lower E resource and, thus, the R value; this can be accomplished by lowering the silica content in the decoating residue by replacing silica with another material. The recyclability of object B is already better than that of object D, but is still about four times worse than objects A and C. The high TiO2 content in the residue, combined with a large amount of decoating residue present on the substrate, results in a large metal quality loss ( D E quality) and large oxidation and entrapment losses ( D E E&O); therefore, a high R value is obtained (Table VII). Metal quality changes due to intermetallic formation and metal loss due to oxidation (Table VII) can be avoided by changing both the residue composition and amount. In this manner, object B will move toward the high recyclability region in the 3-D metric.
+It is clear from this discussion that the 3-D metric presented in Figure 17 can be used as a tool during the design phase of coated products; it explains in fundamental terms the effect that the different options have on the recyclability of the coated magnesium. The careful design and selection of coatings may completely avoid the creation of scrap that is difficult to recycle. The recyclability of the current design indicated by its position in the metric can be compared to the desired position within the diagram. In this way, improvements are easily visualized and explained.
+For the selection of alternative coating components, diagrams linking coating components to one of the parameters of the metric can be used. Paints that are easier to decoat can be found using charts based on Figure 16, in which the Ea /( RTp ) of paints can be compared. Alternative coating components with a lower impact on remelting can be selected using diagrams in which the R value of single components or mixtures are compared, as previously published by Meskers et al . [14] In this manner, the effect of both a single component and a mixture can be assessed. Other diagrams are possible, also; one example is a plot of R against ln A or against Ea /( RTp ).
+VI. CONCLUSIONS
+Consumer products are complex combinations of materials that can have an effect on the metals and other materials obtained after their recycling. This work suggests a unique approach to quantifying this effect in a 3-D design metric that includes Ea /( RTp ), ln A , and R . Utilization of this visual 3-D metric in coating and product design highlights and pinpoints the possibilities and limitations of the recycling of the designed coated magnesium materials.
+The metric for recycling presented in Figure 17 is based on first principles and a detailed understanding of the impact of coatings on the decoating and remelting process and, in this manner underpinning sustainable product design. The fundamental parameters of the metric can be measured and predicted; therefore, it
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-513
+Table VII. Mass and Activities of Materials Entering Remelter at Reference Temperature (298 K), and Calculated Exergy E, at 298 K; MAA, MAM, MMA, and MMM Are Abbreviations of c Phase with General Formula Mg5(Mg, Al)12(Mg, Al)12; Pure Substances a = 1; Solution Phase: When Sum of the Activities of the Species in Solution Is 0.95 £ a £ 1.05, a Is Used for Calculation of E or x Is Used; Heat Necessary for Heating Materials to Remelting Temperature Is Given
+514-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+Table VIII. Mass and Activities after Simulation of Remelting at 973 K and Cooling to Reference Temperature (298 K), and Calculated Exergy E at 298 K; MAA, MAM, MMA, and MMM Are Abbreviations of c Phase with General Formula Mg5(Mg, Al)12(Mg, Al)12; Pure Substances a = 1; Solution Phase: When Sum of the Activities of the Species in Solution Is 0.95 £ a £ 1.05, a Is Used
+Is Used Instead
+x
+for Calculation of E or
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-515
+Table IX. Calculated Specific Exergy Content at Reference Temperature (298 K) Using Method Described in Reference 42
+provides a sound (engineering) basis for a sustainable design for coated magnesium. This facilitates quantitative assessment of the recyclability of products.
+This approach provides much needed metrics for recycling that can help to ensure that valuable material resources are preserved and kept available for highquality applications within the materials cycle.
+ACKNOWLEDGMENTS
+The authors are grateful to Olga Ignatenko and Antoinette van Schaik for valuable discussions on exergy. The authors also extend their gratitude to Professor Thorvald Abel Engh, Norwegian University of Science and Technology, for his comments and advice. This research is part of the SenterNovem IOP Surface Technology Project No. IOT 03005-Recycling of Coated Magnesium. The thermal decoating part has been done at the Norwegian University of Science and Technology, supported by a Marie Curie Fellowship of the European Community program entitled Early Stage Training, under Contract No. HPMT-GH-0100305-03.
+OPEN ACCESS
+This article is distributed under the terms of the Creative Commons Attribution Noncommercial License which permits any noncommercial use, distribution, and reproduction in any medium, provided the original author(s) and source are credited.
+NOMENCLATURE
+REFERENCES
+K.U. Kainer, H. Dieringa, J. Bohlen, N. Hort, and D. Letzig: Proc. Symp. Magnesium Technology , 2007, TMS, Warrendale, PA, 2007, pp. 3-8.
+M. Avedesian and H. Baker: ASM Specialty Handbook: Magnesium and Magnesium Alloys , ASM INTERNATIONAL, Materials Park, OH, 1999.
+P. Blanchard, D. Hill, G. Bretz, and R. McCune: Proc. Symp. Magnesium Technology , TMS, Warrendale, PA, 2005, pp. 463-68.
+J.E. Gray and B. Luan: J. Alloys Compd. , 2002, vol. 336, pp. 88113.
+K. Kimura, K. Nishii, and M. Karawada: Fujitsu Sci. Tech. J. , 2002, vol. 38, pp. 102-11.
+G. Hanko, S. Griesser, and T. Angerer: Aluminium , 2005, vol. 81, pp. 202-08.
+A. Ditze and C. Scharf: Erzmetall , 2005, vol. 58, pp. 3-8.
+C. Kammer: Magnesium Taschenbuch , Aluminium Verlag, Du ¨ sseldorf, 2000. 784 pp.
+Directive 2000/53/EC of the European Parliament and of the Council of 18 September 2000 on End-of-Life Vehicles, European Union, Brussels, 2000, pp. 34-43.
+Directive 2002/96/EC of the European Parliament and of the Council of 27 January 2003 on Waste Electrical and Electronic Equipment, European Union, Brussels, 2003, pp. 1-15.
+R. Lifset and T.E. Graedel: in Handbook of Industrial Ecology , R.U. Ayres and L.W. Ayres, eds., Edward Elgar, Cheltenham, 2002, pp. 3-15.
+M.A. Reuter, U.M.J. Boin, A. van Schaik, E. Verhoef, K. Heiskanen, Y. Yang, G. Georgalli: The Metrics of Material and Metal Ecology , Elsevier, Amsterdam, 2005, 706 pp.
+O. Ignatenko, A. van Schaik, and M.A. Reuter: Miner. Eng. , 2007, vol. 20, pp. 862-74.
+C.E.M. Meskers, Y. Xiao, R. Boom, U. Boin, and M.A. Reuter: Miner. Eng. , 2007, vol. 20, pp. 913-25.
+A. Javaid, E. Essadiqi, S. Bell, and B. Davis: Proc. Symp. Magnesium Technology , 2006, TMS, Warrendale, PA, 2006, pp. 7-12.
+Thermfact and GTT Technologies: FactSage, version 5.5, 19762007.
+A.K. Galwey and M.E. Brown: in Handbook of Thermal Analysis and Calorimetry, Vol. 1: Principles and Practice , M.E. Brown, ed., Elsevier, Amsterdam, 1998, pp. 147-71.
+H. Kissinger: Anal. Chem. , 1957, vol. 29, pp. 1702-06.
+A. Khawam and D. Flanagan: Thermochim. Acta , 2005, vol. 492, pp. 93-102.
+516-VOLUME 39B, JUNE 2008
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+A. Khawam and D.R. Flanagan: Thermochim. Acta , 2005, vol. 436, pp. 101-12.
+E. Jahnke and F. Lo ¨ sch: Tables of Higher Functions , B.G. Teuber, ed., Verlagsgesellschaft, Stuttgart, 1966, p. 18.
+S. Vyazovkin and N. Sbirrazzuoli: Macromol. Rapid Commun. , 2006, vol. 27, pp. 1515-32.
+G. Effenberg, A. Prince, N. Lebrun, H. Lukas, and M. Harmelin: in Landolt-Bo ¨rnstein New Series IV/11A Light Metal Systems, Part 3 , G. Effenberg and S. Ilyenko, eds., Springer Verlag, Berlin, 2005, pp. 191-209.
+F. Czerwinski: JOM , 2004, vol. 56, pp. 29-31.
+M. Maciejewski: Thermochim. Acta , 2000, vol. 355, pp. 145-54.
+P.J. Linstrom: NIST Chemistry WebBook, NIST Standard Reference Database 69 , National Institute of Standards and Technology, Gaithersburg, MD, 2005.
+D. Parra, L. Mercuri, J. Matos, H. Brito, and R. Romano: Thermochim. Acta , 2002, vol. 386, pp. 143-51.
+T. Arii, S. Ichihara, H. Nakagawa, and N. Fujii: Thermochim. Acta , 1998, vol. 319, pp. 139-49.
+S. Paul: Surface Coatings Science and Technology , 2nd ed., John Wiley & Sons, Chichester, 1996.
+J. Morancho, J. Salla, X. Ramis, and A. Cadenato: Thermochim. Acta , 2004, vol. 419, pp. 181-87.
+S. Vyazovkin: Thermochim. Acta , 2000, vol. 355, pp. 155-63.
+M. Brown, M. Maciejewski, S. Vyazovkin, R. Nomen, J. Sempere, A. Burnham, J. Opfermann, R. Strey, H. Anderson, A. Kemmler, R. Keuleers, J. Janssens, H. Desseyn, C. Li, T. Tang, B. Roduit,
+Malek, and T. Mitsuhashi: Thermochim. Acta , 2000, vol. 355, pp. 125-43.
+A. Kvithyld: Doctoral Thesis, Norwegian University of Science and Technology, Trondheim, 2003, 150 pp.
+C.E.M. Meskers, A. Kvithyld, M.A. Reuter, and T.A. Engh: Proc. Symp. Magnesium Technol ., 2006, TMS, Warrendale, PA, 2006, pp. 33-38.
+A. Kvithyld, J. Kaczorowski, and T. Engh: Light Metals , TMS, Warrendale, PA, 2004, pp. 151-56.
+T. Rosenqvist: Principles of Extractive Metallurgy , McGraw-Hill, New York, NY, 1983, p. 506.
+F.H. Hayes, A. Watson, and T. Dobatkina: in Landolt-Bo ¨rnstein New Series IV/11A Light Metal System, Part 3 , G. Effenberg and S. Ilyenko, eds., Springer, Berlin, 2005, pp. 187-90.
+V. Raghavan: J. Phase Equilib. Diffus. , 2005, vol. 26, pp. 624-28.
+P. Perrot: in Landolt-Bo ¨rnstein New Series IV/11A Light Metal Systems, Part 4 , G. Effenberg and S. Ilyenko, eds., Springer, Berlin, 2006, pp. 1-15.
+U. Boin: Metall. , 2001, vol. 55, pp. 283-86.
+G. Wall and M. Gong: Int. J. Exergy , 2001, vol. 1, pp. 128-45.
+J. Szargut: Exergy Method-Technical and Ecological Applications , WIT Press, Southampton, 2005, pp. 1-142.
+M.A. Rosen and I. Dincer: Int. J. Energy Res. , 1997, vol. 21, pp. 643-54.
+Standard Specification for Unalloyed Magnesium Ingot and Stick for Remelting (B92/B92M-01) , ASTM INTERNATIONAL, West Conshohocken, PA, 2001, pp. 1-2.
+METALLURGICAL AND MATERIALS TRANSACTIONS B
+VOLUME 39B, JUNE 2008-517
