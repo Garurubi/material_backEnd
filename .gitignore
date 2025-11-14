@@ -1,4 +1,5 @@
 .test_code/
+.logs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
