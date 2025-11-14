@@ -20,16 +20,16 @@ from langgraph.checkpoint.memory import InMemorySaver
 
 # Build the scoping workflow
 main_workflow = StateGraph(AgentState)
-cache_policy=CachePolicy(
- ttl=10800, # 3시간 동안 캐시 유지, None 이면 만료시간 없음
- # key_func=lambda x: hash(x["x"]) # 커스텀 캐시 키 생성 함수
-)
+# cache_policy=CachePolicy(
+#  ttl=10800, # 3시간 동안 캐시 유지, None 이면 만료시간 없음
+#  # key_func=lambda x: hash(x["x"]) # 커스텀 캐시 키 생성 함수
+# )
 
 # Add workflow nodes
 main_workflow.add_node("clarify_with_user", clarify_with_user)
-main_workflow.add_node("write_research_brief", write_research_brief, cache_policy=cache_policy)
+main_workflow.add_node("write_research_brief", write_research_brief)
 main_workflow.add_node("re_question", re_question)
-main_workflow.add_node("criteria_generation", criteria_generation, cache_policy=cache_policy)
+main_workflow.add_node("criteria_generation", criteria_generation)
 main_workflow.add_node("supervisor_agent", supervisor_agent)
 
 # Add workflow edges

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  fastAPI:
+    # 1. 'python' 공식 이미지를 기반으로 함
+    image: python:3.10-slim 
+    container_name: material_back
+    # 2. 현재 폴더(.)를 컨테이너 내부 /app 폴더에 통째로 마운트
+    volumes:
+      - .:/app 
+      - venv_data:/app/.venv
+    
+    # 3. 마운트 후 작업 디렉토리 설정
+    working_dir: /app
+    
+    # 4. 포트 연결 (호스트:컨테이너)
+    ports:
+      - "9876:9876"
+      
+    # 5. 컨테이너가 시작될 때 실행할 명령
+    #    - 매번 시작할 때마다 uv로 라이브러리를 설치하고 (느림)
+    #    - Gunicorn이 아닌 Uvicorn을 '--reload' 옵션으로 바로 실행
+    command: >
+      bash -c "pip install uv && 
+               uv sync && 
+               sh start.sh"
+
+# 2. 패키지를 저장할 'Named Volume' 정의
+volumes:
+  venv_data: 
+    # 'driver: local'이 기본값이므로, 비워두거나 이렇게 명시합니다.
+    driver: local

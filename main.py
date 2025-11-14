@@ -9,7 +9,13 @@ from pydantic import BaseModel
 from SupervisorAgent.main_graph import get_main_graph
 from langgraph.types import Command
 from fastapi.middleware.cors import CORSMiddleware
+import logging.config
+from logging_config import LOGGING_CONFIG
 
+# uvicorn access log 설정
+# logging.config.dictConfig(LOGGING_CONFIG) 
+
+# langfuse 설정
 langfuse = Langfuse(
     secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
     public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
@@ -75,4 +81,4 @@ async def material_chat(request: MaterialAgentRequest) -> MaterialAgentResponse:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=os.getenv("FASTAPI_HOST", 9876))
+    uvicorn.run("main:app", host="0.0.0.0", port=os.getenv("FASTAPI_HOST", 8000), reload=True)
