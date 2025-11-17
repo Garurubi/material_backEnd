@@ -1,10 +1,11 @@
 import operator
-from typing_extensions import Optional, Annotated, Sequence, TypedDict, Literal, List
+from typing_extensions import Optional, Annotated, Sequence, TypedDict, Literal, List, Dict
 from enum import Enum
 from langchain_core.messages import BaseMessage
 from langgraph.graph import MessagesState
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
+from DebateAgent import DebateSummary
 
 # ===== STRUCTURED OUTPUT SCHEMAS =====
 class Domain(str, Enum):
@@ -107,4 +108,7 @@ class AgentState(MessagesState):
     supervisor_messages: Annotated[Sequence[BaseMessage], add_messages]
     criteria: Optional[Criteria]
     user_feedback: Optional[str]
+    search_results: Optional[List[str]]
+    hypothesis_results: Optional[List[str]]
+    debate_summary: DebateSummary
     final_report: str

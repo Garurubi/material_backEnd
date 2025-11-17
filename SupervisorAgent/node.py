@@ -10,7 +10,8 @@ from .prompts import (
     paper_clarify_instructions,
     clarify_with_user_and_paper,
     evaluate_criteria_prompt,
-    feedback_intent_prompt
+    feedback_intent_prompt,
+    final_anwser_prompt
 )
 from .state import (
     AgentState, 
@@ -31,11 +32,11 @@ from langgraph.types import interrupt
 
 model = init_chat_model(model=os.getenv("SUPERVISOR_MODEL"), temperature=0.0)
 
-def clarify_with_user(state: AgentState) -> Command[Literal["re_question"]]:
+async def clarify_with_user(state: AgentState) -> Command[Literal["re_question"]]:
     # 질문만 들어오는 경우
     if state.get("messages") and not state.get("pdfs"):
         structured_output_model = model.with_structured_output(ClarifyWithUser)
-        response = structured_output_model.invoke([
+        response = await structured_output_model.ainvoke([
             HumanMessage(content=clarify_with_user_instructions.format(
                 messages=get_buffer_string(messages=state["messages"])
             ))
@@ -51,7 +52,7 @@ def clarify_with_user(state: AgentState) -> Command[Literal["re_question"]]:
         pdfs = state.get("pdfs")
         papers_str = "\n".join([f"Paper_id: {pdf['id']}\nTitle: {pdf['title']}\nAbstract: {pdf['abstract']}\n" for pdf in pdfs])
         structured_output_model = model.with_structured_output(ClarifyPaper)
-        response = structured_output_model.invoke([
+        response = await structured_output_model.ainvoke([
             SystemMessage(content=paper_system_instructions),
             HumanMessage(content=paper_clarify_instructions.format(
                 papers=papers_str
@@ -62,7 +63,7 @@ def clarify_with_user(state: AgentState) -> Command[Literal["re_question"]]:
         pdfs = state.get("pdfs")
         papers_str = "\n".join([f"Paper_id: {pdf['id']}\nTitle: {pdf['title']}\nAbstract: {pdf['abstract']}\n" for pdf in pdfs])
         structured_output_model = model.with_structured_output(ClassifiedPaperWithUser)
-        response = structured_output_model.invoke([
+        response = await structured_output_model.ainvoke([
             SystemMessage(content=paper_system_instructions),
             HumanMessage(content=clarify_with_user_and_paper.format(
                 messages=get_buffer_string(messages=state["messages"]),
@@ -83,12 +84,12 @@ def clarify_with_user(state: AgentState) -> Command[Literal["re_question"]]:
                 "classified_input": response}
     )
 
-def write_research_brief(state: AgentState) -> Command[Literal["criteria_generation"]]:
+async def write_research_brief(state: AgentState) -> Command[Literal["criteria_generation"]]:
     structured_output_model = model.with_structured_output(ResearchQuestion)
 
     tmpl = Template(transform_messages_into_research_topic_prompt)
 
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=tmpl.render(
             messages=get_buffer_string(state.get("messages", [])),
             papers="\n".join([f"{pdf.title}\n{pdf.abstract}\n" for pdf in state.get("pdfs", [])])
@@ -102,7 +103,7 @@ def write_research_brief(state: AgentState) -> Command[Literal["criteria_generat
         "supervisor_messages": [HumanMessage(content=f"{response.research_brief}")]}
     )
 
-def re_question(state: AgentState)-> Command[Literal["write_research_brief", "supervisor_agent"]]:
+async def re_question(state: AgentState)-> Command[Literal["write_research_brief", "supervisor_agent"]]:
     ai_message = state.get("messages", [AIMessage(content="")])[-1]
     
     # 유저에게 질문한후 피드백 받기
@@ -111,7 +112,7 @@ def re_question(state: AgentState)-> Command[Literal["write_research_brief", "su
     if state.get("criteria"):
         # 사용자의 피드백에서 평가기준을 승인
         structured_output_model = model.with_structured_output(UserFeedbackIntent)
-        response = structured_output_model.invoke([
+        response = await structured_output_model.ainvoke([
             HumanMessage(content=feedback_intent_prompt.format(
                 user_feedback=user_feedback,
             ))
@@ -135,14 +136,14 @@ def re_question(state: AgentState)-> Command[Literal["write_research_brief", "su
             update={"messages": [HumanMessage(content=user_feedback)]}
         )
 
-def criteria_generation(state: AgentState) -> Command[Literal["re_question"]]:
+async def criteria_generation(state: AgentState) -> Command[Literal["re_question"]]:
     user_feedback = state.get("user_feedback", "")
     # 평가기준 생성(research_brief로 생성)
     structured_output_model = model.with_structured_output(Criteria)
 
     tmpl = Template(evaluate_criteria_prompt)
 
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=tmpl.render(
             research_brief = state.get("research_brief", ""),
             user_feedback = user_feedback
@@ -184,50 +185,43 @@ async def supervisor_agent(state: AgentState):
         config={"run_name": "hypothesis_agent"}
     )
 
-    if hypothesis_state.get("proposal_output"):
+    if proposal_output:=hypothesis_state.get("proposal_output"):
+        hypothesis_result = []
+        for val1 in proposal_output.values():
+            for val2 in val1.values():
+                hypothesis_result.append(val2.get("output"))
+
         # 토론 agent 호출
-        debate_state = debate_graph.invoke(
+        debate_state = await debate_graph.ainvoke(
             {
-                "hypothesis": hypothesis_state["proposal_output"],
-                "search_results": data_collect_state.get("response", {})
+                "hypothesis": "\n".join(hypothesis_result)
             },
             config={"run_name": "debate_agent"}
         )
 
-        return {"final_report": debate_state.get("debate_summary")}
-    else:
-        return {"final_report": "No hypothesis proposal generated."}
+        return Command(
+            goto="final_report",
+            update={
+                    "search_results" : data_collect_state.get("response", []),
+                    "debate_summary" : debate_state.get("debate_summary"),
+                    "hypothesis_results": hypothesis_result
+            }
+        )
+    else :
+        return Command(
+            goto="final_report",
+            update={"search_results" : data_collect_state.get("response", [])}
+        )
 
+async def make_final_report(state: AgentState):
+    tmpl = Template(final_anwser_prompt)
+    response = await model.ainvoke([
+        HumanMessage(content=tmpl.render(
+            query = state.get("messages")[0].content,
+            search_results = state.get("search_results"),
+            hypothesis_results = state.get("hypothesis_results"),
+            debate_summary = state.get("debate_summary"),
+        ))
+    ])
 
-    # # 데이터 수집 agent 호출
-    # data_collect_graph = build_data_collect_graph()
-    # collect_coro = data_collect_graph.ainvoke(
-    #     {"requirements": state.get("research_brief")},
-    #     config={"run_name": "data_collect_agent"}
-    # )
-    # # 가설생성 agent 호출
-    # hypo_coro = hypothesis_workflow.ainvoke(
-    #     {
-    #         "hypothesis_query": state.get("research_brief"),
-    #         "step_timestamp": {},
-    #     },
-    #     config={"run_name": "hypothesis_agent"}
-    # )
-    # # 데이터 수집 에이전트, 가설생성 에이전트 동시 호출한후 대기
-    # data_collect_state, hypothesis_state = await asyncio.gather(
-    #     collect_coro, hypo_coro, return_exceptions=False
-    # )
-
-    # if hypothesis_state.get("proposal_output"):
-    #     # 토론 agent 호출
-    #     debate_state = debate_graph.invoke(
-    #         {
-    #             "hypothesis": hypothesis_state["proposal_output"],
-    #             "search_results": data_collect_state.get("response", {})
-    #         },
-    #         config={"run_name": "debate_agent"}
-    #     )
-
-    #     return {"final_report": debate_state.get("debate_summary")}
-    # else:
-    #     return {"final_report": "No hypothesis proposal generated."}
+    return {"final_report": response.content}

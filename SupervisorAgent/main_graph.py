@@ -12,6 +12,7 @@ from .node import (
     re_question,
     supervisor_agent,
     write_research_brief,
+    make_final_report
 )
 from .state import AgentState
 
@@ -31,10 +32,11 @@ main_workflow.add_node("write_research_brief", write_research_brief)
 main_workflow.add_node("re_question", re_question)
 main_workflow.add_node("criteria_generation", criteria_generation)
 main_workflow.add_node("supervisor_agent", supervisor_agent)
+main_workflow.add_node("final_report", make_final_report)
 
 # Add workflow edges
 main_workflow.add_edge(START, "clarify_with_user")
-main_workflow.add_edge("supervisor_agent", END)
+main_workflow.add_edge("final_report", END)
 
 # DB_URI = "redis://192.168.2.135:6379"  # Original Redis endpoint
 

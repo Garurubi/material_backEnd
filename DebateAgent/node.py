@@ -29,9 +29,9 @@ model = init_chat_model(model=os.getenv("DEBATE_MODEL"))
 def make_debate_history(turns):
     return Template(debate_turn_jinja_format).render(turns = turns)
 
-def summary_hypothesis(state: DebateState) -> Command[Literal["proponent"]]:
+async def summary_hypothesis(state: DebateState) -> Command[Literal["proponent"]]:
     """토론 주제(가설) 요약 노드"""
-    response = model.invoke([
+    response = await model.ainvoke([
         HumanMessage(content=hypothesis_summary_prompt.format(hypothesis=state.get("hypothesis", "")))          
     ])
 
@@ -40,13 +40,13 @@ def summary_hypothesis(state: DebateState) -> Command[Literal["proponent"]]:
         update={"topic": response.content.strip()}
     )
 
-def proponent(state: DebateState) -> Command[Literal["opponent"]]:
+async def proponent(state: DebateState) -> Command[Literal["opponent"]]:
     """찬성 토론자 역할을 수행하는 노드"""
     # debate_history 정리
     debate_history = make_debate_history(turns = state.get("turns", []))
 
     structured_output_model = model.with_structured_output(DebateUtteranceLLM)
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=proponent_prompt.format(
             topic=state.get("topic", ""),
             debate_history=debate_history
@@ -63,12 +63,12 @@ def proponent(state: DebateState) -> Command[Literal["opponent"]]:
         }
     )
 
-def opponent(state: DebateState) -> Command[Literal["proponent", "moderator"]]:
+async def opponent(state: DebateState) -> Command[Literal["proponent", "moderator"]]:
     """반대 토론자 역할을 수행하는 노드"""
     debate_history = Template(debate_turn_jinja_format).render(turns = state.get("turns", []))
 
     structured_output_model = model.with_structured_output(DebateUtteranceLLM)
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=opponent_prompt.format(
             topic=state.get("topic", ""),
             debate_history=debate_history
@@ -95,12 +95,12 @@ def opponent(state: DebateState) -> Command[Literal["proponent", "moderator"]]:
             }
         )
 
-def moderator(state: DebateState) -> Command[Literal["proponent", "summary_debate"]]:
+async def moderator(state: DebateState) -> Command[Literal["proponent", "summary_debate"]]:
     """사회자 역할을 수행하는 노드"""
     debate_history = Template(debate_turn_jinja_format).render(turns = state.get("turns", []))
 
     structured_output_model = model.with_structured_output(ModeratorDecision)
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=moderator_prompt.format(
             debate_history=debate_history
         ))
@@ -117,11 +117,11 @@ def moderator(state: DebateState) -> Command[Literal["proponent", "summary_debat
             update={"moderator_decisions": response}
         )
 
-def summary_debate(state: DebateState) -> dict:
+async def summary_debate(state: DebateState) -> dict:
     """토론 결론을 정리하고 노드"""
     debate_history = Template(debate_turn_jinja_format).render(turns = state.get("turns", []))
     structured_output_model = model.with_structured_output(DebateSummary)
-    response = structured_output_model.invoke([
+    response = await structured_output_model.ainvoke([
         HumanMessage(content=debate_summarize_prompt.format(
             debate_history=debate_history
         ))

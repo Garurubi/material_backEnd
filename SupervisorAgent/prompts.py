@@ -249,3 +249,53 @@ User feedback:
   "intent": "approve" | "revise"
 }}
 """
+
+final_anwser_prompt = """You are the Final Answer Agent.
+
+Your task is to generate the best possible answer to the user's query using
+the following structured information:
+
+1) <QUERY>             → 사용자가 입력한 질문
+2) <SEARCH_RESULTS>    → 데이터베이스/문헌 검색 결과
+3) <HYPOTHESIS>        → 가설 생성 에이전트가 제안한 가설
+4) <DEBATE_SUMMARY>    → 토론 에이전트의 찬반·판정 요약
+
+Follow these rules:
+- All statements must be consistent with SEARCH_RESULTS.
+- If HYPOTHESIS conflicts with the data, explicitly point out the conflict.
+- If DEBATE_SUMMARY is inconclusive, propose next steps.
+- Output must be concise, structured, and domain-expert level.
+
+<QUERY>
+{{ query }}
+</QUERY>
+
+{% if search_result %}
+<SEARCH_RESULTS>
+{% for s in search_result %}
+<SEARCH_RESULT index="{{ loop.index }}">
+{{ s }}
+</SEARCH_RESULT>
+{% endfor %}
+</SEARCH_RESULTS>
+{% endif %}
+
+{% if hypothesis %}
+<HYPOTHESIS>
+{% for h in hypothesis %}
+<HYPOTHESIS_ITEM index="{{ loop.index }}">
+{{ h }}
+</HYPOTHESIS_ITEM>
+{% endfor %}
+</HYPOTHESIS>
+{% endif %}
+
+{% if debate_summary %}
+<DEBATE_SUMMARY>
+  <ISSUE>{{ debate_summary.issue }}</ISSUE>
+  <PROPONENT_SUMMARY>{{ debate_summary.proponent_summary }}</PROPONENT_SUMMARY>
+  <OPPONENT_SUMMARY>{{ debate_summary.opponent_summary }}</OPPONENT_SUMMARY>
+  <AGREEMENT_STATUS>{{ debate_summary.agreement_status }}</AGREEMENT_STATUS>
+</DEBATE_SUMMARY>
+{% endif %}
+"""
