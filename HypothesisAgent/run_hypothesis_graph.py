@@ -30,7 +30,7 @@ if missing_vars:
 # Graph State
 class HypothesisState(TypedDict):
 	hypothesis_query: str
-	search_docs: pd.DataFrame
+	search_docs: Dict
 	hierarchy_output: Dict
 	emerging_output: Dict
 	proposal_output: Dict
@@ -101,6 +101,12 @@ async def run_emerging(state: HypothesisState) -> HypothesisState:
 	emerging_output = await emerging_tool.run_emerging_pipeline(vector_df=search_docs, output_jsonl=hierarchy_output)
 	state["step_timestamp"]["run_emerging"] = f"Node 실행 시간: {(time.time()-start_time):.4f} 초"
 
+	# dataframe 직렬화 가능하게 처리
+	new_value = {}
+	for col, df in emerging_output.get("l0_docs", {}).items():
+		new_value[col] = df.to_dict(orient="records")
+	emerging_output["l0_docs"] = new_value
+
 	return {"emerging_output": emerging_output}
 
 
@@ -108,7 +114,13 @@ async def run_proposal(state: HypothesisState) -> HypothesisState:
 	start_time = time.time()
 
 	emerging_output = state.get("emerging_output")
-	proposal_output = await proposal_tool.pr_run_all(emerging_output["l0_docs"])
+
+	l0_docs = {}
+	# dataframe으로 변환
+	for col, records in emerging_output.get("l0_docs", {}).items():
+		l0_docs[col] = pd.DataFrame.from_records(records)
+
+	proposal_output = await proposal_tool.pr_run_all(l0_docs)
 
 	state["step_timestamp"]["run_proposal"] = f"Node 실행 시간: {(time.time()-start_time):.4f} 초"
 
