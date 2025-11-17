@@ -218,6 +218,7 @@ async def make_final_report(state: AgentState):
     response = await model.ainvoke([
         HumanMessage(content=tmpl.render(
             query = state.get("messages")[0].content,
+            criteria = state.get("criteria").weight,
             search_results = state.get("search_results"),
             hypothesis_results = state.get("hypothesis_results"),
             debate_summary = state.get("debate_summary"),
