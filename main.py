@@ -81,4 +81,4 @@ async def material_chat(request: MaterialAgentRequest) -> MaterialAgentResponse:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8000)), reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8000)))
