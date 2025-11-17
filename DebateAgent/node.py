@@ -106,7 +106,7 @@ def moderator(state: DebateState) -> Command[Literal["proponent", "summary_debat
         ))
     ])
 
-    if response.decision == Decision.CONTINUE:
+    if response.decision == Decision.CONTINUE and state["turn_id"] < 12:
         return Command(
             goto="proponent",
             update={"moderator_decisions": response}
