@@ -1,14 +1,22 @@
+import os
 from dotenv import load_dotenv
 load_dotenv()
-import os
-from fastapi import FastAPI
+from pydantic import BaseModel
+
+from fastapi import FastAPI, Query, Request, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+
 from langchain_core.messages import HumanMessage
+
 from langfuse import Langfuse, propagate_attributes
 from langfuse.langchain import CallbackHandler
-from pydantic import BaseModel
-from SupervisorAgent.main_graph import get_main_graph
+
 from langgraph.types import Command
-from fastapi.middleware.cors import CORSMiddleware
+
+from graph_stream.streamer import sse_event_generator
+from SupervisorAgent.main_graph import get_main_graph
+
 import logging.config
 from logging_config import LOGGING_CONFIG
 
@@ -78,6 +86,29 @@ async def material_chat(request: MaterialAgentRequest) -> MaterialAgentResponse:
                     return MaterialAgentResponse(response_str=interrupt_result)
                 else:
                     return MaterialAgentResponse(response_str=resume_result["final_report"])
+
+@app.get("/material_chat/{conversation_id}")
+async def material_chat_stream(
+    conversation_id: str,
+    query: str = Query(..., description="Answer to resume interrupted workflow")
+    ) -> StreamingResponse:
+    """Stream in SSE(Server-Sent Events) mode"""
+    
+    config = {"configurable": {"thread_id": conversation_id}, "callbacks": [langfuse_handler]}
+    graph = await get_main_graph()
+
+    with langfuse.start_as_current_span(name="langgraph-call"):
+        
+        with propagate_attributes(session_id=conversation_id):
+            return StreamingResponse(
+                sse_event_generator(graph, config, query),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no",
+                }
+            )
 
 if __name__ == "__main__":
     import uvicorn
