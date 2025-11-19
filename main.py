@@ -116,4 +116,4 @@ async def material_chat_stream(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8000)))
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8593)))

@@ -12,7 +12,11 @@ from .node import (
     re_question,
     supervisor_agent,
     write_research_brief,
-    make_final_report
+    make_final_report,
+    sac_search_agent,
+    hypothesis_agent,
+    debate_agent,
+    perovskite_search_agent
 )
 from .state import AgentState
 
@@ -32,13 +36,26 @@ main_workflow.add_node("write_research_brief", write_research_brief)
 main_workflow.add_node("re_question", re_question)
 main_workflow.add_node("criteria_generation", criteria_generation)
 main_workflow.add_node("supervisor_agent", supervisor_agent)
+main_workflow.add_node("sac_search_agent", sac_search_agent)
+main_workflow.add_node("hypothesis_agent", hypothesis_agent)
+main_workflow.add_node("debate_agent", debate_agent)
+main_workflow.add_node("perovskite_search_agent", perovskite_search_agent)
 main_workflow.add_node("final_report", make_final_report)
 
 # Add workflow edges
 main_workflow.add_edge(START, "clarify_with_user")
+main_workflow.add_conditional_edges("supervisor_agent",
+                                    lambda state: state["next_agents"][-1],
+                                    {
+                                        "sac_search_agent": "sac_search_agent",
+                                        "hypothesis_agent": "hypothesis_agent",
+                                        "debate_agent": "debate_agent",
+                                        "perovskite_search_agent": "perovskite_search_agent",
+                                        "final_report": "final_report"
+                                    })
 main_workflow.add_edge("final_report", END)
 
-# DB_URI = "redis://192.168.2.135:6379"  # Original Redis endpoint
+DB_URI = "redis://192.168.2.135:6379"  # Original Redis endpoint
 
 _main_graph: Any | None = None
 _checkpointer: Optional[InMemorySaver] = None

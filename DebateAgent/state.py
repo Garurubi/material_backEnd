@@ -1,9 +1,10 @@
-from typing import TypedDict, List, Dict, Any, Literal, Optional
+from typing import TypedDict, List, Sequence
 from typing_extensions import Annotated
 from langgraph.graph import MessagesState
-from pydantic import BaseModel, Field, conint
+from pydantic import BaseModel, Field
 from enum import Enum
 import operator
+from langchain_core.messages import BaseMessage
 
 # ===== STRUCTURED OUTPUT SCHEMAS =====
 class Role(str, Enum):
@@ -57,8 +58,9 @@ class SearchResult(TypedDict):
     search_reactions: str
     search_from_mongoDB: str
 
-class DebateState(MessagesState, total=False):
-    hypothesis: str
+class DebateState(TypedDict, total=False):
+    user_query: str
+    hypothesis_results : List[str]
     search_results: SearchResult
     topic: str
     turn_id: int = 0

@@ -250,6 +250,115 @@ User feedback:
 }}
 """
 
+sac_supervisor_prompt = """You are the "Supervisor Agent" for a Novel Materials Discovery research pipeline.
+Your sole responsibility is to analyze the current pipeline state and select the next sub-agent to execute.
+Do NOT answer the scientific question directly. ONLY decide which agent should run next.
+
+[Sub-Agent List]
+1) SAC_SEARCH_AGENT ("sac_search_agent")
+  - Searches external/internal databases and literature for SAC-related data.
+2) HYPOTHESIS_AGENT ("hypothesis_agent")
+  - Generate emergent scientific hypotheses by analyzing retrieved research data
+3) DEBATE_AGENT ("debate_agent")
+  - Conducts a structured debate (proponent vs. opponent + evaluator) to evaluate hypothesis validity, strengths, weaknesses, uncertainties, and alternative interpretations.
+4) FINAL_REPORT ("final_report")
+  - Terminate the pipeline and return the final result when the best possible answer or conclusion has been prepared based on all available information.
+
+[Input State]
+You will be given the following fields:
+
+- <QUERY> : The user’s original scientific question.
+- <SAC_SEARCH_RESULTS>: Summary of data retrieved by the SAC search agent (may be empty).
+- <HYPOTHESES>: List of generated hypotheses (may be empty).
+- <DEBATE_SUMMARY>: Summary of the debate agent’s evaluation (may be empty).
+
+[Decision Rules]
+1. Select "final_report" when:
+  - The current information appears sufficient to answer the user’s question with a coherent, defensible conclusion.
+  - SEARCH_RESULTS, HYPOTHESES, and DEBATE_SUMMARY are all present.
+2. Select "debate_agent" when:
+  - hypotheses exist, OR
+  - Existing hypotheses show uncertainty or require evaluation before a final decision.
+3. Select "hypothesis_agent" when:
+  - SEARCH_RESULTS exist but no hypothesis is available, OR
+  - when there is no hypothesis or the search results are difficult to answer user queries.
+4. Select "sac_search_agent" when:
+  - When SAC_SEARCH_RESULTS is empty or when the user query pertains to the SAC domain.
+
+<QUERY>
+{{ query }}
+</QUERY>
+
+{% if search_results %}
+<SEARCH_RESULTS>
+{% if "sac_search_results" in search_results %}
+<SAC_SEARCH_RESULTS>
+{% for k, v in search_results["sac_search_results"].items() %}
+  {% if k == "search_reactions" %}
+    <REACTION_RESULTS>{{ v }}</REACTION_RESULTS>
+  {% elif k == "search_from_mongoDB" %}
+    {% if v.db_result %}
+        <MONGO_DB_RESULTS>{{ v.db_result }}</MONGO_DB_RESULTS>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</SAC_SEARCH_RESULTS>
+{% endif %}
+</SEARCH_RESULTS>
+{% endif %}
+
+{% if hypothesis_results %}
+<HYPOTHESES>
+{% for h in hypothesis_results %}
+<HYPOTHESIS_ITEM index="{{ loop.index }}">
+{{ h }}
+</HYPOTHESIS_ITEM>
+{% endfor %}
+</HYPOTHESES>
+{% endif %}
+
+{% if debate_summary %}
+<DEBATE_SUMMARY>
+  <ISSUE>{{ debate_summary.issue }}</ISSUE>
+  <PROPONENT_SUMMARY>{{ debate_summary.proponent_summary }}</PROPONENT_SUMMARY>
+  <OPPONENT_SUMMARY>{{ debate_summary.opponent_summary }}</OPPONENT_SUMMARY>
+  <AGREEMENT_STATUS>{{ debate_summary.agreement_status }}</AGREEMENT_STATUS>
+</DEBATE_SUMMARY>
+{% endif %}
+"""
+
+perovskite_supervisor_prompt = """You are the "Supervisor Agent" for a Novel Materials Discovery research pipeline focused on Perovskite materials.
+Your sole responsibility is to analyze the current pipeline state and select the next sub-agent to execute.
+Do NOT answer the scientific question directly. ONLY decide which agent should run next.
+
+[Sub-Agent List]
+1) PEROVSKITE_SEARCH_AGENT ("perovskite_search_agent")
+  - Searches external/internal databases and literature for Perovskite-related data.
+2) FINAL_REPORT ("final_report")
+  - Terminate the pipeline and return the final result when the best possible answer or conclusion has been prepared based on all available information.
+
+[Input State]
+- <PEROVSKITE_SEARCH_RESULTS> : Summary of data retrieved by the Perovskite search agent (may be empty).
+
+[Decision Rules]
+1. Select "final_report" when:
+  - The current information appears sufficient to answer the user’s question with a coherent, defensible conclusion.
+2. Select "perovskite_search_agent" when:
+  - When PEROVSKITE_SEARCH_RESULTS is empty or when the user query pertains to the Perovskite domain.
+
+<QUERY>
+{{ query }}
+</QUERY>
+  
+{% if search_results %}
+<SEARCH_RESULTS>
+{% if "perovskite_search_results" in search_results %}
+<PEROVSKITE_SEARCH_RESULTS>{{search_results["perovskite_search_results"]}}</PEROVSKITE_SEARCH_RESULTS>
+{% endif %}
+</SEARCH_RESULTS>
+{% endif %}
+"""
+
 final_anwser_prompt = """You are the Final Answer Agent.
 
 Your task is to generate the best possible answer to the user's query using
@@ -257,7 +366,7 @@ the following structured information:
 
 1) <QUERY>             → 사용자가 입력한 질문
 2) <SEARCH_RESULTS>    → 데이터베이스/문헌 검색 결과
-3) <HYPOTHESIS>        → 가설 생성 에이전트가 제안한 가설
+3) <HYPOTHESES>        → 가설 생성 에이전트가 제안한 가설
 4) <DEBATE_SUMMARY>    → 토론 에이전트의 찬반·판정 요약
 
 Follow these rules:
@@ -273,7 +382,9 @@ Follow these rules:
 
 {% if search_results %}
 <SEARCH_RESULTS>
-{% for k, v in search_results.items() %}
+{% if "sac_search_results" in search_results %}
+<SAC_SEARCH_RESULTS>
+{% for k, v in search_results["sac_search_results"].items() %}
   {% if k == "search_reactions" %}
     <REACTION_RESULTS>{{ v }}</REACTION_RESULTS>
   {% elif k == "search_from_mongoDB" %}
@@ -282,17 +393,22 @@ Follow these rules:
     {% endif %}
   {% endif %}
 {% endfor %}
+</SAC_SEARCH_RESULTS>
+{% endif %}
+{% if "perovskite_search_results" in search_results %}
+<PEROVSKITE_SEARCH_RESULTS>{{search_results["perovskite_search_results"]}}</PEROVSKITE_SEARCH_RESULTS>
+{% endif %}
 </SEARCH_RESULTS>
 {% endif %}
 
 {% if hypothesis_results %}
-<HYPOTHESIS>
+<HYPOTHESES>
 {% for h in hypothesis_results %}
 <HYPOTHESIS_ITEM index="{{ loop.index }}">
 {{ h }}
 </HYPOTHESIS_ITEM>
 {% endfor %}
-</HYPOTHESIS>
+</HYPOTHESES>
 {% endif %}
 
 {% if debate_summary %}

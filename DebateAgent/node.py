@@ -29,10 +29,16 @@ model = init_chat_model(model=os.getenv("DEBATE_MODEL"))
 def make_debate_history(turns):
     return Template(debate_turn_jinja_format).render(turns = turns)
 
-async def summary_hypothesis(state: DebateState) -> Command[Literal["proponent"]]:
+async def debate_topic_summary(state: DebateState) -> Command[Literal["proponent"]]:
     """토론 주제(가설) 요약 노드"""
+    tmpl = Template(debate_turn_jinja_format)
+
     response = await model.ainvoke([
-        HumanMessage(content=hypothesis_summary_prompt.format(hypothesis=state.get("hypothesis", "")))          
+        HumanMessage(content=tmpl.render(
+            query = state.get("user_query", ""),
+            search_results = state.get("search_results", {}),
+            hypothesis_results = state.get("hypothesis_results", []),
+        ))          
     ])
 
     return Command(
