@@ -11,6 +11,8 @@ from .prompts import (
     clarify_with_user_and_paper,
     evaluate_criteria_prompt,
     feedback_intent_prompt,
+    sac_supervisor_prompt,
+    perovskite_supervisor_prompt,
     final_anwser_prompt
 )
 from .state import (
@@ -20,15 +22,18 @@ from .state import (
     ClarifyPaper,
     ClassifiedPaperWithUser,
     Criteria,
-    UserFeedbackIntent
+    UserFeedbackIntent,
+    RouteResponse,
+    Domain
 )
 from jinja2 import Template
 from DataCollectAgent import build_data_collect_graph
 from HypothesisAgent import hypothesis_workflow
 from DebateAgent import debate_graph
+from PerovskiteSearchAgent import perovskite_workflow
 import os
-import asyncio
 from langgraph.types import interrupt
+
 
 model = init_chat_model(model=os.getenv("SUPERVISOR_MODEL"), temperature=0.0)
 
@@ -167,16 +172,54 @@ async def criteria_generation(state: AgentState) -> Command[Literal["re_question
         )
     
 async def supervisor_agent(state: AgentState):
+    # 무한 재귀 방지(하위 에이전트 호출 횟수 제한)
+    supervisor_recursion = state.get("supervisor_recursion", 0)
+    if supervisor_recursion >= 3:
+        return {"next_agents": ["final_report"]}
+    
     # pdf가 있다면 데이터 추출 agent 호출
     if state.get("pdfs"):
         pass
     
+    classified_input = state.get("classified_input")
+    if classified_input.query_domain == Domain.SAC:
+        # sac supervisor agent
+        tmpl = Template(sac_supervisor_prompt)
+        structured_output_model = model.with_structured_output(RouteResponse)
+        response = await structured_output_model.ainvoke([
+            HumanMessage(content=tmpl.render(
+                query = state.get("messages")[0].content,
+                search_results = state.get("search_results"),
+                hypothesis_results = state.get("hypothesis_results"),
+                debate_summary = state.get("debate_summary"),
+            ))
+        ])
+    elif classified_input.query_domain == Domain.PV_TANDEM:
+        # perovskite supervisor agent
+        tmpl = Template(perovskite_supervisor_prompt)
+        structured_output_model = model.with_structured_output(RouteResponse)
+        response = await structured_output_model.ainvoke([
+            HumanMessage(content=tmpl.render(
+                query = state.get("messages")[0].content,
+                search_results = state.get("search_results")
+            ))
+        ])
+    
+    return {"next_agents": [response.next_agent],
+            "supervisor_recursion": supervisor_recursion + 1}
+
+async def sac_search_agent(state: AgentState):
     data_collect_graph = build_data_collect_graph()
     data_collect_state = await data_collect_graph.ainvoke(
         {"requirements": state.get("messages")[0].content},
         config={"run_name": "data_collect_agent"}
     )
+    return Command(
+        goto="supervisor_agent",
+        update={"search_results" : {"sac_search_results" : data_collect_state.get("response", [])}}
+    )
 
+async def hypothesis_agent(state: AgentState):
     hypothesis_state = await hypothesis_workflow.ainvoke(
         {
             "hypothesis_query": state.get("messages")[0].content,
@@ -191,27 +234,43 @@ async def supervisor_agent(state: AgentState):
             for val2 in val1.values():
                 hypothesis_result.append(val2.get("output"))
 
-        # 토론 agent 호출
-        debate_state = await debate_graph.ainvoke(
-            {
-                "hypothesis": "\n".join(hypothesis_result)
-            },
-            config={"run_name": "debate_agent"}
+        return Command(
+            goto="supervisor_agent",
+            update={"hypothesis_results" : hypothesis_result}
+        )
+    else:
+        return Command(
+            goto="supervisor_agent",
+            update={"hypothesis_results" : []}
         )
 
-        return Command(
-            goto="final_report",
-            update={
-                    "search_results" : data_collect_state.get("response", []),
-                    "debate_summary" : debate_state.get("debate_summary"),
-                    "hypothesis_results": hypothesis_result
-            }
-        )
-    else :
-        return Command(
-            goto="final_report",
-            update={"search_results" : data_collect_state.get("response", [])}
-        )
+async def debate_agent(state: AgentState):
+    debate_state = await debate_graph.ainvoke(
+        {
+            "user_query" : state.get("messages")[0].content,
+            "hypothesis_results" : state.get("hypothesis_results", []),
+            "search_results" : state.get("search_results", {}),
+        },
+        config={"run_name": "debate_agent"}
+    )
+    
+    return Command(
+        goto="supervisor_agent",
+        update={"debate_summary" : debate_state.get("debate_summary")}
+    )
+
+async def perovskite_search_agent(state: AgentState):
+    perovskite_state = await perovskite_workflow.ainvoke(
+        {
+            "messages" : [state.get("messages")[0].content],
+        },
+        config={"run_name": "perovskite_search_agent"}
+    )
+    
+    return Command(
+        goto="supervisor_agent",
+        update={"search_results" : {"perovskite_search_results" : perovskite_state["messages"][-1].content}}
+    )
 
 async def make_final_report(state: AgentState):
     tmpl = Template(final_anwser_prompt)
