@@ -1,5 +1,5 @@
 import operator
-from typing_extensions import Optional, Annotated, Sequence, TypedDict, Literal, List, Dict
+from typing_extensions import Optional, Annotated, Sequence, TypedDict, Any, List, Dict
 from enum import Enum
 from langchain_core.messages import BaseMessage
 from langgraph.graph import MessagesState
@@ -94,12 +94,29 @@ class Criteria(BaseModel):
     rationale : Rationale
     feedback_question : str
 
+class SubAgents(str, Enum):
+    SAC_SEARCH_AGENT = "sac_search_agent"
+    PEROVSKITE_SEARCH_AGENT = "perovskite_search_agent"
+    HYPOTHESIS_AGENT = "hypothesis_agent"
+    DEBATE_AGENT = "debate_agent"
+    FINAL_REPORT = "final_report"
+
+class RouteResponse(BaseModel):
+    next_agent : SubAgents
+    reason : str = Field(
+        description="1–2 sentence explanation in Korean for why this agent was selected"
+    )
+
 # ===== state classes =====
 class PdfReference(TypedDict):
     id: str
     title: str
     abstract : str
     classification: Optional[str]
+
+def merge_search_results(existing: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]:
+    existing = existing or {}
+    return {**existing, **new}
 
 class AgentState(MessagesState):
     pdfs : List[PdfReference]
@@ -108,7 +125,9 @@ class AgentState(MessagesState):
     supervisor_messages: Annotated[Sequence[BaseMessage], add_messages]
     criteria: Optional[Criteria]
     user_feedback: Optional[str]
-    search_results: Optional[List[str]]
+    search_results: Annotated[Dict[str, Any], merge_search_results]
     hypothesis_results: Optional[List[str]]
-    debate_summary: DebateSummary
+    debate_summary: Optional[DebateSummary]
+    next_agents : Annotated[List[SubAgents], operator.add]
+    supervisor_recursion: int
     final_report: str

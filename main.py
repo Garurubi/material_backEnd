@@ -33,7 +33,7 @@ langfuse_handler = CallbackHandler()
 
 origins = [
     "http://localhost:8501",
-    "http://192.168.2.135:8501"
+    "http://192.168.2.135:8501",
     "http://220.89.167.202:53984"
 ]
 
@@ -42,7 +42,7 @@ app = FastAPI(title="Material Agent", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -116,4 +116,4 @@ async def material_chat_stream(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8000)))
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("FASTAPI_HOST", 8593)))
