@@ -90,25 +90,29 @@ async def material_chat(request: MaterialAgentRequest) -> MaterialAgentResponse:
 @app.get("/material_chat/{conversation_id}")
 async def material_chat_stream(
     conversation_id: str,
+    # request: Request,
     query: str = Query(..., description="Answer to resume interrupted workflow")
     ) -> StreamingResponse:
     """Stream in SSE(Server-Sent Events) mode"""
-    
+
     config = {"configurable": {"thread_id": conversation_id}, "callbacks": [langfuse_handler]}
     graph = await get_main_graph()
 
-    with langfuse.start_as_current_span(name="langgraph-call"):
-        
-        with propagate_attributes(session_id=conversation_id):
-            return StreamingResponse(
-                sse_event_generator(graph, config, query),
-                media_type="text/event-stream",
-                headers={
-                    "Cache-Control": "no-cache",
-                    "Connection": "keep-alive",
-                    "X-Accel-Buffering": "no",
-                }
-            )
+    print(conversation_id, "/", query)
+    async def event_gen():
+        with langfuse.start_as_current_span(name="langgraph-call"):
+            with propagate_attributes(session_id=conversation_id):
+                async for event in sse_event_generator(graph, {"configurable": {"thread_id": conversation_id}, "callbacks": [langfuse_handler]}, query):
+                    yield event
+    
+    return StreamingResponse(
+        event_gen(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+        }
+    )
 
 if __name__ == "__main__":
     import uvicorn
