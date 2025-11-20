@@ -20,3 +20,5 @@ exec uv run gunicorn main:app \
   --bind "${HOST}:${PORT}" \
   --timeout "${TIMEOUT}" \
   --log-level "${LOG_LEVEL}"
+  --access-logfile '-' \
+  --error-logfile '-'

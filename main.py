@@ -25,7 +25,7 @@ langfuse_handler = CallbackHandler()
 
 origins = [
     "http://localhost:8501",
-    "http://192.168.2.135:8501"
+    "http://192.168.2.135:8501",
     "http://220.89.167.202:53984"
 ]
 
@@ -34,7 +34,7 @@ app = FastAPI(title="Material Agent", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

@@ -1,5 +1,6 @@
 services:
   material-backend:
+    image: material-back:1.0
     build:
       context: .
       dockerfile: Dockerfile
