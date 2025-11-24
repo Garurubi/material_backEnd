@@ -69,7 +69,7 @@ A user asks a question about a single-atom catalyst (SAC) for a specific electro
    - **Do not hardcode any root field name.** Instead, use the **top-level key of the provided JSON schema** as the prefix for all field paths when constructing the query.
 
 3. Generate a MongoDB query that retrieves documents satisfying:
-   - The schema is provided in the <schema> section and includes a JsonObject that specifies the top-level path of the catalyst document.
+   - The schema is provided in the <schema> section and includes a "data" that specifies the top-level path of the catalyst document.
    - The electrochemical reaction matches the user's target reaction.
    - Use a case-insensitive regex to cover multiple naming variations of the reaction (e.g., "HER", "Hydrogen evolution reaction", "Hydrogen Evolution Reaction (HER)").
    - Any other relevant conditions based on the user’s question.
