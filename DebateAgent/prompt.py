@@ -6,7 +6,7 @@ debate_turn_jinja_format = """
 </Turn>
 {% endfor %}"""
 
-hypothesis_summary_prompt = """You are the **Debate Topic Generator**.
+debate_topic_prompt = """You are the **Debate Topic Generator**.
 
 Your task is to read:
 <QUERY>          # The user’s scientific question or problem context
