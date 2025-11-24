@@ -11,7 +11,7 @@ from bson import json_util
 from langchain.tools import tool
 
  
-from ..schemas.sacs.electro_chemical import catalyst
+from ..schemas.sacs.electro_chemical import Experiment
 from ..state import collectState
 from ..prompts import db_query_output_format,db_query_generate_format , new_db_query_generate_format
 
@@ -22,12 +22,14 @@ class MongoQuery(BaseModel):
 #-------------------------------- 사전 설정 -----------------------------------
 
 # load_dotenv()
-client = MongoClient("mongodb://mongodb:dnpdlqmdnpdj@192.168.2.131:27017/")  # 기본 포트 27017
+# client = MongoClient("mongodb://mongodb:dnpdlqmdnpdj@192.168.2.131:27017/")  # 기본 포트 27017
+client = MongoClient(os.getenv("MONGO_DB_ADDR"))  # 기본 포트 27017
 db = client["extraction_db"]
-collection = db["all_extracted_data"]
+# collection = db["all_extracted_data"]
+collection = db["catalyst"]
 
 
-llm = ChatOpenAI(model="gpt-4.1", temperature=0)
+llm = ChatOpenAI(model=os.getenv("DATA_COLLECT_MODEL"), temperature=0)
 
 # 최대 반환 document 수
 MAX_SEARCH_DOC = 10
@@ -64,7 +66,7 @@ def create_mongo_query (query : str )->dict :
     # 1. DB에 날릴 쿼리 작성
     # 1-1. 스키마 + 프롬프트 만들기
     parser = JsonOutputParser(pydantic_object=MongoQuery)
-    schema_dict = catalyst.model_json_schema()
+    schema_dict = Experiment.model_json_schema()
     schema_str = json.dumps(schema_dict)  # dict → str
     schema_json = schema_str.replace("{", "{{").replace("}", "}}") 
     
@@ -78,26 +80,30 @@ def create_mongo_query (query : str )->dict :
     ])
     chain = prompt | llm | parser 
     result = chain.invoke({"schema_json": schema_json,"user_request": query})
-
+    
 
     # 2. DB에 쿼리 날리기(오류 체크)
-    try : 
-        if result["query"]["filter"] =={} or type(result["query"]["filter"])!=list:
-            raise Exception
-        result["query_str"] = json.dumps(result["query"],indent=2, ensure_ascii=False)
+    try :
+        if result["query"]["filter"] =={} :
+            raise Exception 
+        # aggregate 사용하는 코드
+        # if result["query"]["filter"] =={} or type(result["query"]["filter"])!=list:
+        #     raise Exception
+        result["query_str"] = json.dumps(result["query"],indent=2, ensure_ascii=False) 
     except Exception as e :
         result["db_result"] = None
         result["error"] = str(e)
         return result
 
     # find 사용하는 코드
-    # filter_dict = result["query"]["filter"]
-    # results = collection.find(filter_dict,projection = PROJECTION).limit(MAX_SEARCH_DOC).to_list(length=None)
-
-    result["query"]["filter"]=[stage for stage in result["query"]["filter"]if "$project" not in result["query"]["filter"]]
-    result["query"]["filter"] +=[PROJECTION] 
-    query_result = collection.aggregate(result["query"]["filter"]).to_list(length=None)
-    query_result =query_result[:MAX_SEARCH_DOC]
+    filter_dict = result["query"]["filter"]
+    query_result = collection.find(filter_dict).limit(MAX_SEARCH_DOC).to_list(length=None)
+    
+    # aggregate 사용하는 코드
+    # result["query"]["filter"]=[stage for stage in result["query"]["filter"]if "$project" not in result["query"]["filter"]]
+    # result["query"]["filter"] +=[PROJECTION] 
+    # query_result = collection.aggregate(result["query"]["filter"]).to_list(length=None)
+    # query_result =query_result[:MAX_SEARCH_DOC]
     if len(query_result) == 0 :
         result["error"] = "no documents are found for the generated query."
         return result 
@@ -110,12 +116,12 @@ def create_mongo_query (query : str )->dict :
     # 3. 결과 리턴하기
     result["count"] = len(query_result) 
 
-
+    print(result)
     return result 
 
 def build_prompt( output_format):
     prompt_first = f"""
-    {new_db_query_generate_format}
+    {db_query_generate_format}
 
     <schema>
     """
