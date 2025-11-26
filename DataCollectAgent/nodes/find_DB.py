@@ -9,6 +9,7 @@ from pydantic import BaseModel
 import json
 from bson import json_util
 from langchain.tools import tool
+from langchain.chat_models import init_chat_model
 
  
 from ..schemas.sacs.electro_chemical import Experiment
@@ -29,7 +30,7 @@ db = client["extraction_db"]
 collection = db["catalyst"]
 
 
-llm = ChatOpenAI(model=os.getenv("DATA_COLLECT_MODEL"), temperature=0)
+llm = init_chat_model(model=os.getenv("DATA_COLLECT_MODEL"), temperature=0)
 
 # 최대 반환 document 수
 MAX_SEARCH_DOC = 10

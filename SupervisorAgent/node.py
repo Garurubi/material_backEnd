@@ -154,9 +154,18 @@ async def criteria_generation(state: AgentState) -> Command[Literal["re_question
             user_feedback = user_feedback
         ))
     ])
-    criteria_str = "Weight: \n" \
-        + str({'\n'.join([f"{w}={v}" for w, v in response.weight.model_dump().items()])})\
-        + f"\n\n{response.feedback_question}"
+    # 표형식으로 가중치 기준 표현하기 
+    criteria_description = {
+        "activity" : "촉매의 반응 성능",
+        "stability" : "장기 안정성",
+        "synthesis" : "합성 난이도 및 재현성",
+        "cost" : "재료 및 공정 비용",
+        "evidence" : "문헌·실험 데이터 신뢰도",
+        "ml_lit_agree" : "머신러닝 예측과 기존 연구의 일치성"
+    }
+    criteria_table = "| 항목 | 가중치 | 설명 |\n|------|----|--------|\n"\
+        + '\n'.join([f"| {w} | {v} | {criteria_description[w]} |" for w, v in response.weight.model_dump().items()])    
+    criteria_str = criteria_table + f"\n\n{response.feedback_question}"
     
     # 평가기준에 대한 피드백을 한번이라도 받았으면 다시 피드백 받지 않음
     if user_feedback:
