@@ -1,3 +1,4 @@
+import asyncio
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -102,8 +103,9 @@ async def material_chat_stream(
     async def event_gen():
         with langfuse.start_as_current_span(name="langgraph-call"):
             with propagate_attributes(session_id=conversation_id):
-                async for event in sse_event_generator(graph, {"configurable": {"thread_id": conversation_id}, "callbacks": [langfuse_handler]}, query):
+                async for event in sse_event_generator(graph, config, query):
                     yield event
+                    await asyncio.sleep(0)  # flush and allow event loop
     
     return StreamingResponse(
         event_gen(),
@@ -111,8 +113,10 @@ async def material_chat_stream(
         headers={
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
         }
     )
+
 
 if __name__ == "__main__":
     import uvicorn
