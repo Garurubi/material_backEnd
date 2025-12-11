@@ -101,6 +101,14 @@ async def write_research_brief(state: AgentState) -> Command[Literal["criteria_g
         ))
     ])
 
+    if isinstance(state.get("classified_input"), ClarifyWithUser):
+        classified = state.get("classified_input")
+        if classified.query_domain == Domain.PV_TANDEM:
+            return Command(
+                goto="supervisor_agent",
+                update={"research_brief": response.research_brief}
+            )
+
     # Update state with generated research brief and pass it to the supervisor
     return Command(
         goto="criteria_generation",
@@ -286,7 +294,7 @@ async def make_final_report(state: AgentState):
     response = await model.ainvoke([
         HumanMessage(content=tmpl.render(
             query = state.get("messages")[0].content,
-            criteria = state.get("criteria").weight,
+            criteria = state.get("criteria").weight if state.get("criteria") else "",
             search_results = state.get("search_results"),
             hypothesis_results = state.get("hypothesis_results"),
             debate_summary = state.get("debate_summary"),
