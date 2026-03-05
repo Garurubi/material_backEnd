@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "justMyCode": false
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "justMyCode": true
         }
     ]
 }

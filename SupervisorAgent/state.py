@@ -130,4 +130,5 @@ class AgentState(MessagesState):
     debate_summary: Optional[DebateSummary]
     next_agents : Annotated[List[SubAgents], operator.add]
     supervisor_recursion: int
+    material_predict_results: Optional[List[str]]
     final_report: str

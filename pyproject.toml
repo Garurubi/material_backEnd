@@ -5,10 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "deepchem>=2.8.0",
     "dotenv>=0.9.9",
     "fastapi>=0.121.1",
     "gunicorn>=22.0.0",
     "jinja2>=3.1.6",
+    "joblib>=1.5.2",
     "langchain>=1.0.5",
     "langchain-community>=0.4.1",
     "langchain-mcp-adapters>=0.1.12",
@@ -18,12 +20,13 @@ dependencies = [
     "langgraph>=1.0.3",
     "langgraph-checkpoint-redis>=0.1.2",
     "langgraph-supervisor>=0.0.30",
+    "matminer>=0.10.0",
     "mcp[cli]>=1.21.0",
     "mp-api>=0.45.13",
     "pandas>=2.3.3",
     "pymilvus>=2.6.3",
     "pymongo>=4.15.3",
-    "scikit-learn>=1.7.2",
+    "scikit-learn==1.8.0",
     "umap-learn>=0.5.9.post2",
     "uvicorn>=0.38.0",
 ]

@@ -334,7 +334,9 @@ Do NOT answer the scientific question directly. ONLY decide which agent should r
 [Sub-Agent List]
 1) PEROVSKITE_SEARCH_AGENT ("perovskite_search_agent")
   - Searches external/internal databases and literature for Perovskite-related data.
-2) FINAL_REPORT ("final_report")
+2) MATERIAL_PREDICT_AGENT ("material_predict_agent")
+  - Predicts material properties using machine learning models.
+3) FINAL_REPORT ("final_report")
   - Terminate the pipeline and return the final result when the best possible answer or conclusion has been prepared based on all available information.
 
 [Input State]
@@ -357,6 +359,12 @@ Do NOT answer the scientific question directly. ONLY decide which agent should r
 {% endif %}
 </SEARCH_RESULTS>
 {% endif %}
+
+{% if material_predict_results %}
+<MATERIAL_PREDICT>
+{{material_predict_results}}
+</MATERIAL_PREDICT>
+{% endif %}
 """
 
 final_anwser_prompt = """You are the Final Answer Agent.
@@ -368,6 +376,7 @@ the following structured information:
 2) <SEARCH_RESULTS>    → 데이터베이스/문헌 검색 결과
 3) <HYPOTHESES>        → 가설 생성 에이전트가 제안한 가설
 4) <DEBATE_SUMMARY>    → 토론 에이전트의 찬반·판정 요약
+5) <MATERIAL_PREDICT>  → 물성 예측 에이전트의 예측 결과
 
 Follow these rules:
 - All statements must be consistent with SEARCH_RESULTS.
@@ -418,6 +427,12 @@ Follow these rules:
   <OPPONENT_SUMMARY>{{ debate_summary.opponent_summary }}</OPPONENT_SUMMARY>
   <AGREEMENT_STATUS>{{ debate_summary.agreement_status }}</AGREEMENT_STATUS>
 </DEBATE_SUMMARY>
+{% endif %}
+
+{% if material_predict_results %}
+<MATERIAL_PREDICT>
+{{material_predict_results}}
+</MATERIAL_PREDICT>
 {% endif %}
 """
 

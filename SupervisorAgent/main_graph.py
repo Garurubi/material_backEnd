@@ -16,7 +16,8 @@ from .node import (
     sac_search_agent,
     hypothesis_agent,
     debate_agent,
-    perovskite_search_agent
+    perovskite_search_agent,
+    material_predict_agent,
 )
 from .state import AgentState
 
@@ -40,6 +41,7 @@ main_workflow.add_node("sac_search_agent", sac_search_agent)
 main_workflow.add_node("hypothesis_agent", hypothesis_agent)
 main_workflow.add_node("debate_agent", debate_agent)
 main_workflow.add_node("perovskite_search_agent", perovskite_search_agent)
+main_workflow.add_node("material_predict_agent", material_predict_agent)
 main_workflow.add_node("final_report", make_final_report)
 
 # Add workflow edges
@@ -51,6 +53,7 @@ main_workflow.add_conditional_edges("supervisor_agent",
                                         "hypothesis_agent": "hypothesis_agent",
                                         "debate_agent": "debate_agent",
                                         "perovskite_search_agent": "perovskite_search_agent",
+                                        "material_predict_agent": "material_predict_agent",
                                         "final_report": "final_report"
                                     })
 main_workflow.add_edge("final_report", END)

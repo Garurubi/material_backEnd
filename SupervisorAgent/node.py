@@ -33,7 +33,7 @@ from DebateAgent import debate_graph
 from PerovskiteSearchAgent import perovskite_workflow
 import os
 from langgraph.types import interrupt
-
+from MaterialPredictionAgent import material_predict_workflow
 
 model = init_chat_model(model=os.getenv("SUPERVISOR_MODEL"), temperature=0.0)
 
@@ -218,7 +218,8 @@ async def supervisor_agent(state: AgentState):
         response = await structured_output_model.ainvoke([
             HumanMessage(content=tmpl.render(
                 query = state.get("messages")[0].content,
-                search_results = state.get("search_results")
+                search_results = state.get("search_results"),
+                material_predict_results = state.get("material_predict_results")
             ))
         ])
     
@@ -289,6 +290,20 @@ async def perovskite_search_agent(state: AgentState):
         update={"search_results" : {"perovskite_search_results" : perovskite_state["messages"][-1].content}}
     )
 
+async def material_predict_agent(state: AgentState):
+    if state.get("search_results", {}):
+        message = str(state["search_results"])
+        material_predict_state = await perovskite_predict_workflow(message)
+    
+        return Command(
+            goto="supervisor_agent",
+            update={"material_predict_results" : material_predict_state}
+        )
+    else:
+        return Command(
+            goto="supervisor_agent",
+        )
+
 async def make_final_report(state: AgentState):
     tmpl = Template(final_anwser_prompt)
     response = await model.ainvoke([
@@ -298,6 +313,7 @@ async def make_final_report(state: AgentState):
             search_results = state.get("search_results"),
             hypothesis_results = state.get("hypothesis_results"),
             debate_summary = state.get("debate_summary"),
+            material_predict_results = state.get("material_predict_results"),
         ))
     ])
 
