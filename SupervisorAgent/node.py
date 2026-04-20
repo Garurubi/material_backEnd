@@ -33,7 +33,7 @@ from DebateAgent import debate_graph
 from PerovskiteSearchAgent import perovskite_workflow
 import os
 from langgraph.types import interrupt
-from MaterialPredictionAgent import material_predict_workflow
+from MaterialPredictionAgent import perovskite_predict_workflow
 
 model = init_chat_model(model=os.getenv("SUPERVISOR_MODEL"), temperature=0.0)
 
@@ -292,17 +292,16 @@ async def perovskite_search_agent(state: AgentState):
 
 async def material_predict_agent(state: AgentState):
     if state.get("search_results", {}):
-        message = str(state["search_results"])
-        material_predict_state = await perovskite_predict_workflow(message)
-    
-        return Command(
-            goto="supervisor_agent",
-            update={"material_predict_results" : material_predict_state}
-        )
+        message = str(state["search_results"]) 
     else:
-        return Command(
-            goto="supervisor_agent",
-        )
+        message = state.get("messages")[0].content
+
+    material_predict_state = await perovskite_predict_workflow(message)
+    
+    return Command(
+        goto="supervisor_agent",
+        update={"material_predict_results" : material_predict_state}
+    )
 
 async def make_final_report(state: AgentState):
     tmpl = Template(final_anwser_prompt)

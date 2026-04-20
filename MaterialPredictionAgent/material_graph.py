@@ -3,7 +3,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain.chat_models import init_chat_model
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
-from perovskite_predict import element_fingerprint, element_net
+from .perovskite_predict import element_fingerprint, element_net
 import os
 import asyncio
 import sys
@@ -26,7 +26,6 @@ client = MultiServerMCPClient(
             "args": [os.path.join(BASE_DIR, "perovskite_predict.py")],
             "transport": "stdio",
         },
-        
     }
 )
 
@@ -52,4 +51,4 @@ async def perovskite_predict_workflow(message: str):
     return predict_result
 
 if __name__ == "__main__":
-    asyncio.run(perovskite_predict_workflow("FA0.8MA0.2Pb(I0.6Br0.4)3 bandgap 예측해줘."))
+    asyncio.run(perovskite_predict_workflow("CsSnI3 bandgap 예측해줘."))

@@ -1,5 +1,5 @@
-from .material_graph import material_predict_workflow
+from .material_graph import perovskite_predict_workflow
 
 __all__ = [
-    "material_predict_workflow"
+    "perovskite_predict_workflow"
 ]

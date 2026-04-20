@@ -37,10 +37,10 @@ try:
 	_db_path = "perovskite.db"
 	# DB 파일 존재 확인
 	if not os.path.exists(base_dir+"/"+_db_path):
-		raise FileNotFoundError(f"SQLite DB 파일이 존재하지 않습니다: {base_dir+"/"+_db_path}")
+		raise FileNotFoundError(f"SQLite DB 파일이 존재하지 않습니다: {base_dir+'/'+_db_path}")
 
 	# DB 연결 시도
-	db = SQLDatabase.from_uri(f"sqlite:///{base_dir+"/"+_db_path}")
+	db = SQLDatabase.from_uri(f"sqlite:///{base_dir+'/'+_db_path}")
 
 except Exception as e:
 	print(f"SQLite DB 필요 또는 연결 실패: {e}")

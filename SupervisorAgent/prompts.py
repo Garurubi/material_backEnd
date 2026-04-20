@@ -335,18 +335,13 @@ Do NOT answer the scientific question directly. ONLY decide which agent should r
 1) PEROVSKITE_SEARCH_AGENT ("perovskite_search_agent")
   - Searches external/internal databases and literature for Perovskite-related data.
 2) MATERIAL_PREDICT_AGENT ("material_predict_agent")
-  - Predicts material properties using machine learning models.
+  - Predicts bandgap using machine learning models.
 3) FINAL_REPORT ("final_report")
   - Terminate the pipeline and return the final result when the best possible answer or conclusion has been prepared based on all available information.
 
 [Input State]
 - <PEROVSKITE_SEARCH_RESULTS> : Summary of data retrieved by the Perovskite search agent (may be empty).
-
-[Decision Rules]
-1. Select "final_report" when:
-  - The current information appears sufficient to answer the user’s question with a coherent, defensible conclusion.
-2. Select "perovskite_search_agent" when:
-  - When PEROVSKITE_SEARCH_RESULTS is empty or when the user query pertains to the Perovskite domain.
+- <MATERIAL_PREDICT> : Predicted bandgap data retrieved by the Material predict agent (may be empty).
 
 <QUERY>
 {{ query }}
